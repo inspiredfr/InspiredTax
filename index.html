@@ -1,259 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InspiredTax Africa — Provisional Tax Planning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            DEFAULT: '#0B1F3B',
-                            light: '#132E54',
-                        },
-                        blue: {
-                            DEFAULT: '#1F5FAF',
-                            light: '#2E7CDA',
-                        },
-                        green: {
-                            DEFAULT: '#1FAF73',
-                            hover: '#178F5D',
-                        },
-                        accent: '#3EDC97'
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InspiredTax Africa — Provisional Tax Planning</title>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0B1F3B', light: '#132E54' },
+            brandBlue: { DEFAULT: '#1F5FAF', light: '#2E7CDA', dark: '#114384' },
+            brandGreen: { DEFAULT: '#1FAF73', hover: '#178F5D', subtle: '#E7FBF2' },
+            accent: '#1CB875' // Shifted to higher contrast tone for accessibility
+          },
+          boxShadow: {
+            brand: '0 10px 30px rgba(31,95,175,0.25)'
+          }
         }
-    </script>
-    <style>
-        .hero-pattern {
-            background-color: #0B1F3B;
-            background-image: radial-gradient(circle at 20% 30%, #1F5FAF 0%, transparent 40%), radial-gradient(circle at 80% 70%, #1FAF73 0%, transparent 40%);
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    .hero-pattern {
+      background-color: #0B1F3B;
+      background-image:
+        radial-gradient(circle at 20% 30%, #1F5FAF 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #1FAF73 0%, transparent 40%);
+    }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
+
 <body class="bg-gray-50 text-gray-900 font-sans antialiased">
-
-    <nav class="bg-navy border-b border-navy-light sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-3">
-                    <img src="logo.png" alt="InspiredTax Africa Logo" class="h-10 w-auto object-contain hidden sm:block fallback-svg" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <svg class="w-8 h-8 text-accent hidden fallback-svg-target" style="display: none;" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L15 6L19 5L18 10L22 13L17 16L16 21L11 18L7 20L8 15L4 12L8 9L7 4L12 2Z" />
-                    </svg>
-                    <span class="text-white font-bold text-lg tracking-tight">
-                        <span class="text-white">Inspired</span><span class="text-green">Tax</span> <span class="text-blue-light text-xs tracking-wider uppercase font-extrabold">AFRICA</span>
-                    </span>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#features" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Features</a>
-                    <a href="#calculators" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Calculators</a>
-                    <a href="#articles" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Articles</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Contact</a>
-                </div>
-                <div>
-                    <a href="#download" class="bg-green hover:bg-green-hover text-white px-4 py-2 rounded text-sm font-semibold tracking-wide transition shadow-sm">
-                        Get Started
-                    </a>
-                </div>
-            </div>
+  
+  <!-- NAV -->
+  <nav class="bg-navy border-b border-navy-light sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <!-- Logo Fallback SVG -->
+          <svg class="w-8 h-8 text-brandGreen" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L15 6L19 5L18 10L22 13L17 16L16 21L11 18L7 20L8 15L4 12L8 9L7 4L12 2Z" />
+          </svg>
+          <span class="text-white font-bold text-lg tracking-tight">
+            Inspired<span class="text-brandGreen">Tax</span>
+            <span class="text-brandBlue-light text-xs tracking-wider uppercase font-extrabold ml-1">AFRICA</span>
+          </span>
         </div>
-    </nav>
 
-    <header class="hero-pattern text-white py-20 lg:py-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left lg:flex lg:items-center lg:justify-between">
-            <div class="lg:w-1/2 space-y-6">
-                <div class="inline-flex items-center space-x-2 bg-navy-light px-3 py-1 rounded-full border border-blue/30">
-                    <span class="w-2.5 h-2.5 bg-accent rounded-full animate-pulse"></span>
-                    <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Now in Alpha 1 Testing</span>
-                </div>
-                <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-none">
-                    Provisional Tax Planning <br><span class="text-green">Accurate. Offline. Secure.</span>
-                </h1>
-                <p class="text-lg text-gray-300 max-w-xl">
-                    Purpose-built for South African provisional taxpayers earning R400k–R1.1m. Take full control of your SARS calculations, completely offline, without sharing your financial details to external servers.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 justify-center lg:justify-start">
-                    <a href="#download" class="bg-green hover:bg-green-hover text-white text-center px-6 py-3 rounded font-bold tracking-wide transition shadow-md">
-                        Download Alpha Release
-                    </a>
-                </div>
-            </div>
-            
-            <div class="mt-12 lg:mt-0 lg:w-5/12 flex justify-center hidden lg:flex">
-                <div class="relative w-64 h-[500px] bg-navy-light rounded-[36px] p-3 shadow-2xl border-4 border-gray-700">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-4 w-28 bg-gray-700 rounded-b-xl"></div>
-                    <div class="w-full h-full bg-navy rounded-[28px] overflow-hidden p-4 flex flex-col justify-between text-left">
-                        <div class="pt-6">
-                            <span class="text-xs text-accent font-semibold uppercase tracking-wider">Assessment Summary</span>
-                            <div class="text-2xl font-bold mt-1 text-white">InspiredTax Africa</div>
-                            <div class="mt-4 bg-navy-light p-3 rounded-lg border border-blue/20">
-                                <span class="text-xs text-gray-400 block">Provisional Period</span>
-                                <span class="text-sm font-semibold text-white">2026/27 — Period 1</span>
-                                <div class="mt-2 text-xs text-green font-semibold">✔ s11F Deduction Applied</div>
-                            </div>
-                        </div>
-                        <div class="bg-navy-light p-3 rounded-lg border border-blue/20">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-gray-400">Total Tax Liability</span>
-                                <span class="text-sm font-bold text-accent">R 71,272.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#features" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Features</a>
+          <a href="#calculators" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Calculators</a>
+          <a href="#articles" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Articles</a>
+          <a href="#future-tools" class="text-gray-300 hover:text-white transition py-2 text-sm font-medium">Demos & AI</a>
+          <a href="#download" class="bg-brandGreen hover:bg-brandGreen-hover text-white px-4 py-2 rounded text-sm font-semibold tracking-wide transition shadow-sm">
+            Get Started
+          </a>
         </div>
-    </header>
 
-    <section id="calculators" class="py-20 bg-gray-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold tracking-tight text-navy">Free Tax Calculators</h2>
-                <p class="text-lg text-gray-600 mt-4">Standalone tools based on our core calculation engine.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <a href="#" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue transition shadow-sm group">
-                    <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-lg font-bold text-navy group-hover:text-blue transition">s11F Contribution Limit Calculator</h3>
-                        <span class="text-blue bg-blue/10 px-2 py-1 rounded text-xs font-bold">2026/27</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Calculate your exact retirement funding deduction limits based on the greater of remuneration or taxable income.</p>
-                </a>
-                <a href="#" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue transition shadow-sm group">
-                    <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-lg font-bold text-navy group-hover:text-blue transition">Paragraph 20 Penalty Estimator</h3>
-                        <span class="text-blue bg-blue/10 px-2 py-1 rounded text-xs font-bold">2026/27</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Test your estimated taxable income against the updated R1,800,000 threshold to gauge underestimation risk.</p>
-                </a>
-            </div>
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section id="articles" class="py-20 bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-12">
-                <div class="max-w-2xl">
-                    <h2 class="text-3xl font-bold tracking-tight text-navy">Tax Insights & Articles</h2>
-                    <p class="text-lg text-gray-600 mt-2">Guidance on provisional tax mechanics, deductions, and SARS compliance.</p>
-                </div>
-                <a href="#" class="hidden sm:block text-blue font-semibold hover:text-blue-light transition">View All Articles &rarr;</a>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <article class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-navy flex items-center justify-center p-4">
-                        <span class="text-accent font-bold text-xl text-center">Navigating Paragraph 20</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <span class="text-xs font-bold text-green uppercase tracking-wider mb-2">Compliance</span>
-                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight">The R1.8m Threshold: What Changes in 2026/27?</h3>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">An analysis of the new underestimation penalty brackets and how they impact provisional taxpayers earning above the threshold.</p>
-                        <a href="#" class="text-blue font-semibold text-sm hover:underline">Read Article</a>
-                    </div>
-                </article>
-                <article class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-navy-light flex items-center justify-center p-4">
-                        <span class="text-white font-bold text-xl text-center">Freelancers & s11F</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <span class="text-xs font-bold text-green uppercase tracking-wider mb-2">Deductions</span>
-                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight">Maximising Retirement Contributions as a Contractor</h3>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">How independent contractors should calculate their 27.5% limit when taxable income exceeds standard remuneration.</p>
-                        <a href="#" class="text-blue font-semibold text-sm hover:underline">Read Article</a>
-                    </div>
-                </article>
-                <article class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-blue-light flex items-center justify-center p-4">
-                        <span class="text-white font-bold text-xl text-center">Data Privacy</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <span class="text-xs font-bold text-green uppercase tracking-wider mb-2">Technology</span>
-                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight">Why Offline-First Matters for Financial Data</h3>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">Understanding local AES-GCM-256 encryption and why keeping your tax data off cloud servers mitigates risk.</p>
-                        <a href="#" class="text-blue font-semibold text-sm hover:underline">Read Article</a>
-                    </div>
-                </article>
-            </div>
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-light px-4 pt-2 pb-4 space-y-2 border-t border-navy">
+      <a href="#features" class="block text-gray-300 hover:text-white text-base font-medium py-2">Features</a>
+      <a href="#calculators" class="block text-gray-300 hover:text-white text-base font-medium py-2">Calculators</a>
+      <a href="#articles" class="block text-gray-300 hover:text-white text-base font-medium py-2">Articles</a>
+      <a href="#future-tools" class="block text-gray-300 hover:text-white text-base font-medium py-2">Demos & AI</a>
+      <a href="#download" class="block bg-brandGreen text-center text-white text-base font-semibold py-2 rounded">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-pattern text-white py-16 sm:py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <div class="lg:w-1/2 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center space-x-2 bg-navy-light px-3 py-1 rounded-full border border-brandBlue/30">
+          <span class="w-2.5 h-2.5 bg-brandGreen rounded-full animate-pulse"></span>
+          <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Now in Alpha 1 Testing</span>
         </div>
-    </section>
 
-    <section id="contact" class="bg-navy text-white pt-20 pb-12 border-t border-navy-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 mb-16">
-                <div>
-                    <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Get in Touch</h2>
-                    <p class="text-gray-400 mb-8 max-w-md">Whether you are an alpha tester reporting a defect, a tax practitioner interested in B2B deployment, or an investor, reach out directly.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="mt-1 w-5 h-5 text-accent">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
-                            <div>
-                                <span class="block text-sm font-semibold text-gray-300">Email</span>
-                                <a href="mailto:founder@inspiredtax.africa" class="text-white hover:text-accent transition">founder@inspiredtax.africa</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="mt-1 w-5 h-5 text-accent">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                            </div>
-                            <div>
-                                <span class="block text-sm font-semibold text-gray-300">LinkedIn</span>
-                                <a href="#" class="text-white hover:text-accent transition">Allan Lombard</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-navy-light p-6 rounded-lg border border-blue/20">
-                    <form action="#" method="POST" class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
-                            <input type="text" id="name" name="name" class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                            <input type="email" id="email" name="email" class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-green hover:bg-green-hover text-white font-bold py-2 px-4 rounded transition">Send Message</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="border-t border-navy-light pt-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between">
-                <div class="space-y-1">
-                    <span class="text-white font-bold tracking-tight">
-                        <span>Inspired</span><span class="text-green">Tax</span> <span class="text-blue-light text-xs uppercase font-extrabold">AFRICA</span>
-                    </span>
-                    <p class="text-xs text-gray-400">© 2026 InspiredTax Africa. All rights reserved.</p>
-                </div>
-                <div class="mt-4 sm:mt-0">
-                    <a href="#" class="text-sm text-gray-400 hover:text-white transition">Privacy Policy</a>
-                    <span class="text-gray-600 mx-2">|</span>
-                    <a href="#" class="text-sm text-gray-400 hover:text-white transition">Terms of Service</a>
-                </div>
-            </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+          Provisional Tax Planning <br />
+          <span class="text-brandGreen">Accurate. Offline. Secure.</span>
+        </h1>
+
+        <p class="text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Purpose-built for South African provisional taxpayers earning R400k–R1.1m.
+          Take full control of your SARS calculations—designed to run offline to guard financial privacy.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start">
+          <a href="#download" class="bg-brandGreen hover:bg-brandGreen-hover text-white text-center px-6 py-3 rounded font-bold tracking-wide transition shadow-md">
+            Download Alpha Release
+          </a>
+          <a href="#calculators" class="bg-white/10 hover:bg-white/15 text-white text-center px-6 py-3 rounded font-semibold tracking-wide transition border border-white/15">
+            Explore Free Calculators
+          </a>
         </div>
-    </section>
+      </div>
 
-    <script>
-        // Simple fallback mechanism for the logo if the image fails to load during local development
-        document.querySelector('.fallback-svg').addEventListener('error', function() {
-            this.style.display = 'none';
-            document.querySelector('.fallback-svg-target').style.display = 'block';
-        });
-    </script>
+      <!-- App Interface UI Frame Preview -->
+      <div class="mt-10 lg:mt-0 lg:w-5/12 hidden lg:flex justify-center">
+        <div class="relative w-72 xl:w-80 h-[520px] bg-navy-light rounded-[36px] p-3 shadow-2xl border border-gray-700/40">
+          <div class="w-full h-full bg-navy rounded-[28px] overflow-hidden p-5 flex flex-col justify-between text-left">
+            <div>
+              <span class="text-xs text-brandGreen font-semibold uppercase tracking-wider">Assessment Summary</span>
+              <div class="text-2xl font-bold mt-1 text-white">InspiredTax Africa</div>
+              <div class="mt-4 bg-navy-light p-3 rounded-lg border border-brandBlue/20">
+                <span class="text-xs text-gray-400 block">Provisional Period</span>
+                <span class="text-sm font-semibold text-white">2026/27 — Period 1</span>
+                <div class="mt-2 flex items-center gap-2 text-xs text-brandGreen font-medium">
+                  <span>✔</span> s11F Deduction Applied
+                </div>
+              </div>
+            </div>
+            <div class="bg-navy-light p-3 rounded-lg border border-brandBlue/20">
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-gray-400">Total Tax Liability</span>
+                <span class="text-sm font-bold text-brandGreen">R 71,272.00</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-gray-400 text-center">Privacy Note: Computations are processing completely locally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CALCULATORS SECTION (Interactive Ready) -->
+  <section id="calculators" class="py-16 bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-navy">Free In-Browser Calculators</h2>
+        <p class="text-lg text-gray-600 mt-2">Instant client-side evaluation models based on current SARS parameters.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Card Item -->
+        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-lg font-bold text-navy">s11F Contribution Limit Tool</h3>
+            <span class="text-xs bg-brandBlue/10 text-brandBlue font-bold px-2 py-1 rounded">Tax Year: 2026/27</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-4">Calculate maximum allowable retirement deductions relative to your gross income variables.</p>
+          
+          <!-- Embedded Live Calculator Form Mini-Engine -->
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Estimated Taxable Income (R)</label>
+              <input type="number" id="calc-income" placeholder="e.g. 600000" class="w-full text-sm p-2 border border-gray-300 rounded focus:ring-1 focus:ring-brandGreen focus:outline-none">
+            </div>
+            <button onclick="calculateS11F()" class="w-full py-2 bg-brandBlue text-white rounded text-xs font-bold hover:bg-brandBlue-dark transition">Compute Limit</button>
+            <div id="calc-result" class="text-xs text-brandGreen font-bold text-center mt-1 hidden"></div>
+          </div>
+        </div>
+
+        <!-- Card Item -->
+        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-lg font-bold text-navy">Paragraph 20 Penalty Estimator</h3>
+              <span class="text-xs bg-brandBlue/10 text-brandBlue font-bold px-2 py-1 rounded">Underestimation</span>
+            </div>
+            <p class="text-sm text-gray-600">Simulate potential exposures if your declared provisional estimates differ substantially from final assessments below or above the R1.8m thresholds.</p>
+          </div>
+          <button class="mt-6 w-full py-2 bg-gray-100 hover:bg-gray-200 text-navy font-bold text-xs rounded transition">Launch Interactive Simulator</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC PLACEHOLDERS: FUTURE ROADMAP VIDEOS & AI ASSESSMENT -->
+  <section id="future-tools" class="py-16 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-navy">App Ecosystem & Strategy Roadmap</h2>
+        <p class="text-lg text-gray-600 mt-2">Preview features arriving throughout the beta cycle.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Future YouTube / Video Container -->
+        <div class="border border-dashed border-gray-300 rounded-xl p-6 flex flex-col justify-between bg-gray-50/50">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center mb-4 text-red-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <h4 class="text-lg font-bold text-navy mb-2">Video Walkthroughs & Demos</h4>
+            <p class="text-sm text-gray-600">Step-by-step guides on how to extract calculations without violating local device boundaries.</p>
+          </div>
+          <div class="mt-6 aspect-video bg-gray-200 rounded-lg flex items-center justify-center text-xs text-gray-400 font-medium">
+            YouTube Embed Integration Area
+          </div>
+        </div>
+
+        <!-- Future Tax Risk Analyzer Assistant AI -->
+        <div class="border border-dashed border-gray-300 rounded-xl p-6 flex flex-col justify-between bg-gray-50/50">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center mb-4 text-brandGreen">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h4 class="text-lg font-bold text-navy mb-2">AI Assessment Models</h4>
+            <p class="text-sm text-gray-600">Client-side logic evaluation checking if your income trends present tax compliance hazards.</p>
+          </div>
+          <span class="mt-6 text-xs text-brandBlue font-semibold uppercase tracking-wider">🔬 In Concept Dev Phase</span>
+        </div>
+
+        <!-- Assistant Chatbot Wireframe UI Element -->
+        <div class="border border-dashed border-gray-300 rounded-xl p-6 flex flex-col justify-between bg-gray-50/50">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center mb-4 text-purple-600">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 1.66-4 3-9 3s-9-1.34-9-3 4-3 9-3 9 1.34 9 3z" /></svg>
+            </div>
+            <h4 class="text-lg font-bold text-navy mb-2">Provisional Assistant Bot</h4>
+            <p class="text-sm text-gray-600">Automated Q&A referencing official SARS guidelines for precise answers.</p>
+          </div>
+          <div class="border border-gray-200 bg-white rounded-lg p-2 text-[11px] text-gray-400 space-y-1">
+            <div class="bg-gray-100 p-1.5 rounded max-w-[85%] text-gray-700 font-medium">When is my 1st provisional return due?</div>
+            <div class="bg-brandBlue/10 p-1.5 rounded max-w-[85%] ml-auto text-brandBlue font-medium text-right">31st of August every year.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPT BLOCK -->
+  <script>
+    // Mobile Navigation Drawer Toggle Handler Logic
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Sample Client-side Local Calculation Formula Demo Engine
+    function calculateS11F() {
+      const incomeVal = parseFloat(document.getElementById('calc-income').value);
+      const outputBox = document.getElementById('calc-result');
+      if(isNaN(incomeVal) || incomeVal <= 0){
+         outputBox.innerText = "Please input a valid amount.";
+         outputBox.classList.remove('hidden');
+         return;
+      }
+      // Formula: 27.5% capped at R350,000 max limit threshold capping rule
+      let computedLimit = incomeVal * 0.275;
+      if (computedLimit > 350000) { computedLimit = 350000; }
+      
+      outputBox.innerText = "Maximum Deductible Limit: R " + computedLimit.toLocaleString('en-ZA', {minimumFractionDigits:2});
+      outputBox.classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
