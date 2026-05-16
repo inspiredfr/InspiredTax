@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Tax for Travel"
+description: "SARS Travel Allowances and Deductions"
+---
 # Navigating SARS Travel Allowances and Deductions: A Practical Guide
 
 Understanding travel allowances and deductions can be a complex aspect of tax compliance in South Africa. The South African Revenue Service (SARS) provides specific guidelines to ensure fair and accurate reporting for both employers and employees. This guide aims to demystify these regulations, offering practical insights into how travel allowances and deductions work, what records you need to keep, and how to maximize your tax efficiency.
