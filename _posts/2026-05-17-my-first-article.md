@@ -1,3 +1,4 @@
+yaml
 ---
 layout: post
 title: "my first article"
