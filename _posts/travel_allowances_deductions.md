@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tax for Travel"
+title: "Taxation for Travel"
 description: "SARS Travel Allowances and Deductions"
 ---
 # Navigating SARS Travel Allowances and Deductions: A Practical Guide
