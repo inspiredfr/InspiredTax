@@ -1,0 +1,20 @@
+title: Allan's Tax Tools
+description: "Articles and calculators for tax planning"
+author: Allan
+url: "https://inspiredfr.github.io"   # replace with your GitHub Pages URL
+baseurl: ""                      # leave blank if site is at root
+
+theme: minima                     # simple built-in theme
+
+plugins:
+  - jekyll-feed                   # RSS feed for articles
+  - jekyll-sitemap                # sitemap for Google indexing
+
+# Default settings for all posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Allan"
