@@ -1,6 +1,62 @@
 {
   "articles": [
     {
+      "id": "tax-deductions-south-africa-freelancers",
+      "slug": "tax-deductions-south-africa-freelancers",
+      "title": "Tax Deductions for Freelancers in South Africa: The Complete 2026/27 Guide",
+      "description": "Every tax deduction South African freelancers and independent contractors can legally claim \u2014 home office, travel, retirement, equipment, and more \u2014 with SARS requirements explained.",
+      "category": "Deductions",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-05-17",
+      "featured": true,
+      "readTime": "12 min read",
+      "heroColor": "navy-light",
+      "heroText": "Deductions"
+    },
+    {
+      "id": "provisional-tax-calculator-south-africa",
+      "slug": "provisional-tax-calculator-south-africa",
+      "title": "Provisional Tax Calculator South Africa 2026/27: How to Calculate What You Owe SARS",
+      "description": "Use South Africa's provisional tax calculator for 2026/27 to estimate your IRP6 payments, apply deductions, and avoid SARS penalties \u2014 built for freelancers earning R400k to R1.5m.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-06-01",
+      "featured": true,
+      "readTime": "11 min read",
+      "heroColor": "navy-light",
+      "heroText": "Compliance"
+    },
+    {
+      "id": "how-to-submit-irp6-south-africa",
+      "slug": "how-to-submit-irp6-south-africa",
+      "title": "How to Submit Your IRP6 in South Africa: A Step-by-Step Guide for the August Deadline",
+      "description": "A complete step-by-step guide to submitting your IRP6 provisional tax return on SARS eFiling before the August deadline \u2014 including how to calculate your estimate and avoid penalties.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-08-01",
+      "featured": true,
+      "readTime": "10 min read",
+      "heroColor": "navy-light",
+      "heroText": "Compliance"
+    },
+    {
+      "id": "how-to-reduce-tax-south-africa",
+      "slug": "how-to-reduce-tax-south-africa",
+      "title": "How to Reduce Your Tax Bill in South Africa: A Practical Guide for Freelancers",
+      "description": "Legal, SARS-compliant strategies to reduce your tax liability in South Africa \u2014 from retirement contributions to home office deductions for independent professionals.",
+      "category": "Tax Planning",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-05-17",
+      "featured": true,
+      "readTime": "10 min read",
+      "heroColor": "navy-light",
+      "heroText": "Tax Planning"
+    },
+    {
       "id": "example-article",
       "slug": "example-article",
       "title": "How to Calculate Your First Provisional Tax Payment",
