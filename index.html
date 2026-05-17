@@ -2,6 +2,12 @@
 layout: default
 title: "Home"
 ---
+{% for article in site.articles %}
+  <div class="article-preview">
+    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+    <p>{{ article.description }}</p>
+  </div>
+{% endfor %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
