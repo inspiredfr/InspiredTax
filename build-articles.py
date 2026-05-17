@@ -82,6 +82,7 @@ def build_articles():
             "{{DATE_FORMATTED}}": date_formatted,
             "{{READ_TIME}}": article["readTime"],
             "{{CONTENT}}": content,
+            "{{SLUG}}": slug,
         }
 
         # Apply substitutions
