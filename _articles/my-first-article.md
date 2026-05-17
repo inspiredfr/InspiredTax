@@ -2,5 +2,6 @@
 layout: default
 title: "My First Article"
 description: "A short preview sentence"
+permalink: /articles/my-first-article/
 ---
-Hello world! This is my first article. It should now open when you click the link.
+Hello world! This is my first article.
