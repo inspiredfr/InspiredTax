@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "example-article",
+      "slug": "example-article",
+      "title": "How to Calculate Your First Provisional Tax Payment",
+      "description": "A plain-English guide to your first IRP6 submission \u2014 what to include, how to estimate, and how to avoid penalties.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-05-17",
+      "featured": true,
+      "readTime": "6 min read",
+      "heroColor": "navy-light",
+      "heroText": "Compliance"
+    },
+    {
       "id": "freelancers-provisional-tax",
       "slug": "freelancers-provisional-tax",
       "title": "Maximising Retirement Contributions as a Contractor",
