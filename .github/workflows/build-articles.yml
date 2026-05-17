@@ -1,0 +1,29 @@
+name: Publish Articles
+
+on:
+  push:
+    paths:
+      - 'articles/*.md'
+      - 'articles/*.txt'
+      - 'article-template.html'
+      - 'build-articles.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build articles
+        run: python3 build-articles.py
+
+      - name: Publish generated files
+        run: |
+          git config user.name "Article Publisher"
+          git config user.email "bot@inspiredtax.africa"
+          git add articles/*.html articles-data.json
+          git diff --staged --quiet || git commit -m "Publish articles"
+          git push

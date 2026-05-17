@@ -1,0 +1,182 @@
+TITLE: How to Submit Your IRP6 in South Africa: A Step-by-Step Guide for the August Deadline
+DESCRIPTION: A complete step-by-step guide to submitting your IRP6 provisional tax return on SARS eFiling before the August deadline — including how to calculate your estimate and avoid penalties.
+CATEGORY: Compliance
+DATE: 2026-08-01
+READ_TIME: 10 min read
+AUTHOR: Allan Lombard
+KEYWORDS: how to submit IRP6, IRP6 South Africa, IRP6 eFiling, provisional tax August deadline, period 1 provisional tax, how to calculate provisional tax, SARS eFiling provisional tax
+FAQ: What is an IRP6 form in South Africa?|The IRP6 is the SARS return used to declare your provisional tax estimate and make payment. It is submitted twice a year — at the end of August (Period 1) and at the end of February (Period 2) — via SARS eFiling.
+FAQ: What is the provisional tax deadline for August in South Africa?|The first provisional tax return (IRP6 – Period 1) must be submitted and paid by 31 August each year. Late submission results in a 20% penalty on the tax liability for that period.
+FAQ: Do I need an accountant to submit my IRP6?|No. SARS eFiling allows you to submit your IRP6 yourself. However, having an accurate calculation of your taxable income and deductions before you log in is essential. InspiredTax Africa helps you prepare this calculation privately and accurately before submission.
+FAQ: What happens if I submit a zero IRP6?|If you submit an IRP6 with zero estimated income, SARS will use your prior year's taxable income as the basis and charge provisional tax accordingly. You may also face a 20% penalty for underestimation if your actual income is significantly higher.
+FAQ: Can I pay provisional tax without submitting an IRP6?|No. The IRP6 return must be submitted first, and payment follows from the declared estimate. Payment without a return, or a return without matching payment, creates an administrative problem with SARS that can attract penalties.
+
+## What Is an IRP6 and Why Does the August Deadline Matter?
+
+The IRP6 is your provisional tax return. It tells SARS how much taxable income you estimate you'll earn for the full year and forms the basis for your provisional tax payment.
+
+South Africa's provisional tax system has two compulsory payment periods:
+
+- **Period 1 (August):** Covers the first six months of the tax year. Due by 31 August.
+- **Period 2 (February):** Covers the full tax year. Due by 28 February.
+
+The **August deadline is the most important** for first-time provisional taxpayers and for those whose income has changed significantly. Getting your Period 1 estimate right sets the tone for the year and reduces the risk of a painful catch-up at Period 2.
+
+Miss the August deadline and SARS imposes a **20% penalty on the tax liability** for that period — before any interest starts accruing on the outstanding amount. There is no grace period.
+
+## Step 1: Gather Your Information Before You Log In
+
+Before opening SARS eFiling, prepare the following:
+
+**Income figures:**
+- Total freelance and consulting income received since March (start of the tax year) to date
+- Any contracts signed that will generate income before February
+- Rental income received or expected
+- Interest income from bank accounts and investments
+- Any other non-PAYE income
+
+**Deduction figures:**
+- Retirement annuity contributions made or planned for the year
+- Confirmed home office costs
+- Business expenses you've incurred
+
+**Prior year information:**
+- Your previous year's assessed taxable income (shown on your SARS assessment)
+- Prior year IRP6 reference numbers if you've filed before
+
+Having this ready before logging in saves time and prevents errors made under pressure.
+
+## Step 2: Calculate Your Estimated Taxable Income for 2026/27
+
+Your IRP6 estimate must reflect your expected taxable income for the **full year** — not just the period to date.
+
+**How to approach the estimate:**
+
+**Option A (Safe Harbour — recommended for Period 1):**
+Use your prior year's assessed taxable income. SARS accepts this for Period 1 without imposing an underestimation penalty, even if your actual income turns out to be higher.
+
+**Option B (Actual estimate):**
+Project your actual expected income for the full year based on contracts, invoices, and known income sources. Apply all allowable deductions to arrive at estimated taxable income.
+
+**Apply the s11F deduction before estimating:**
+
+The single most impactful step before calculating your IRP6 is applying your retirement annuity deduction. If you contribute R200,000 to a retirement annuity during the year, this reduces your taxable income by R200,000 before any tax is calculated.
+
+Many provisional taxpayers calculate their IRP6 using gross income and miss this deduction entirely — paying significantly more than necessary.
+
+## Step 3: Calculate the Tax on Your Estimate
+
+Once you have your estimated taxable income, apply the 2026/27 tax tables:
+
+- R0 – R237,100: 18%
+- R237,101 – R370,500: R42,678 + 26% of excess
+- R370,501 – R512,800: R77,362 + 31% of excess
+- R512,801 – R673,000: R121,475 + 36% of excess
+- R673,001 – R857,900: R179,147 + 39% of excess
+- R857,901 – R1,817,000: R251,258 + 41% of excess
+- Above R1,817,000: R644,489 + 45% of excess
+
+Then deduct:
+
+- Primary rebate: **R17,235**
+- Medical aid tax credits (if applicable)
+- PAYE deducted by any employer during the year
+
+This gives your **estimated annual tax liability**.
+
+**Your Period 1 payment = Estimated annual liability ÷ 2**
+
+SARS expects you to have paid half your annual tax by the August deadline. The calculation doesn't account for what you may already have paid in PAYE — the IRP6 compares your total provisional payments against your full-year estimate at Period 2.
+
+## Step 4: Log In to SARS eFiling and Navigate to IRP6
+
+1. Go to **efiling.sars.gov.za**
+2. Log in with your username and password
+3. From the home page, select **"Returns"** in the top menu
+4. Click **"Returns Issued"**
+5. Select **"Provisional Tax"** from the left menu
+6. You'll see your IRP6 return listed for the current period — click **"Open"**
+
+If no IRP6 appears, your eFiling profile may not be registered for provisional tax. Contact SARS or visit a branch to update your taxpayer type before the deadline.
+
+## Step 5: Complete the IRP6 Return
+
+The IRP6 form is simpler than it looks. The key fields are:
+
+**Estimated taxable income:**
+Enter your calculated estimate from Step 2. This is the most important field — it determines your payment.
+
+**Basic amount:**
+SARS pre-populates this with your prior year's assessed income. If you're using the safe harbour estimate, this is the figure to use.
+
+**Tax calculated:**
+SARS calculates the tax automatically once you enter your estimated income. Verify this matches your own calculation.
+
+**Payments and credits:**
+Enter any PAYE already withheld by an employer for the year to date. This reduces your provisional tax payment.
+
+**Amount payable:**
+This is the final amount due for Period 1. Verify it reflects your expectations before submitting.
+
+## Step 6: Submit and Pay Before 31 August
+
+Once you've reviewed the IRP6 and confirmed the figures:
+
+1. Click **"Submit"** on the return
+2. A payment advice (payment reference number) will be generated
+3. Pay the amount via:
+   - **eFiling payment portal** (instant, recommended)
+   - **Internet banking** using the SARS bank details and your payment reference
+   - **At a bank branch** with the payment advice slip
+
+**Critical:** The payment must reflect in SARS's account by 31 August. Allow at least two banking days for electronic payments. Do not leave this until the last working day before the deadline.
+
+## Common IRP6 Mistakes That Cost South African Freelancers Money
+
+**Overestimating income to be safe:**
+
+Some taxpayers deliberately overestimate to avoid underestimation penalties. This creates a cash flow problem — you're paying tax before it's due. The optional third payment and annual assessment reconciliation handle any shortfall more efficiently.
+
+**Not applying deductions to the estimate:**
+
+Your IRP6 estimate should be your **taxable income after deductions**, not your gross revenue. Entering gross revenue and ignoring the s11F deduction, home office costs, and business expenses means you overpay provisional tax significantly.
+
+**Missing the deadline because payment was slow:**
+
+The return submission and the payment are both due by 31 August. A submitted return with a late payment still attracts penalties. Use eFiling's integrated payment system to ensure both happen simultaneously.
+
+**Not updating eFiling contact details:**
+
+SARS sends notifications to your registered email and phone number. Outdated contact details mean you miss payment reminders, assessment notices, and audit notifications.
+
+**Submitting zero when uncertain:**
+
+If you're unsure of your estimate, using zero is the worst option. SARS will base your assessment on prior year income and charge a 20% penalty for underestimation. Use the safe harbour amount — prior year's taxable income — if you genuinely cannot estimate.
+
+## What to Do If You Can't Pay the Full Amount by 31 August
+
+If cash flow makes the full provisional tax payment impossible:
+
+1. **Submit the IRP6 on time regardless.** A submitted return with partial or no payment is better than a late return. Late submission carries an automatic 20% penalty.
+
+2. **Pay what you can by the deadline.** Partial payment reduces the outstanding balance on which interest accrues.
+
+3. **Apply for a payment arrangement.** SARS allows instalment arrangements for taxpayers who cannot pay in full. Contact SARS before the deadline — not after — to arrange this.
+
+4. **Do not ignore it.** Unaddressed provisional tax debt grows quickly with interest and penalties. SARS has significant enforcement powers including third-party appointments (direct collection from your bank or clients).
+
+## After You Submit: What Comes Next
+
+Once your Period 1 IRP6 is submitted and paid, your provisional tax obligations for August are complete.
+
+**Mark your calendar:**
+
+- **28 February:** Period 2 IRP6 due — your second provisional tax payment
+- **30 September:** Optional third payment deadline — use this if your actual income exceeded your Period 2 estimate
+- **Annual return (ITR12):** Due between July and November — this reconciles your provisional payments against your actual liability for the year
+
+**Start planning Period 2 now:**
+
+The best time to review your Period 2 estimate is November or December, when you have a clearer picture of actual full-year income. This avoids the scramble in February and allows time for any additional retirement contributions before the Period 2 payment.
+
+InspiredTax Africa is built to support this entire cycle — calculating provisional tax accurately, tracking your liability throughout the year, and helping you arrive at each deadline fully prepared.

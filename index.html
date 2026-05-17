@@ -1,19 +1,87 @@
----
-layout: default
-title: "Home"
----
-{% for article in site.articles %}
-  <div class="article-preview">
-    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-    <p>{{ article.description }}</p>
-  </div>
-{% endfor %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InspiredTax Africa — Provisional Tax Planning</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <title>InspiredTax Africa — Provisional Tax Calculator & Planning App for South Africa</title>
+  <meta name="description" content="South Africa's most powerful provisional tax calculator app. Plan deductions, estimate SARS liability, and avoid penalties — offline, private, and secure. For freelancers and contractors earning R500k–R1.5m.">
+  <meta name="keywords" content="provisional tax calculator South Africa, provisional tax app, SARS provisional tax, s11F deduction calculator, freelance tax South Africa, tax planning app SA, IRP6 calculator, SARS tax calculator, contractor tax South Africa">
+  <meta name="author" content="Allan Lombard, InspiredTax Africa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://inspiredtax.africa/">
+
+  <!-- Open Graph — controls how links appear on WhatsApp, LinkedIn, Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inspiredtax.africa/">
+  <meta property="og:title" content="InspiredTax Africa — Provisional Tax Planning App">
+  <meta property="og:description" content="Stop guessing your SARS liability. InspiredTax Africa gives South African freelancers and contractors real-time tax planning, deduction optimisation, and penalty avoidance — completely offline and private.">
+  <meta property="og:image" content="https://inspiredtax.africa/logo.png">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:site_name" content="InspiredTax Africa">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="InspiredTax Africa — Provisional Tax Planning App">
+  <meta name="twitter:description" content="South Africa's most powerful provisional tax planning tool. Offline, private, and built for contractors and freelancers earning R500k–R1.5m.">
+  <meta name="twitter:image" content="https://inspiredtax.africa/logo.png">
+
+  <!-- Schema Markup — tells Google this is a Software App -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "InspiredTax Africa",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Android",
+    "description": "A year-round provisional tax planning and deduction optimisation app for South African freelancers, contractors, and independent professionals earning R500,000–R1,500,000 annually.",
+    "url": "https://inspiredtax.africa",
+    "offers": {
+      "@type": "Offer",
+      "price": "449",
+      "priceCurrency": "ZAR",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/ComingSoon"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "InspiredTax Africa",
+      "url": "https://inspiredtax.africa",
+      "email": "founder@inspiredtax.africa"
+    },
+    "featureList": [
+      "Provisional tax calculation (IRP6)",
+      "s11F retirement contribution limit calculator",
+      "Paragraph 20 underestimation penalty estimator",
+      "11 deduction calculators",
+      "Audit risk assessment",
+      "Multi-year tax projection modeling",
+      "Offline-first, POPIA-compliant"
+    ],
+    "areaServed": "ZA",
+    "inLanguage": ["en-ZA", "af-ZA"]
+  }
+  </script>
+
+  <!-- Schema Markup — Organisation details -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "InspiredTax Africa",
+    "url": "https://inspiredtax.africa",
+    "logo": "https://inspiredtax.africa/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "founder@inspiredtax.africa",
+      "contactType": "customer support",
+      "areaServed": "ZA",
+      "availableLanguage": ["English", "Afrikaans"]
+    },
+    "sameAs": []
+  }
+  </script>
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -193,6 +261,55 @@ title: "Home"
       </div>
     </div>
   </section>
+
+  <!-- ARTICLES -->
+  <section id="articles" class="py-16 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12">
+        <div class="max-w-2xl mb-4 sm:mb-0">
+          <h2 class="text-3xl font-bold tracking-tight text-navy">Tax Insights & Articles</h2>
+          <p class="text-lg text-gray-600 mt-2">Guidance on provisional tax mechanics, deductions, and SARS compliance.</p>
+        </div>
+        <a href="#articles" class="text-brandBlue font-semibold hover:text-brandBlue-light transition inline-flex items-center">Explore All <span class="ml-1">→</span></a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="articles/paragraph-20-threshold.html" class="flex flex-col bg-gray-50 rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-brandBlue transition group">
+          <div class="h-40 bg-navy flex items-center justify-center p-4">
+            <span class="text-accent font-bold text-xl text-center">Navigating Paragraph 20</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <span class="text-xs font-bold text-brandBlue uppercase tracking-wider mb-2">Compliance</span>
+            <h3 class="text-lg font-bold text-navy mb-2 leading-tight group-hover:text-brandBlue transition">The R1.8m Threshold: What Changes in 2026/27?</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">New underestimation penalty brackets and what they mean for provisional taxpayers earning above the threshold.</p>
+            <span class="text-brandBlue font-semibold text-sm group-hover:underline inline-flex items-center">Read Article <span class="ml-1">→</span></span>
+          </div>
+        </a>
+        <a href="articles/freelancers-provisional-tax.html" class="flex flex-col bg-gray-50 rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-brandBlue transition group">
+          <div class="h-40 bg-navy-light flex items-center justify-center p-4">
+            <span class="text-white font-bold text-xl text-center">Freelancers & s11F</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-2">Deductions</span>
+            <h3 class="text-lg font-bold text-navy mb-2 leading-tight group-hover:text-brandBlue transition">Maximising Retirement Contributions as a Contractor</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">How independent contractors should calculate their 27.5% s11F limit when taxable income exceeds standard remuneration.</p>
+            <span class="text-brandBlue font-semibold text-sm group-hover:underline inline-flex items-center">Read Article <span class="ml-1">→</span></span>
+          </div>
+        </a>
+        <a href="articles/offline-first-security.html" class="flex flex-col bg-gray-50 rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-brandBlue transition group">
+          <div class="h-40 bg-brandBlue-light flex items-center justify-center p-4">
+            <span class="text-white font-bold text-xl text-center">Data Privacy</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <span class="text-xs font-bold text-accent uppercase tracking-wider mb-2">Technology</span>
+            <h3 class="text-lg font-bold text-navy mb-2 leading-tight group-hover:text-brandBlue transition">Why Offline-First Matters for Financial Data</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">AES-GCM-256 encryption and why keeping your tax data off cloud servers protects your financial privacy.</p>
+            <span class="text-brandBlue font-semibold text-sm group-hover:underline inline-flex items-center">Read Article <span class="ml-1">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- DYNAMIC PLACEHOLDERS: FUTURE ROADMAP VIDEOS & AI ASSESSMENT -->
   <section id="future-tools" class="py-16 bg-white border-b border-gray-200">

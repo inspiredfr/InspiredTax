@@ -1,0 +1,58 @@
+TITLE: How to Calculate Your First Provisional Tax Payment
+DESCRIPTION: A plain-English guide to your first IRP6 submission — what to include, how to estimate, and how to avoid penalties.
+CATEGORY: Compliance
+DATE: 2026-05-17
+READ_TIME: 6 min read
+AUTHOR: Allan Lombard
+KEYWORDS: provisional tax South Africa, IRP6, first provisional tax payment, how to calculate provisional tax, SARS provisional tax deadline
+FAQ: When is the first provisional tax payment due?|The first provisional tax payment (Period 1) is due at the end of August each year, covering the first six months of the tax year.
+FAQ: What happens if I miss the provisional tax deadline?|SARS imposes a 20% penalty on the tax due if you fail to submit your IRP6 return by the deadline. Interest also accrues on any outstanding amount.
+FAQ: Can I use last year's income as my estimate?|Yes. For Period 1, SARS accepts the prior year's taxable income as a safe estimate without penalty. Adjust upward if your income has grown significantly.
+
+## What Is the First Provisional Tax Payment?
+
+Your first provisional tax payment (Period 1) is due at the end of August each year. It covers the first six months of the tax year and is based on your estimated taxable income for the full year.
+
+SARS does not tell you what to pay — you estimate it yourself using IRP6.
+
+## What Income to Include
+
+You must include all taxable income you expect to earn during the year:
+
+- Freelance and consulting fees
+- Contract income
+- Rental income
+- Interest income above the exemption threshold
+- Any other income not subject to PAYE
+
+Do not include income already taxed at source by an employer (PAYE), as your employer handles that portion separately.
+
+## How to Estimate Your Taxable Income
+
+The safest approach is to use the previous year's taxable income as your base estimate. SARS accepts this without penalty for Period 1.
+
+If your income has grown significantly, adjust upward. If it has dropped, you may estimate lower but keep documentation to support your estimate.
+
+## Calculating the Tax
+
+Once you have your estimated taxable income, apply the current SARS tax tables to calculate the gross tax liability. Then subtract:
+
+- **Primary rebate** (available to all individuals)
+- **Medical tax credits** (if applicable)
+- **Any PAYE already deducted** by an employer
+
+The result is your estimated tax for the year. Divide by two for the Period 1 payment.
+
+## The s11F Deduction
+
+Before calculating your tax, subtract any retirement annuity or pension contributions you plan to make. This is the s11F deduction — up to 27.5% of the greater of your remuneration or taxable income, capped at R350,000 per year.
+
+This single deduction can significantly reduce your provisional tax liability.
+
+## Filing and Paying
+
+Submit your IRP6 on SARS eFiling before the end of August. Pay the calculated amount at the same time. Late filing attracts a 20% penalty on the tax due.
+
+## Final Thoughts
+
+Period 1 is your opportunity to set a realistic baseline for the year. A conservative, well-documented estimate protects you from penalties and gives you a clear picture of your cash flow obligations.
