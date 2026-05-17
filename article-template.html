@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}} — InspiredTax Africa</title>
     <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
     <meta name="author" content="{{AUTHOR}}, InspiredTax Africa">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://inspiredtax.africa/articles/{{SLUG}}.html">
@@ -20,22 +21,30 @@
     <meta property="article:published_time" content="{{DATE_ISO}}">
     <meta property="article:author" content="{{AUTHOR}}">
     <meta property="article:section" content="{{CATEGORY}}">
+    <meta property="article:tag" content="{{KEYWORDS}}">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{TITLE}} — InspiredTax Africa">
     <meta name="twitter:description" content="{{DESCRIPTION}}">
 
-    <!-- Schema Markup — Article -->
+    <!-- Schema: Article with author expertise (E-E-A-T signals) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "{{TITLE}}",
       "description": "{{DESCRIPTION}}",
+      "keywords": "{{KEYWORDS}}",
       "author": {
         "@type": "Person",
-        "name": "{{AUTHOR}}"
+        "name": "{{AUTHOR}}",
+        "jobTitle": "Chartered Accountant",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "InspiredTax Africa"
+        },
+        "knowsAbout": ["South African Tax Law", "Provisional Tax", "SARS Compliance", "FinTech"]
       },
       "publisher": {
         "@type": "Organization",
@@ -56,6 +65,36 @@
       }
     }
     </script>
+
+    <!-- Schema: Breadcrumbs (shows Home > Articles > Title in Google results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://inspiredtax.africa/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://inspiredtax.africa/#articles"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{TITLE}}",
+          "item": "https://inspiredtax.africa/articles/{{SLUG}}.html"
+        }
+      ]
+    }
+    </script>
+
+    {{FAQ_SCHEMA}}
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -175,6 +214,18 @@
                     <article class="article-content prose prose-lg max-w-none">
                         {{CONTENT}}
                     </article>
+
+                    {{FAQ_HTML}}
+
+                    <!-- Author Bio — E-E-A-T credibility signal for Google -->
+                    <div class="mt-10 pt-8 border-t border-gray-200 flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg">AL</div>
+                        <div>
+                            <p class="font-bold text-navy text-sm">{{AUTHOR}}</p>
+                            <p class="text-xs text-blue font-semibold mb-1">Chartered Accountant · Founder, InspiredTax Africa</p>
+                            <p class="text-sm text-gray-600">Allan has spent years working with South African provisional taxpayers and independent professionals. InspiredTax Africa was built to make year-round tax planning accessible, private, and accurate for the growing freelance economy.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Sidebar -->

@@ -19,21 +19,29 @@ def format_date(date_str):
 
 
 def parse_file(filepath):
-    """Read article file. Extracts KEY: Value headers from the top, rest is content."""
+    """Read article file. Extracts KEY: Value headers and FAQ: Q|A pairs from top."""
     text = Path(filepath).read_text(encoding='utf-8')
     meta = {}
+    faqs = []
     content_lines = []
     in_header = True
 
     for line in text.splitlines():
         if in_header and re.match(r'^[A-Z_]+\s*:', line):
             key, _, value = line.partition(':')
-            meta[key.strip().upper()] = value.strip()
+            key = key.strip().upper()
+            if key == 'FAQ':
+                # FAQ: Question text|Answer text
+                parts = value.split('|', 1)
+                if len(parts) == 2:
+                    faqs.append({'q': parts[0].strip(), 'a': parts[1].strip()})
+            else:
+                meta[key] = value.strip()
         else:
             in_header = False
             content_lines.append(line)
 
-    return meta, '\n'.join(content_lines).strip()
+    return meta, '\n'.join(content_lines).strip(), faqs
 
 
 def to_html(text):
@@ -111,7 +119,7 @@ def build_articles():
     built = 0
     for filepath in content_files:
         slug = filepath.stem
-        meta, raw_content = parse_file(filepath)
+        meta, raw_content, faqs = parse_file(filepath)
 
         title      = meta.get('TITLE',       slug.replace('-', ' ').title())
         description= meta.get('DESCRIPTION', '')
@@ -121,6 +129,7 @@ def build_articles():
         author     = meta.get('AUTHOR',      'Allan Lombard')
         hero_text  = meta.get('HERO_TEXT',   category)
         cat_color  = meta.get('COLOR',       'blue')
+        keywords   = meta.get('KEYWORDS',    f'provisional tax South Africa, {category.lower()}, SARS, tax planning')
 
         # Auto-register new articles in articles-data.json
         if slug not in existing_ids:
@@ -148,10 +157,36 @@ def build_articles():
 
         content = to_html(raw_content)
 
+        # Build FAQ schema (JSON-LD) and HTML block if FAQs exist
+        if faqs:
+            faq_items_schema = ',\n'.join(
+                f'{{"@type":"Question","name":"{f["q"]}","acceptedAnswer":{{"@type":"Answer","text":"{f["a"]}"}}}}'
+                for f in faqs
+            )
+            faq_schema = f'''<script type="application/ld+json">
+    {{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{faq_items_schema}]}}
+    </script>'''
+
+            faq_html_items = ''.join(
+                f'''<div class="border-b border-gray-200 py-4">
+                        <h3 class="font-bold text-navy text-base mb-2">{f["q"]}</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">{f["a"]}</p>
+                    </div>'''
+                for f in faqs
+            )
+            faq_html = f'''<div class="mt-10 pt-8 border-t border-gray-200">
+                    <h2 class="text-xl font-bold text-navy mb-4">Frequently Asked Questions</h2>
+                    {faq_html_items}
+                </div>'''
+        else:
+            faq_schema = ''
+            faq_html = ''
+
         html = template
         for placeholder, value in {
             '{{TITLE}}':            title,
             '{{DESCRIPTION}}':      description,
+            '{{KEYWORDS}}':         keywords,
             '{{CATEGORY}}':         category,
             '{{CATEGORY_COLOR}}':   category_color,
             '{{AUTHOR}}':           author,
@@ -160,6 +195,8 @@ def build_articles():
             '{{READ_TIME}}':        read_time,
             '{{CONTENT}}':          content,
             '{{SLUG}}':             slug,
+            '{{FAQ_SCHEMA}}':       faq_schema,
+            '{{FAQ_HTML}}':         faq_html,
         }.items():
             html = html.replace(placeholder, value)
 

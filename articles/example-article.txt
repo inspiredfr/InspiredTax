@@ -4,6 +4,10 @@ CATEGORY: Compliance
 DATE: 2026-05-17
 READ_TIME: 6 min read
 AUTHOR: Allan Lombard
+KEYWORDS: provisional tax South Africa, IRP6, first provisional tax payment, how to calculate provisional tax, SARS provisional tax deadline
+FAQ: When is the first provisional tax payment due?|The first provisional tax payment (Period 1) is due at the end of August each year, covering the first six months of the tax year.
+FAQ: What happens if I miss the provisional tax deadline?|SARS imposes a 20% penalty on the tax due if you fail to submit your IRP6 return by the deadline. Interest also accrues on any outstanding amount.
+FAQ: Can I use last year's income as my estimate?|Yes. For Period 1, SARS accepts the prior year's taxable income as a safe estimate without penalty. Adjust upward if your income has grown significantly.
 
 ## What Is the First Provisional Tax Payment?
 
