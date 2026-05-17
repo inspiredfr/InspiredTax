@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximising Retirement Contributions as a Contractor — InspiredTax Africa</title>
+    <title>{{TITLE}} — InspiredTax Africa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -91,23 +91,23 @@
     <div class="bg-navy-light text-white py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-4">
-                <span class="inline-flex items-center bg-green/20 text-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Deductions
+                <span class="inline-flex items-center bg-{{CATEGORY_COLOR}}/20 text-{{CATEGORY_COLOR}} px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    {{CATEGORY}}
                 </span>
             </div>
-            <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6">Maximising Retirement Contributions as a Contractor</h1>
+            <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6">{{TITLE}}</h1>
             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-gray-300 text-sm">
                 <div class="flex items-center space-x-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <time datetime="2026-02-15">February 15, 2026</time>
+                    <time datetime="{{DATE_ISO}}">{{DATE_FORMATTED}}</time>
                 </div>
                 <div class="flex items-center space-x-2 mt-2 sm:mt-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>8 min read</span>
+                    <span>{{READ_TIME}}</span>
                 </div>
                 <div class="flex items-center space-x-2 mt-2 sm:mt-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>By Allan Lombard</span>
+                    <span>By {{AUTHOR}}</span>
                 </div>
             </div>
         </div>
@@ -120,86 +120,7 @@
                 <!-- Article Content -->
                 <div class="md:col-span-3">
                     <article class="article-content prose prose-lg max-w-none">
-                        ## What Is Provisional Tax?
-
-Provisional tax is not a separate tax. It is a system used by SARS to collect income tax in advance throughout the year instead of waiting until annual tax return season.
-
-Employees usually have PAYE deducted monthly by their employers. Freelancers, however, generally do not have PAYE deducted automatically, so they are expected to estimate and pay their own tax during the year.
-
-## Who Must Register?
-
-You may need to register as a provisional taxpayer if you:
-
-- Earn freelance or consulting income
-- Invoice clients directly
-- Operate as a sole proprietor
-- Receive income without PAYE deductions
-- Have multiple income sources
-
-Even part-time freelancers may fall into the provisional tax system depending on the type and amount of income earned.
-
-## How Provisional Tax Works
-
-Provisional taxpayers normally make two compulsory tax payments each year:
-
-1. **First provisional payment:** Usually due at the end of August
-2. **Second provisional payment:** Usually due at the end of February
-
-A third optional top-up payment can also be made after the tax year ends to avoid interest charges if income was underestimated.
-
-## Estimating Your Income
-
-SARS requires freelancers to estimate their taxable income for the year. This includes:
-
-- Freelance income
-- Consulting fees
-- Contract income
-- Side-business income
-- Rental income (if applicable)
-
-From this income, allowable business expenses can generally be deducted. Common deductible expenses for freelancers may include:
-
-- Internet and phone costs
-- Office expenses
-- Laptop and equipment costs
-- Professional software subscriptions
-- Travel for business purposes
-- Accounting fees
-
-## The 27.5% s11F Retirement Contribution Limit
-
-One of the most important deductions available to independent contractors is the s11F retirement contribution allowance. The limit is calculated as **27.5% of the greater of your remuneration or taxable income**.
-
-**Key Points:**
-- For contractors, this is based on your **taxable income**, not salary
-- You can contribute up to this limit annually to approved retirement funds (pension, provident, or retirement annuity)
-- This deduction significantly reduces your provisional tax liability
-- Proper calculation requires understanding your income projections for the year
-
-Many contractors leave this deduction on the table by not understanding how it applies to their situation.
-
-## Why Good Recordkeeping Matters
-
-Freelancers should keep proper records of:
-
-- Invoices issued
-- Bank statements
-- Receipts and expenses
-- Business mileage logs
-- Tax certificates
-
-Poor recordkeeping can lead to incorrect tax calculations, penalties, or problems during a SARS audit.
-
-## Penalties for Underestimating
-
-SARS may impose penalties and interest if a freelancer significantly underestimates taxable income, especially for the second provisional tax payment.
-
-Conservative and realistic estimates are generally safer than aggressive underestimation.
-
-## Final Thoughts
-
-Provisional tax can initially seem complicated, but it is manageable with proper planning and recordkeeping. Freelancers who understand the system, maximize deductions like the s11F retirement allowance, and stay compliant can avoid unnecessary penalties and ensure smooth tax season experiences.
-
+                        {{CONTENT}}
                     </article>
                 </div>
 
@@ -211,22 +132,22 @@ Provisional tax can initially seem complicated, but it is manageable with proper
                         <div class="space-y-4 text-sm">
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Published</span>
-                                <time datetime="2026-02-15" class="text-navy font-semibold">February 15, 2026</time>
+                                <time datetime="{{DATE_ISO}}" class="text-navy font-semibold">{{DATE_FORMATTED}}</time>
                             </div>
 
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Category</span>
-                                <span class="inline-flex items-center bg-green/10 text-green px-2 py-1 rounded text-xs font-bold uppercase">Deductions</span>
+                                <span class="inline-flex items-center bg-{{CATEGORY_COLOR}}/10 text-{{CATEGORY_COLOR}} px-2 py-1 rounded text-xs font-bold uppercase">{{CATEGORY}}</span>
                             </div>
 
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Reading Time</span>
-                                <span class="text-navy">8 min read</span>
+                                <span class="text-navy">{{READ_TIME}}</span>
                             </div>
 
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Author</span>
-                                <span class="text-navy">Allan Lombard</span>
+                                <span class="text-navy">{{AUTHOR}}</span>
                             </div>
                         </div>
 

@@ -1,0 +1,60 @@
+name: Build Articles
+
+on:
+  push:
+    branches:
+      - main
+      - claude/**
+    paths:
+      - 'articles-data.json'
+      - 'articles/**/*.md'
+      - 'article-template.html'
+      - 'build-articles.py'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run build script
+        run: python3 build-articles.py
+
+      - name: Check for changes
+        id: verify-changes
+        run: |
+          if git diff --quiet articles/*.html; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.verify-changes.outputs.changed == 'true'
+        run: |
+          git config user.name "Article Builder Bot"
+          git config user.email "bot@inspiredtax.africa"
+          git add articles/*.html
+          git commit -m "Auto-build articles from markdown
+
+- Regenerated article HTML from markdown source
+- Updated article catalog"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: No changes to commit
+        if: steps.verify-changes.outputs.changed == 'false'
+        run: echo "✓ Article HTML is already up to date"

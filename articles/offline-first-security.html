@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximising Retirement Contributions as a Contractor — InspiredTax Africa</title>
+    <title>Why Offline-First Matters for Financial Data — InspiredTax Africa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -91,19 +91,19 @@
     <div class="bg-navy-light text-white py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-4">
-                <span class="inline-flex items-center bg-green/20 text-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Deductions
+                <span class="inline-flex items-center bg-blue-light/20 text-blue-light px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Technology
                 </span>
             </div>
-            <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6">Maximising Retirement Contributions as a Contractor</h1>
+            <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6">Why Offline-First Matters for Financial Data</h1>
             <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-gray-300 text-sm">
                 <div class="flex items-center space-x-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <time datetime="2026-02-15">February 15, 2026</time>
+                    <time datetime="2025-12-10">December 10, 2025</time>
                 </div>
                 <div class="flex items-center space-x-2 mt-2 sm:mt-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>8 min read</span>
+                    <span>7 min read</span>
                 </div>
                 <div class="flex items-center space-x-2 mt-2 sm:mt-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -120,85 +120,171 @@
                 <!-- Article Content -->
                 <div class="md:col-span-3">
                     <article class="article-content prose prose-lg max-w-none">
-                        ## What Is Provisional Tax?
+                        ## Why Your Tax Data Is Different
 
-Provisional tax is not a separate tax. It is a system used by SARS to collect income tax in advance throughout the year instead of waiting until annual tax return season.
+Tax information is sensitive. It contains:
+- Your income figures
+- Deduction amounts
+- Personal financial details
+- Business structure information
 
-Employees usually have PAYE deducted monthly by their employers. Freelancers, however, generally do not have PAYE deducted automatically, so they are expected to estimate and pay their own tax during the year.
+If this data is compromised, you face:
+- Identity theft risk
+- Targeted fraud
+- Unnecessary audit risk
+- Privacy violations
 
-## Who Must Register?
+Most people don't realize that uploading their tax information to cloud-based calculators and spreadsheet tools puts it at risk, even if those services are reputable.
 
-You may need to register as a provisional taxpayer if you:
+## The Cloud Problem
 
-- Earn freelance or consulting income
-- Invoice clients directly
-- Operate as a sole proprietor
-- Receive income without PAYE deductions
-- Have multiple income sources
+Cloud-based tax tools operate on this model:
+1. You enter your financial data
+2. Data travels to their servers
+3. Servers calculate results
+4. Results come back to you
+5. **Your data is now stored somewhere, potentially indefinitely**
 
-Even part-time freelancers may fall into the provisional tax system depending on the type and amount of income earned.
+Even if a service deletes your data after you're done, it may be:
+- Backed up on their servers
+- Cached in multiple geographic locations
+- Accessible to support staff
+- Subject to data retention laws you're not aware of
+- Vulnerable to breaches
 
-## How Provisional Tax Works
+Major corporations have suffered data breaches affecting millions. A smaller tax tool is no different—and perhaps less secure than enterprises with dedicated security teams.
 
-Provisional taxpayers normally make two compulsory tax payments each year:
+## What Is Offline-First?
 
-1. **First provisional payment:** Usually due at the end of August
-2. **Second provisional payment:** Usually due at the end of February
+Offline-first technology works differently:
 
-A third optional top-up payment can also be made after the tax year ends to avoid interest charges if income was underestimated.
+1. **All processing happens on your device** - Your computer, not someone else's server
+2. **No data transmission** - Your financial information never leaves your device
+3. **Local encryption** - Data at rest is encrypted with military-grade AES-GCM-256
+4. **You retain control** - You decide what to keep and what to delete
+5. **No account required** - No usernames, passwords, or account recovery needed
 
-## Estimating Your Income
+This is fundamentally more secure because the biggest attack surface—network transmission and remote storage—is completely eliminated.
 
-SARS requires freelancers to estimate their taxable income for the year. This includes:
+## Understanding AES-GCM-256
 
-- Freelance income
-- Consulting fees
-- Contract income
-- Side-business income
-- Rental income (if applicable)
+InspiredTax uses **AES-GCM-256** encryption for any data you choose to save locally:
 
-From this income, allowable business expenses can generally be deducted. Common deductible expenses for freelancers may include:
+**AES** = Advanced Encryption Standard
+- US Government standard encryption algorithm
+- Used worldwide by military, banks, and intelligence agencies
+- Mathematically proven to be secure
+- No known practical attacks against proper AES-256 implementation
 
-- Internet and phone costs
-- Office expenses
-- Laptop and equipment costs
-- Professional software subscriptions
-- Travel for business purposes
-- Accounting fees
+**GCM** = Galois/Counter Mode
+- A mode of operation that provides both confidentiality and authenticity
+- Detects if encrypted data has been tampered with
+- Ensures data integrity
 
-## The 27.5% s11F Retirement Contribution Limit
+**256** = Key size in bits
+- 256-bit keys have 2^256 possible combinations
+- Would take longer than the age of the universe to brute-force
+- Standard for highly sensitive government data
 
-One of the most important deductions available to independent contractors is the s11F retirement contribution allowance. The limit is calculated as **27.5% of the greater of your remuneration or taxable income**.
+**In plain English:** Your data is encrypted with the same strength algorithm that protects classified government information.
 
-**Key Points:**
-- For contractors, this is based on your **taxable income**, not salary
-- You can contribute up to this limit annually to approved retirement funds (pension, provident, or retirement annuity)
-- This deduction significantly reduces your provisional tax liability
-- Proper calculation requires understanding your income projections for the year
+## The Offline-First Advantage
 
-Many contractors leave this deduction on the table by not understanding how it applies to their situation.
+### Security Through Simplicity
+- Fewer systems = fewer vulnerabilities
+- No network to intercept
+- No servers to hack
+- No accounts to compromise
 
-## Why Good Recordkeeping Matters
+### Complete Privacy
+- SARS cannot see your estimates (unless you submit returns showing them)
+- No tax tool company can access your data
+- No data broker can purchase your information
+- Your privacy is genuinely private
 
-Freelancers should keep proper records of:
+### Speed Without Compromise
+- Calculations happen instantly (no network latency)
+- No waiting for server response
+- Works when you don't have internet
+- Performs complex calculations efficiently
 
-- Invoices issued
-- Bank statements
-- Receipts and expenses
-- Business mileage logs
-- Tax certificates
+### Data Ownership
+- You own your calculations, not a company
+- You decide what to keep, what to delete
+- No surprise data collection
+- No terms of service changes affecting your stored data
 
-Poor recordkeeping can lead to incorrect tax calculations, penalties, or problems during a SARS audit.
+## Real-World Scenarios
 
-## Penalties for Underestimating
+### Scenario 1: Cloud Tool Gets Hacked
+- All user data including yours is potentially exposed
+- You have no way to know if your data was accessed
+- Criminals may have your income information
+- Your identity theft risk increases
 
-SARS may impose penalties and interest if a freelancer significantly underestimates taxable income, especially for the second provisional tax payment.
+### Scenario 2: Cloud Tool Changes Terms
+- They decide to share anonymized data with "partners"
+- They require accounts and payment for downloads
+- They sell aggregated insights to competitors
+- Your privacy became their product
 
-Conservative and realistic estimates are generally safer than aggressive underestimation.
+### Scenario 3: Offline-First Tool (InspiredTax)
+- Hackers cannot access your data—it's not on their servers
+- If you lose the file, encrypted backups you control are your only copy
+- No terms of service can affect your stored calculations
+- Your data is truly yours
 
-## Final Thoughts
+## When Offline Might Have Limitations
 
-Provisional tax can initially seem complicated, but it is manageable with proper planning and recordkeeping. Freelancers who understand the system, maximize deductions like the s11F retirement allowance, and stay compliant can avoid unnecessary penalties and ensure smooth tax season experiences.
+We're honest about this: offline-first isn't perfect for everything.
+
+Offline-first works best when:
+- You want fast, private calculations
+- You don't need cloud sync across devices
+- You're okay storing data locally
+- You want maximum security
+
+Offline-first is less ideal if you:
+- Need to access data on multiple devices simultaneously
+- Require automatic cloud backup
+- Want customer support to troubleshoot your specific calculations
+- Need to collaborate with an accountant in real-time
+
+For most people doing provisional tax planning alone, offline-first is ideal. If you need collaboration, you can export results and share securely.
+
+## Best Practices for Offline Security
+
+Even with encryption, best practices matter:
+
+1. **Use a strong password** for your device if you save encrypted files
+2. **Back up your files** to secure locations (external drive, personal cloud storage)
+3. **Never share your files** unless you trust the recipient completely
+4. **Update your software** to get security patches
+5. **Use a password manager** if you need to remember complex passwords
+
+## The InspiredTax Commitment
+
+InspiredTax is built with privacy-first principles:
+
+- ✓ No cloud servers storing your data
+- ✓ No account creation required
+- ✓ AES-GCM-256 encryption on any saved files
+- ✓ Calculations happen entirely on your device
+- ✓ Complete transparency about how data is handled
+- ✓ No data collection, analytics, or tracking
+
+Your financial data is yours alone. That's not just good technology—it's the right thing to do.
+
+## Key Takeaways
+
+1. Cloud tools carry inherent privacy and security risks
+2. Offline-first eliminates the biggest attack surface
+3. AES-GCM-256 is military-grade encryption
+4. Local processing is faster and more private
+5. You maintain complete control of your data
+6. Offline-first isn't perfect for collaboration, but it's ideal for personal tax planning
+
+Your tax information is private. Keep it that way.
 
                     </article>
                 </div>
@@ -211,17 +297,17 @@ Provisional tax can initially seem complicated, but it is manageable with proper
                         <div class="space-y-4 text-sm">
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Published</span>
-                                <time datetime="2026-02-15" class="text-navy font-semibold">February 15, 2026</time>
+                                <time datetime="2025-12-10" class="text-navy font-semibold">December 10, 2025</time>
                             </div>
 
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Category</span>
-                                <span class="inline-flex items-center bg-green/10 text-green px-2 py-1 rounded text-xs font-bold uppercase">Deductions</span>
+                                <span class="inline-flex items-center bg-blue-light/10 text-blue-light px-2 py-1 rounded text-xs font-bold uppercase">Technology</span>
                             </div>
 
                             <div>
                                 <span class="text-gray-600 font-semibold block mb-1">Reading Time</span>
-                                <span class="text-navy">8 min read</span>
+                                <span class="text-navy">7 min read</span>
                             </div>
 
                             <div>

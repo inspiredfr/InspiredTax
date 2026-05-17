@@ -1,0 +1,66 @@
+{
+  "articles": [
+    {
+      "id": "freelancers-provisional-tax",
+      "slug": "freelancers-provisional-tax",
+      "title": "Maximising Retirement Contributions as a Contractor",
+      "description": "How independent contractors should calculate their 27.5% limit when taxable income exceeds standard remuneration.",
+      "category": "Deductions",
+      "categoryColor": "green",
+      "author": "Allan Lombard",
+      "date": "2026-02-15",
+      "featured": true,
+      "readTime": "8 min read",
+      "heroColor": "navy-light",
+      "heroText": "Freelancers & s11F"
+    },
+    {
+      "id": "paragraph-20-threshold",
+      "slug": "paragraph-20-threshold",
+      "title": "The R1.8m Threshold: What Changes in 2026/27?",
+      "description": "An analysis of the new underestimation penalty brackets and how they impact provisional taxpayers earning above the threshold.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-01-20",
+      "featured": true,
+      "readTime": "10 min read",
+      "heroColor": "navy",
+      "heroText": "Navigating Paragraph 20"
+    },
+    {
+      "id": "offline-first-security",
+      "slug": "offline-first-security",
+      "title": "Why Offline-First Matters for Financial Data",
+      "description": "Understanding local AES-GCM-256 encryption and why keeping your tax data off cloud servers mitigates risk.",
+      "category": "Technology",
+      "categoryColor": "blue-light",
+      "author": "Allan Lombard",
+      "date": "2025-12-10",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "blue-light",
+      "heroText": "Data Privacy"
+    }
+  ],
+  "calculators": [
+    {
+      "id": "s11f-contribution-calculator",
+      "slug": "s11f-contribution-calculator",
+      "title": "s11F Contribution Limit Calculator",
+      "description": "Calculate your exact retirement funding deduction limits based on the greater of remuneration or taxable income.",
+      "category": "Calculation",
+      "year": "2026/27",
+      "status": "coming-soon"
+    },
+    {
+      "id": "paragraph-20-estimator",
+      "slug": "paragraph-20-estimator",
+      "title": "Paragraph 20 Penalty Estimator",
+      "description": "Test your estimated taxable income against the updated R1,800,000 threshold to gauge underestimation risk.",
+      "category": "Estimation",
+      "year": "2026/27",
+      "status": "coming-soon"
+    }
+  ]
+}

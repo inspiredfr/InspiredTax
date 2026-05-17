@@ -119,67 +119,79 @@
                 <p class="text-lg text-gray-600 mt-4">Standalone tools based on our core calculation engine.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
-                <a href="#" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue transition shadow-sm group">
-                    <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-lg font-bold text-navy group-hover:text-blue transition">s11F Contribution Limit Calculator</h3>
-                        <span class="text-blue bg-blue/10 px-2 py-1 rounded text-xs font-bold">2026/27</span>
+                <div class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green/5 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-navy">s11F Contribution Limit Calculator</h3>
+                            <span class="text-green bg-green/10 px-2 py-1 rounded text-xs font-bold uppercase">Coming Soon</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Calculate your exact retirement funding deduction limits based on the greater of remuneration or taxable income.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-xs text-gray-500 italic">Available in the InspiredTax Alpha application</p>
+                        </div>
                     </div>
-                    <p class="text-gray-600 text-sm">Calculate your exact retirement funding deduction limits based on the greater of remuneration or taxable income.</p>
-                </a>
-                <a href="#" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue transition shadow-sm group">
-                    <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-lg font-bold text-navy group-hover:text-blue transition">Paragraph 20 Penalty Estimator</h3>
-                        <span class="text-blue bg-blue/10 px-2 py-1 rounded text-xs font-bold">2026/27</span>
+                </div>
+                <div class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green/5 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-navy">Paragraph 20 Penalty Estimator</h3>
+                            <span class="text-green bg-green/10 px-2 py-1 rounded text-xs font-bold uppercase">Coming Soon</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Test your estimated taxable income against the updated R1,800,000 threshold to gauge underestimation risk.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-xs text-gray-500 italic">Available in the InspiredTax Alpha application</p>
+                        </div>
                     </div>
-                    <p class="text-gray-600 text-sm">Test your estimated taxable income against the updated R1,800,000 threshold to gauge underestimation risk.</p>
-                </a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="articles" class="py-20 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-12">
-                <div class="max-w-2xl">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12">
+                <div class="max-w-2xl mb-4 sm:mb-0">
                     <h2 class="text-3xl font-bold tracking-tight text-navy">Tax Insights & Articles</h2>
                     <p class="text-lg text-gray-600 mt-2">Guidance on provisional tax mechanics, deductions, and SARS compliance.</p>
                 </div>
-                <a href="#" class="hidden sm:block text-blue font-semibold hover:text-blue-light transition">View All Articles &rarr;</a>
+                <a href="#articles" class="text-blue font-semibold hover:text-blue-light transition inline-flex items-center">Explore All <span class="ml-1">→</span></a>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <article class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-navy flex items-center justify-center p-4">
+                <a href="articles/paragraph-20-threshold.html" class="block bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col hover:shadow-lg hover:border-blue transition group">
+                    <div class="h-40 bg-navy flex items-center justify-center p-4 group-hover:bg-opacity-90 transition">
                         <span class="text-accent font-bold text-xl text-center">Navigating Paragraph 20</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <span class="text-xs font-bold text-green uppercase tracking-wider mb-2">Compliance</span>
-                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight">The R1.8m Threshold: What Changes in 2026/27?</h3>
+                        <span class="text-xs font-bold text-blue uppercase tracking-wider mb-2">Compliance</span>
+                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight group-hover:text-blue transition">The R1.8m Threshold: What Changes in 2026/27?</h3>
                         <p class="text-gray-600 text-sm mb-4 flex-1">An analysis of the new underestimation penalty brackets and how they impact provisional taxpayers earning above the threshold.</p>
-                        <a href="#" class="text-blue font-semibold text-sm hover:underline">Read Article</a>
+                        <span class="text-blue font-semibold text-sm group-hover:underline inline-flex items-center">Read Article <span class="ml-1">→</span></span>
                     </div>
-                </article>
-                <article class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-navy-light flex items-center justify-center p-4">
+                </a>
+                <a href="articles/freelancers-provisional-tax.html" class="block bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col hover:shadow-lg hover:border-blue transition group">
+                    <div class="h-40 bg-navy-light flex items-center justify-center p-4 group-hover:bg-opacity-90 transition">
                         <span class="text-white font-bold text-xl text-center">Freelancers & s11F</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <span class="text-xs font-bold text-green uppercase tracking-wider mb-2">Deductions</span>
-                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight">Maximising Retirement Contributions as a Contractor</h3>
+                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight group-hover:text-blue transition">Maximising Retirement Contributions as a Contractor</h3>
                         <p class="text-gray-600 text-sm mb-4 flex-1">How independent contractors should calculate their 27.5% limit when taxable income exceeds standard remuneration.</p>
-                        <a href="#" class="text-blue font-semibold text-sm hover:underline">Read Article</a>
+                        <span class="text-blue font-semibold text-sm group-hover:underline inline-flex items-center">Read Article <span class="ml-1">→</span></span>
                     </div>
-                </article>
-                <article class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-blue-light flex items-center justify-center p-4">
+                </a>
+                <a href="articles/offline-first-security.html" class="block bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex flex-col hover:shadow-lg hover:border-blue transition group">
+                    <div class="h-40 bg-blue-light flex items-center justify-center p-4 group-hover:bg-opacity-90 transition">
                         <span class="text-white font-bold text-xl text-center">Data Privacy</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <span class="text-xs font-bold text-green uppercase tracking-wider mb-2">Technology</span>
-                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight">Why Offline-First Matters for Financial Data</h3>
+                        <span class="text-xs font-bold text-accent uppercase tracking-wider mb-2">Technology</span>
+                        <h3 class="text-lg font-bold text-navy mb-2 leading-tight group-hover:text-blue transition">Why Offline-First Matters for Financial Data</h3>
                         <p class="text-gray-600 text-sm mb-4 flex-1">Understanding local AES-GCM-256 encryption and why keeping your tax data off cloud servers mitigates risk.</p>
-                        <a href="#" class="text-blue font-semibold text-sm hover:underline">Read Article</a>
+                        <span class="text-blue font-semibold text-sm group-hover:underline inline-flex items-center">Read Article <span class="ml-1">→</span></span>
                     </div>
-                </article>
+                </a>
             </div>
         </div>
     </section>
@@ -214,18 +226,18 @@
                 </div>
                 
                 <div class="bg-navy-light p-6 rounded-lg border border-blue/20">
-                    <form action="#" method="POST" class="space-y-4">
+                    <form action="https://formspree.io/f/xyzgkopj" method="POST" class="space-y-4">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
-                            <input type="text" id="name" name="name" class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent">
+                            <input type="text" id="name" name="name" required class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent transition">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                            <input type="email" id="email" name="email" class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent">
+                            <input type="email" id="email" name="email" required class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent transition">
                         </div>
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent resize-none"></textarea>
+                            <textarea id="message" name="message" rows="4" required class="w-full bg-navy border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:border-accent resize-none transition"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-green hover:bg-green-hover text-white font-bold py-2 px-4 rounded transition">Send Message</button>
                     </form>
