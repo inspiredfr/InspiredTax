@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement Contributions Deduction Calculator — InspiredTax Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ── InspiredTax Africa — Retirement Calculator Embed ── */
+.itax-calc-wrap *,
+.itax-calc-wrap *::before,
+.itax-calc-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.itax-calc-wrap {
+  --bg:    #f5f6fa;
+  --sf:    #ffffff;
+  --sf2:   #f0f2f5;
+  --sf3:   #e2e6eb;
+  --bd:    rgba(0,0,0,0.09);
+  --tx:    #1a202c;
+  --tx2:   #374151;
+  --tx3:   #6b7280;
+  --navy:  #0B1F3B;
+  --blue:  #1F5FAF;
+  --green: #1FAF73;
+  --greenl:#3EDC97;
+  --ok:    #00c98a;
+  --er:    #ff4d4d;
+  --wa:    #f0b800;
+  --in:    #3b82f6;
+  --r:     12px;
+  --ff:    'Inter', system-ui, sans-serif;
+  --fh:    'Space Grotesk', 'Inter', sans-serif;
+  --mono:  'JetBrains Mono', monospace;
+  font-family: var(--ff);
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--tx);
+  border-radius: 16px;
+  padding: 0;
+  max-width: 680px;
+  width: 100%;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Header */
+.itax-header {
+  background: var(--navy);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 16px 16px 0 0;
+}
+.itax-header-icon {
+  width: 44px; height: 44px;
+  background: rgba(31,175,115,0.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--green); flex-shrink: 0;
+}
+.itax-header-text { flex: 1; }
+.itax-header-title {
+  font-family: var(--fh); font-size: 16px; font-weight: 700; color: #fff;
+}
+.itax-header-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.itax-wordmark { text-align: right; flex-shrink: 0; }
+.itax-wm-inspired { font-family: var(--fh); font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 0.3px; display: block; }
+.itax-wm-tax     { font-family: var(--fh); font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: 0.5px; display: block; }
+.itax-wm-africa  { font-family: var(--fh); font-size: 9px;  font-weight: 600; color: #4d8ad4; letter-spacing: 2px; text-transform: uppercase; display: block; }
+
+/* Body */
+.itax-body { padding: 20px 24px; background: var(--bg); }
+
+/* Form */
+.itax-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.itax-row.single { grid-template-columns: 1fr; }
+@media(max-width:520px){ .itax-row { grid-template-columns: 1fr; } }
+.itax-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.itax-group.full { grid-column: 1/-1; }
+.itax-label { font-size: 13px; font-weight: 600; color: var(--tx2); }
+.itax-input, .itax-select {
+  padding: 12px 14px;
+  background: var(--sf2);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--tx);
+  font-size: 15px;
+  font-family: var(--ff);
+  transition: border-color .15s;
+  width: 100%;
+}
+.itax-input:focus, .itax-select:focus { outline: none; border-color: var(--blue); }
+.itax-input::placeholder { color: var(--tx3); }
+.itax-select { cursor: pointer; appearance: auto; }
+.itax-input.mono { font-family: var(--mono); font-weight: 500; }
+
+/* Section label */
+.itax-section-label {
+  font-size: 11px; font-weight: 700; color: var(--tx3);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin: 20px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--bd);
+}
+
+/* Note */
+.itax-note {
+  font-size: 13px; line-height: 1.7;
+  padding: 12px 14px; border-radius: 10px;
+  margin-bottom: 14px; border-left: 4px solid;
+}
+.itax-note.info  { background: rgba(59,130,246,0.06); color: #1d4ed8; border-left-color: var(--in); }
+.itax-note.warn  { background: rgba(240,184,0,0.06);  color: #92400e; border-left-color: var(--wa); }
+.itax-note.error { background: rgba(255,77,77,0.06);  color: #b91c1c; border-left-color: var(--er); }
+.itax-note.green { background: rgba(31,175,115,0.06); color: #065f46; border-left-color: var(--green); }
+
+/* IT3(f) verify block */
+.itax-verify-block {
+  display: none;
+  margin: 4px 0 14px;
+  padding: 12px 14px;
+  background: rgba(31,95,175,0.06);
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
+}
+.itax-verify-block label.itax-label { margin-bottom: 8px; display: block; }
+.itax-radio-group { display: flex; gap: 18px; font-size: 13px; }
+.itax-radio-group label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+/* Divider */
+.itax-divider { border: none; border-top: 1px solid var(--bd); margin: 20px 0; }
+
+/* Results */
+.itax-results {
+  background: var(--sf);
+  border-radius: var(--r);
+  padding: 20px;
+  margin-top: 20px;
+  display: none;
+}
+.itax-results.visible { display: block; }
+.itax-results-title {
+  font-family: var(--fh); font-size: 14px; font-weight: 700;
+  color: var(--navy); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.itax-results-title i { color: var(--green); }
+
+.itax-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media(max-width:420px){ .itax-stat-row { grid-template-columns: 1fr 1fr; } }
+.itax-stat {
+  background: var(--sf2);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+.itax-stat-val {
+  font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--navy);
+  white-space: nowrap;
+}
+.itax-stat-val.green { color: #047857; }
+.itax-stat-val.amber { color: #92400e; }
+.itax-stat-val.red   { color: #b91c1c; }
+.itax-stat-lbl { font-size: 11px; color: var(--tx3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.itax-sum-line { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bd); }
+.itax-sum-line:last-child { border-bottom: none; }
+.itax-sum-line .lbl { color: var(--tx2); }
+.itax-sum-line .val { font-family: var(--mono); font-weight: 600; color: var(--navy); }
+.itax-sum-line.total .lbl { font-weight: 700; color: var(--navy); }
+.itax-sum-line.total .val { color: #047857; font-size: 15px; }
+
+/* Calc button */
+.itax-calc-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--ff);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s;
+}
+.itax-calc-btn:hover { background: var(--greenl); color: var(--navy); }
+
+/* Flags */
+.itax-flag-area { margin-top: 14px; }
+
+/* Footer */
+.itax-footer {
+  background: var(--sf);
+  padding: 12px 24px;
+  border-top: 1px solid var(--bd);
+  font-size: 11px;
+  color: var(--tx3);
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.itax-footer a { color: var(--blue); text-decoration: none; }
+.itax-footer a:hover { color: var(--greenl); }
+</style>
+</head>
+<body style="background:#f5f6fa;margin:0;padding:16px;">
+
+<div class="itax-calc-wrap" id="itax-ret-calc">
+
+  <!-- Header -->
+  <div class="itax-header">
+    <div class="itax-header-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+    <div class="itax-header-text">
+      <div class="itax-header-title">Retirement Fund Contributions — s11F Deduction Calculator</div>
+      <div class="itax-header-sub">Pension · Provident · Retirement Annuity</div>
+    </div>
+    <div class="itax-wordmark">
+      <span class="itax-wm-inspired">Inspired</span>
+      <span class="itax-wm-tax">Tax</span>
+      <span class="itax-wm-africa">Africa</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="itax-body">
+
+    <!-- Tax Year -->
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="ret-tax-year">Tax Year</label>
+        <select class="itax-select" id="ret-tax-year" onchange="retCalc()">
+          <option value="2027" selected>2026/27 (1 Mar 2026 – 28 Feb 2027)</option>
+          <option value="2026">2025/26 (1 Mar 2025 – 28 Feb 2026)</option>
+          <option value="2025">2024/25 (1 Mar 2024 – 28 Feb 2025)</option>
+          <option value="2024">2023/24 (1 Mar 2023 – 29 Feb 2024)</option>
+          <option value="2023">2022/23 (1 Mar 2022 – 28 Feb 2023)</option>
+          <option value="2022">2021/22 (1 Mar 2021 – 28 Feb 2022)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="itax-note info">
+      <i class="fa-solid fa-circle-info" style="margin-right:6px"></i>
+      <strong>s11F rule:</strong> The allowable deduction is the <strong>lesser</strong> of (a) 27.5% of the greater of your remuneration or taxable income (excluding lump sums), or (b) the annual rand cap. Excess contributions carry forward indefinitely.
+    </div>
+
+    <!-- Income base -->
+    <div class="itax-section-label">Income Base (excluding lump sums)</div>
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ret-remuneration">Remuneration (R)
+          <span title="Gross employment income per Fourth Schedule par 1 — salary, bonus, commission, allowances, fringe benefits. Excludes lump sums and severance." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ret-remuneration" placeholder="0" min="0" step="1" oninput="retCalc()">
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="ret-taxable-income">Taxable Income before s11F (R)
+          <span title="If you have business, rental or investment income in addition to employment income, enter your taxable income (before this s11F deduction). The calculator uses the higher of remuneration or taxable income." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ret-taxable-income" placeholder="0" min="0" step="1" oninput="retCalc()">
+      </div>
+    </div>
+
+    <!-- Prior year excess -->
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="ret-py-excess">Prior Year Disallowed Excess Carried Forward (R)</label>
+        <input type="number" class="itax-input mono" id="ret-py-excess" placeholder="0" min="0" step="1" oninput="retCalc()">
+      </div>
+    </div>
+
+    <!-- Contributions -->
+    <div class="itax-section-label">Contributions for the Tax Year</div>
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ret-pension">Pension Fund (Code 4001) (R)</label>
+        <input type="number" class="itax-input mono" id="ret-pension" placeholder="0" min="0" step="1" oninput="retCalc()">
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="ret-provident">Provident Fund (Code 4003) (R)</label>
+        <input type="number" class="itax-input mono" id="ret-provident" placeholder="0" min="0" step="1" oninput="retCalc()">
+      </div>
+    </div>
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="ret-ra">Retirement Annuity Fund / RAF (Code 4006) (R)</label>
+        <input type="number" class="itax-input mono" id="ret-ra" placeholder="0" min="0" step="1" oninput="retCalc();retToggleVerify()">
+      </div>
+    </div>
+
+    <!-- IT3(f) verify block -->
+    <div class="itax-verify-block" id="ret-verify-block">
+      <label class="itax-label">Have you verified this amount against your IT3(f) certificate from the RA provider?</label>
+      <div class="itax-radio-group">
+        <label><input type="radio" name="ret_ra_verified" value="yes" onchange="retCalc()"> Yes</label>
+        <label><input type="radio" name="ret_ra_verified" value="no"  onchange="retCalc()"> No</label>
+      </div>
+      <div id="ret-verify-warn" style="display:none;margin-top:8px">
+        <div class="itax-note error" style="margin:0;font-size:12px">
+          <i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i>
+          <strong>Audit risk:</strong> RAF amount not verified against an IT3(f) certificate. Verify before submission to SARS.
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculate button -->
+    <button class="itax-calc-btn" onclick="retCalc()">
+      <i class="fa-solid fa-calculator"></i> Calculate Deduction
+    </button>
+
+    <!-- Results -->
+    <div class="itax-results" id="ret-results">
+      <div class="itax-results-title"><i class="fa-solid fa-chart-simple"></i> s11F Deduction Result</div>
+      <div class="itax-stat-row" id="ret-stat-row"></div>
+      <div id="ret-sum-lines" style="margin-bottom:14px"></div>
+      <div id="ret-flags" class="itax-flag-area"></div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- Footer -->
+  <div class="itax-footer">
+    <span>For the purpose of completing ITR12 / provisional tax. Results are indicative — verify against your tax return.</span>
+    <a href="https://www.inspiredtaxafrica.co.za" target="_blank">inspiredtaxafrica.co.za</a>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+/* ── Tax Year Data ── */
+const RET_TAX_YEARS = {
+  '2027': {label:'2026/27', pct:27.5, cap:430000},
+  '2026': {label:'2025/26', pct:27.5, cap:350000},
+  '2025': {label:'2024/25', pct:27.5, cap:350000},
+  '2024': {label:'2023/24', pct:27.5, cap:350000},
+  '2023': {label:'2022/23', pct:27.5, cap:350000},
+  '2022': {label:'2021/22', pct:27.5, cap:350000}
+};
+
+/* ── Helpers ── */
+function retFmt(n) {
+  if (n === undefined || n === null || isNaN(n)) return 'R 0';
+  return 'R\u00a0' + Math.round(n).toLocaleString('en-ZA');
+}
+function retGv(id) {
+  const el = document.getElementById(id);
+  if (!el) return 0;
+  const v = parseFloat(el.value);
+  return isNaN(v) ? 0 : Math.round(v);
+}
+function retGs(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : '';
+}
+function retGR(name) {
+  const els = document.querySelectorAll('[name="' + name + '"]');
+  for (let i = 0; i < els.length; i++) {
+    if (els[i].checked) return els[i].value;
+  }
+  return '';
+}
+
+/* ── Show / hide IT3(f) verify block ── */
+function retToggleVerify() {
+  const ra = retGv('ret-ra');
+  const block = document.getElementById('ret-verify-block');
+  if (block) block.style.display = ra > 0 ? 'block' : 'none';
+  retUpdateVerifyWarn();
+}
+function retUpdateVerifyWarn() {
+  const ra = retGv('ret-ra');
+  const verified = retGR('ret_ra_verified');
+  const warn = document.getElementById('ret-verify-warn');
+  if (warn) warn.style.display = (ra > 0 && verified === 'no') ? 'block' : 'none';
+}
+
+/* ── Main calculation ── */
+function retCalc() {
+  retToggleVerify();
+  retUpdateVerifyWarn();
+
+  const tyKey = retGs('ret-tax-year') || '2027';
+  const ty = RET_TAX_YEARS[tyKey] || RET_TAX_YEARS['2027'];
+
+  const remuneration = retGv('ret-remuneration');
+  const taxableIncome = retGv('ret-taxable-income');
+  const pyExcess = retGv('ret-py-excess');
+  const pension = retGv('ret-pension');
+  const provident = retGv('ret-provident');
+  const ra = retGv('ret-ra');
+
+  const s11FBase = Math.max(0, remuneration, taxableIncome);
+  const pctTest = Math.round(s11FBase * (ty.pct / 100));
+  const capTest = ty.cap;
+  const retMax = Math.min(pctTest, capTest);
+
+  const contributions = pension + provident + ra;
+  const combined = contributions + pyExcess;
+  const allowed = Math.min(combined, retMax);
+  const excess = Math.max(0, combined - allowed);
+
+  /* ── Stat cards ── */
+  const statRow = document.getElementById('ret-stat-row');
+  statRow.innerHTML =
+    '<div class="itax-stat">'
+      + '<div class="itax-stat-val green">' + retFmt(allowed) + '</div>'
+      + '<div class="itax-stat-lbl">Allowable Deduction</div>'
+    + '</div>'
+    + '<div class="itax-stat">'
+      + '<div class="itax-stat-val">' + retFmt(retMax) + '</div>'
+      + '<div class="itax-stat-lbl">s11F Cap (' + ty.pct + '% / R' + (ty.cap/1000).toFixed(0) + 'k)</div>'
+    + '</div>'
+    + '<div class="itax-stat">'
+      + '<div class="itax-stat-val ' + (excess > 0 ? 'amber' : '') + '">' + retFmt(excess) + '</div>'
+      + '<div class="itax-stat-lbl">Excess Carried Forward</div>'
+    + '</div>';
+
+  /* ── Sum lines ── */
+  let sumLines =
+    '<div class="itax-sum-line"><span class="lbl">Income base used (max of remuneration / taxable income)</span><span class="val">' + retFmt(s11FBase) + '</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">27.5% percentage test</span><span class="val">' + retFmt(pctTest) + '</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">Annual rand cap (' + ty.label + ')</span><span class="val">' + retFmt(capTest) + '</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">Effective cap (lesser of above)</span><span class="val">' + retFmt(retMax) + '</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">Current year contributions</span><span class="val">' + retFmt(contributions) + '</span></div>';
+  if (pyExcess > 0) {
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Prior year excess (subject to cap)</span><span class="val">' + retFmt(pyExcess) + '</span></div>'
+              + '<div class="itax-sum-line"><span class="lbl">Combined (current + prior excess)</span><span class="val">' + retFmt(combined) + '</span></div>';
+  }
+  sumLines += '<div class="itax-sum-line total"><span class="lbl">Allowable deduction (s11F)</span><span class="val">' + retFmt(allowed) + '</span></div>';
+  if (excess > 0) {
+    sumLines += '<div class="itax-sum-line"><span class="lbl" style="color:#f0b800">Excess disallowed — carried forward</span><span class="val" style="color:#f0b800">' + retFmt(excess) + '</span></div>';
+  }
+  document.getElementById('ret-sum-lines').innerHTML = sumLines;
+
+  /* ── Flags ── */
+  let flags = '';
+
+  if (contributions > 0 && s11FBase <= 0) {
+    flags += '<div class="itax-note error"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>Warning:</strong> Contributions of ' + retFmt(contributions) + ' entered but no income base is present. The deduction will be entirely disallowed and carried forward. Verify your income entries.</div>';
+  } else if (contributions > 0 && s11FBase > 0) {
+    const pctOfBase = (contributions / s11FBase) * 100;
+    if (pctOfBase > 35) {
+      flags += '<div class="itax-note error"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>Warning:</strong> Contributions are ' + pctOfBase.toFixed(1) + '% of income — above 35% is highly unusual. Verify amounts entered.</div>';
+    } else if (pctOfBase > 27.5) {
+      flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i>Contributions are ' + pctOfBase.toFixed(1) + '% of income — above the 27.5% s11F percentage cap. Excess will carry forward to next year.</div>';
+    }
+  }
+
+  if (excess > 0) {
+    flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-exclamation" style="margin-right:5px"></i><strong>Audit risk:</strong> ' + retFmt(excess) + ' is disallowed (over cap) and carries forward. Ensure this is tracked correctly on your ITR12 in future years.</div>';
+  }
+
+  if (allowed > 0 && s11FBase > 0) {
+    flags += '<div class="itax-note green"><i class="fa-solid fa-circle-check" style="margin-right:5px"></i>Enter <strong>' + retFmt(allowed) + '</strong> as your retirement fund deduction in your ITR12 return (codes 4001 + 4003 + 4006).</div>';
+  }
+
+  document.getElementById('ret-flags').innerHTML = flags;
+
+  document.getElementById('ret-results').classList.add('visible');
+}
+</script>
+
+</body>
+</html>

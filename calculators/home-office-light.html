@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Office Deduction Calculator — InspiredTax Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ── InspiredTax Africa — Home Office Calculator Embed ── */
+.itax-calc-wrap *,
+.itax-calc-wrap *::before,
+.itax-calc-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.itax-calc-wrap {
+  --bg:    #f5f6fa;
+  --sf:    #ffffff;
+  --sf2:   #f0f2f5;
+  --sf3:   #e2e6eb;
+  --bd:    rgba(0,0,0,0.09);
+  --tx:    #1a202c;
+  --tx2:   #374151;
+  --tx3:   #6b7280;
+  --navy:  #0B1F3B;
+  --blue:  #1F5FAF;
+  --green: #1FAF73;
+  --greenl:#3EDC97;
+  --ok:    #00c98a;
+  --er:    #ff4d4d;
+  --wa:    #f0b800;
+  --in:    #3b82f6;
+  --r:     12px;
+  --ff:    'Inter', system-ui, sans-serif;
+  --fh:    'Space Grotesk', 'Inter', sans-serif;
+  --mono:  'JetBrains Mono', monospace;
+  font-family: var(--ff);
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--tx);
+  border-radius: 16px;
+  padding: 0;
+  max-width: 680px;
+  width: 100%;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Header */
+.itax-header {
+  background: var(--navy);
+  padding: 18px 24px;
+  display: flex; align-items: center; gap: 14px;
+  border-radius: 16px 16px 0 0;
+}
+.itax-header-icon {
+  width: 44px; height: 44px;
+  background: rgba(31,175,115,0.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--green); flex-shrink: 0;
+}
+.itax-header-text { flex: 1; }
+.itax-header-title { font-family: var(--fh); font-size: 16px; font-weight: 700; color: #fff; }
+.itax-header-sub   { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.itax-wordmark { text-align: right; flex-shrink: 0; }
+.itax-wm-inspired { font-family: var(--fh); font-size: 11px; font-weight: 700; color: #fff;    letter-spacing: 0.3px; display: block; }
+.itax-wm-tax      { font-family: var(--fh); font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: 0.5px; display: block; }
+.itax-wm-africa   { font-family: var(--fh); font-size: 9px;  font-weight: 600; color: #4d8ad4; letter-spacing: 2px; text-transform: uppercase; display: block; }
+
+/* Body */
+.itax-body { padding: 20px 24px; background: var(--bg); }
+
+/* Form layout */
+.itax-row        { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.itax-row.single { grid-template-columns: 1fr; }
+@media(max-width:520px){ .itax-row { grid-template-columns: 1fr; } }
+.itax-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+
+.itax-label { font-size: 13px; font-weight: 600; color: var(--tx2); }
+.itax-input, .itax-select {
+  padding: 12px 14px;
+  background: var(--sf2);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--tx);
+  font-size: 15px;
+  font-family: var(--ff);
+  transition: border-color .15s;
+  width: 100%;
+}
+.itax-input:focus, .itax-select:focus { outline: none; border-color: var(--blue); }
+.itax-input::placeholder { color: var(--tx3); }
+.itax-select { cursor: pointer; appearance: auto; }
+.itax-input.mono { font-family: var(--mono); font-weight: 500; }
+
+.itax-section-label {
+  font-size: 11px; font-weight: 700; color: var(--tx3);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin: 20px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--bd);
+}
+
+/* Notes */
+.itax-note {
+  font-size: 13px; line-height: 1.7;
+  padding: 12px 14px; border-radius: 10px;
+  margin-bottom: 14px; border-left: 4px solid;
+}
+.itax-note.info  { background: rgba(59,130,246,0.06);  color: #1d4ed8;    border-left-color: var(--in); }
+.itax-note.teal  { background: rgba(31,95,175,0.06);   color: #1e3a8a;      border-left-color: var(--blue); }
+.itax-note.warn  { background: rgba(240,184,0,0.06);   color: #92400e;    border-left-color: var(--wa); }
+.itax-note.error { background: rgba(255,77,77,0.06);   color: #b91c1c;    border-left-color: var(--er); }
+.itax-note.green { background: rgba(31,175,115,0.06);  color: #065f46;border-left-color: var(--green); }
+
+/* Hidden conditional */
+.itax-hidden { display: none !important; }
+
+/* Ratio bar */
+.itax-ratio-bar {
+  height: 8px; border-radius: 4px;
+  background: var(--sf3); margin: 6px 0 4px; overflow: hidden;
+}
+.itax-ratio-fill { height: 100%; border-radius: 4px; transition: width .3s, background .3s; }
+
+/* Calc button */
+.itax-calc-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 14px;
+  background: var(--green); color: #fff;
+  border: none; border-radius: 10px;
+  font-family: var(--ff); font-size: 15px; font-weight: 700;
+  cursor: pointer; margin-top: 6px; transition: background .15s;
+}
+.itax-calc-btn:hover { background: var(--greenl); color: var(--navy); }
+
+/* Results */
+.itax-results {
+  background: var(--sf); border-radius: var(--r); padding: 20px;
+  margin-top: 20px; display: none;
+}
+.itax-results.visible { display: block; }
+.itax-results-title {
+  font-family: var(--fh); font-size: 14px; font-weight: 700;
+  color: var(--navy); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.itax-results-title i { color: var(--green); }
+
+/* Stat row */
+.itax-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media(max-width:460px){ .itax-stat-row { grid-template-columns: 1fr 1fr; } }
+.itax-stat { background: var(--sf2); border-radius: 10px; padding: 14px 12px; text-align: center; }
+.itax-stat-val { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.itax-stat-val.green { color: #047857; }
+.itax-stat-val.amber { color: #92400e; }
+.itax-stat-val.red   { color: #b91c1c; }
+.itax-stat-lbl { font-size: 11px; color: var(--tx3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Sum lines */
+.itax-sum-line { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bd); }
+.itax-sum-line:last-child { border-bottom: none; }
+.itax-sum-line .lbl { color: var(--tx2); }
+.itax-sum-line .val { font-family: var(--mono); font-weight: 600; color: var(--navy); }
+.itax-sum-line.total .lbl { font-weight: 700; color: var(--navy); }
+.itax-sum-line.total .val { color: #047857; font-size: 15px; }
+
+/* Tips */
+.itax-tip { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bd); font-size: 13px; }
+.itax-tip:last-child { border-bottom: none; }
+.itax-tip i { color: var(--blue); font-size: 15px; margin-top: 2px; flex-shrink: 0; }
+.itax-tip-title { font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+.itax-tip-desc  { color: var(--tx2); line-height: 1.6; }
+
+/* Accordion */
+.itax-expl-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0; cursor: pointer; font-size: 13px; font-weight: 600;
+  color: var(--tx2); border-top: 1px solid var(--bd); margin-top: 12px;
+  user-select: none;
+}
+.itax-expl-toggle:hover { color: var(--tx); }
+.itax-expl-toggle .chevron { transition: transform .2s; font-size: 12px; color: var(--tx3); }
+.itax-expl-toggle.open .chevron { transform: rotate(180deg); }
+.itax-expl-body { display: none; padding: 12px 0; }
+.itax-expl-body.open { display: block; }
+
+/* Footer */
+.itax-footer {
+  background: var(--sf); padding: 12px 24px;
+  border-top: 1px solid var(--bd); font-size: 11px; color: var(--tx3);
+  border-radius: 0 0 16px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.itax-footer a { color: var(--blue); text-decoration: none; }
+.itax-footer a:hover { color: var(--greenl); }
+</style>
+</head>
+<body style="background:#f5f6fa;margin:0;padding:16px;">
+
+<div class="itax-calc-wrap" id="itax-ho-calc">
+
+  <!-- Header -->
+  <div class="itax-header">
+    <div class="itax-header-icon"><i class="fa-solid fa-house-laptop"></i></div>
+    <div class="itax-header-text">
+      <div class="itax-header-title">Home Office Deduction — s23(b) Calculator</div>
+      <div class="itax-header-sub">s11(a) read with s23(b) · SARS Interpretation Note 28</div>
+    </div>
+    <div class="itax-wordmark">
+      <span class="itax-wm-inspired">Inspired</span>
+      <span class="itax-wm-tax">Tax</span>
+      <span class="itax-wm-africa">Africa</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="itax-body">
+
+    <div class="itax-note teal">
+      <i class="fa-solid fa-circle-info" style="margin-right:6px"></i>
+      <strong>SARS IN28 requirements:</strong> Office must be (1) specifically equipped for trade, (2) used regularly and <em>exclusively</em> for trade, (3) employees need written employer confirmation, and (4) more than 50% of duties performed there.
+    </div>
+
+    <!-- Ownership + Area -->
+    <div class="itax-section-label">Property &amp; Space Details</div>
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ho-ownership">Ownership / Occupancy</label>
+        <select class="itax-select" id="ho-ownership" onchange="hoOwnershipChange(); hoCalc()">
+          <option value="rent">Renting (Tenant)</option>
+          <option value="own">Owner-Occupied (Bond / Cash)</option>
+        </select>
+      </div>
+      <div class="itax-group">
+        <!-- placeholder — balanced grid -->
+      </div>
+    </div>
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ho-area-total">Total Home Floor Area (m²)</label>
+        <input type="number" class="itax-input mono" id="ho-area-total" placeholder="e.g. 180" min="1" step="1" oninput="hoCalc()">
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="ho-area-office">Dedicated Office Area (m²)
+          <span title="Must be a separately identifiable, exclusively used space. Measure internal floor area only." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ho-area-office" placeholder="e.g. 18" min="1" step="1" oninput="hoCalc()">
+      </div>
+    </div>
+
+    <!-- Work days -->
+    <div class="itax-section-label">Working Days</div>
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ho-work-days">Total Working Days in the Year
+          <span title="Typical full-time: ~220 days. Exclude weekends and public holidays." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ho-work-days" value="220" min="1" max="365" step="1" oninput="hoCalc()">
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="ho-days-home">Days Worked from Home (in the Year)
+          <span title="Count only days actually worked from home. Partial days count as full days. Must exceed 50% of working days to meet the duties test." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ho-days-home" placeholder="e.g. 180" min="0" max="365" step="1" oninput="hoCalc()">
+      </div>
+    </div>
+
+    <!-- Occupancy costs — renting -->
+    <div class="itax-section-label">Occupancy Costs (Annual) — Apportioned by Area × Time Ratio</div>
+
+    <div class="itax-row">
+      <!-- Rent — shown for renting -->
+      <div class="itax-group" id="ho-rent-wrap">
+        <label class="itax-label" for="ho-rent">Monthly Rent (R/month)</label>
+        <input type="number" class="itax-input mono" id="ho-rent" placeholder="0" min="0" step="1" oninput="hoCalc()">
+        <span style="font-size:11px;color:var(--tx3)">Annual = monthly × 12</span>
+      </div>
+      <!-- Bond interest — shown for owners -->
+      <div class="itax-group itax-hidden" id="ho-bond-wrap">
+        <label class="itax-label" for="ho-bond-int">Bond Interest Paid — Annual (R)
+          <span title="Interest component only — not capital repayments. Use your annual home loan statement." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ho-bond-int" placeholder="0" min="0" step="1" oninput="hoCalc()">
+      </div>
+      <!-- Rates — shown for owners -->
+      <div class="itax-group itax-hidden" id="ho-rates-wrap">
+        <label class="itax-label" for="ho-rates">Municipal Rates &amp; Taxes — Annual (R)</label>
+        <input type="number" class="itax-input mono" id="ho-rates" placeholder="0" min="0" step="1" oninput="hoCalc()">
+      </div>
+    </div>
+
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ho-elec">Electricity &amp; Water — Annual (R)</label>
+        <input type="number" class="itax-input mono" id="ho-elec" placeholder="0" min="0" step="1" oninput="hoCalc()">
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="ho-levies">Levies / Security / Cleaning — Annual (R)</label>
+        <input type="number" class="itax-input mono" id="ho-levies" placeholder="0" min="0" step="1" oninput="hoCalc()">
+      </div>
+    </div>
+
+    <!-- Direct costs -->
+    <div class="itax-section-label">Direct Office Costs — 100% Deductible</div>
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="ho-phone">Phone / Internet (Business Use — Annual, R)
+          <span title="Business-use portion only. If shared personal/business use, apportion accordingly." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ho-phone" placeholder="0" min="0" step="1" oninput="hoCalc()">
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="ho-other-direct">Other Direct Office Expenses — Annual (R)
+          <span title="Office-specific costs not included above — e.g. office cleaning, office-only repairs." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="ho-other-direct" placeholder="0" min="0" step="1" oninput="hoCalc()">
+      </div>
+    </div>
+
+    <!-- Employee type note -->
+    <div class="itax-note info" id="ho-s23m-note" style="display:none">
+      <i class="fa-solid fa-circle-info" style="margin-right:5px"></i>
+      <strong>Salaried employees (s23(m)):</strong> s23(m) limits deductions for employees — only home office expenses qualify if the employer specifically requires home-based work and this is confirmed in writing. Most other employee deductions (meals, clothing, etc.) are denied under s23(m).
+    </div>
+
+    <!-- Employee type selector -->
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="ho-taxpayer-type">Taxpayer Type</label>
+        <select class="itax-select" id="ho-taxpayer-type" onchange="hoTypeChange(); hoCalc()">
+          <option value="employee">Salaried Employee (IRP5 code 3601)</option>
+          <option value="commission">Commission Earner / Travel Allowance (IRP5 code 3606/3616)</option>
+          <option value="freelance">Freelancer / Independent Contractor / Sole Proprietor</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Calculate button -->
+    <button class="itax-calc-btn" onclick="hoCalc()">
+      <i class="fa-solid fa-calculator"></i> Calculate Home Office Deduction
+    </button>
+
+    <!-- Results -->
+    <div class="itax-results" id="ho-results">
+      <div class="itax-results-title"><i class="fa-solid fa-chart-simple"></i> Home Office Deduction — s23(b)</div>
+
+      <!-- Ratio stats -->
+      <div class="itax-stat-row" id="ho-stat-row"></div>
+
+      <!-- Ratio visual bars -->
+      <div id="ho-ratio-bars" style="margin-bottom:16px"></div>
+
+      <!-- Sum lines -->
+      <div id="ho-sum-lines" style="margin-bottom:14px"></div>
+
+      <!-- Flags -->
+      <div id="ho-flags"></div>
+
+      <!-- Tips accordion -->
+      <div class="itax-expl-toggle" id="ho-tips-toggle" onclick="hoToggleTips()">
+        <span><i class="fa-solid fa-lightbulb" style="margin-right:6px;color:#1F5FAF"></i>Home office compliance checklist</span>
+        <i class="fa-solid fa-chevron-down chevron"></i>
+      </div>
+      <div class="itax-expl-body" id="ho-tips-body"></div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- Footer -->
+  <div class="itax-footer">
+    <span>Deduction reduces taxable income. CGT note: office portion may reduce primary residence exclusion on sale. Results are indicative — verify against your ITR12.</span>
+    <a href="https://www.inspiredtaxafrica.co.za" target="_blank">inspiredtaxafrica.co.za</a>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+/* ── Helpers ── */
+function hoFmt(n) {
+  if (!n || isNaN(n)) return 'R\u00a00';
+  return 'R\u00a0' + Math.round(n).toLocaleString('en-ZA');
+}
+function hoGv(id) {
+  const el = document.getElementById(id);
+  if (!el) return 0;
+  const v = parseFloat(el.value);
+  return isNaN(v) ? 0 : v;
+}
+function hoGs(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : '';
+}
+
+/* ── Ownership toggle ── */
+function hoOwnershipChange() {
+  const isOwn = hoGs('ho-ownership') === 'own';
+  const rentWrap  = document.getElementById('ho-rent-wrap');
+  const bondWrap  = document.getElementById('ho-bond-wrap');
+  const ratesWrap = document.getElementById('ho-rates-wrap');
+  if (rentWrap)  rentWrap.classList.toggle('itax-hidden', isOwn);
+  if (bondWrap)  bondWrap.classList.toggle('itax-hidden', !isOwn);
+  if (ratesWrap) ratesWrap.classList.toggle('itax-hidden', !isOwn);
+  // clear fields from the hidden side
+  if (isOwn) {
+    const r = document.getElementById('ho-rent'); if (r) r.value = '';
+  } else {
+    const b = document.getElementById('ho-bond-int'); if (b) b.value = '';
+    const rt = document.getElementById('ho-rates'); if (rt) rt.value = '';
+  }
+  // CGT note visibility
+  const cgtNote = document.getElementById('ho-cgt-note');
+  if (cgtNote) cgtNote.style.display = isOwn ? 'block' : 'none';
+}
+
+/* ── Taxpayer type info ── */
+function hoTypeChange() {
+  const t = hoGs('ho-taxpayer-type');
+  const note = document.getElementById('ho-s23m-note');
+  if (note) note.style.display = (t === 'employee') ? 'block' : 'none';
+}
+
+/* ── Format pct with colour class ── */
+function hoPctColour(pct, thresholdAmber, thresholdRed, invertLogic) {
+  if (invertLogic) {
+    // lower is bad (time ratio — below 50% is concerning)
+    if (pct < thresholdRed * 100)   return 'red';
+    if (pct < thresholdAmber * 100) return 'amber';
+    return 'green';
+  } else {
+    // higher is bad (area ratio — above 20% is concerning)
+    if (pct > thresholdRed * 100)   return 'red';
+    if (pct > thresholdAmber * 100) return 'amber';
+    return 'green';
+  }
+}
+
+/* ── Main calculation ── */
+function hoCalc() {
+  const total  = hoGv('ho-area-total');
+  const office = hoGv('ho-area-office');
+  const resultsEl = document.getElementById('ho-results');
+
+  if (!total || !office) {
+    resultsEl.classList.remove('visible');
+    return;
+  }
+
+  const areaRatio = Math.min(1, office / total);
+  const workDays  = hoGv('ho-work-days') || 220;
+  const wfhDays   = hoGv('ho-days-home') || 0;
+  const timeRatio = workDays > 0 ? Math.min(1, wfhDays / workDays) : 0;
+  const combined  = areaRatio * timeRatio;
+
+  const ownership = hoGs('ho-ownership');
+  const isOwn     = ownership === 'own';
+
+  // Occupancy costs
+  const rent      = hoGv('ho-rent') * 12;        // monthly → annual
+  const bondInt   = hoGv('ho-bond-int');
+  const rates     = hoGv('ho-rates');
+  const elec      = hoGv('ho-elec');
+  const levies    = hoGv('ho-levies');
+
+  const occBase   = isOwn ? (bondInt + rates + elec + levies) : (rent + elec + levies);
+  const occDed    = Math.round(occBase * combined);
+
+  // Direct costs (100%)
+  const phone       = hoGv('ho-phone');
+  const otherDirect = hoGv('ho-other-direct');
+  const direct      = phone + otherDirect;
+
+  const totalDed  = occDed + direct;
+
+  /* ── Ratio colour classes ── */
+  const areaCls = hoPctColour(areaRatio * 100, 0.20, 0.35, false);
+  const timeCls = hoPctColour(timeRatio * 100, 0.50, 0.25, true);
+
+  /* ── Stat row ── */
+  document.getElementById('ho-stat-row').innerHTML =
+    '<div class="itax-stat">'
+      + '<div class="itax-stat-val ' + areaCls + '">' + (areaRatio * 100).toFixed(1) + '%</div>'
+      + '<div class="itax-stat-lbl">Area Ratio</div>'
+    + '</div>'
+    + '<div class="itax-stat">'
+      + '<div class="itax-stat-val ' + timeCls + '">' + (timeRatio * 100).toFixed(1) + '%</div>'
+      + '<div class="itax-stat-lbl">Time Ratio</div>'
+    + '</div>'
+    + '<div class="itax-stat">'
+      + '<div class="itax-stat-val green">' + hoFmt(totalDed) + '</div>'
+      + '<div class="itax-stat-lbl">Total Deduction</div>'
+    + '</div>';
+
+  /* ── Ratio bars ── */
+  const areaBarCol = areaCls === 'red' ? '#ff4d4d' : areaCls === 'amber' ? '#f0b800' : '#1FAF73';
+  const timeBarCol = timeCls === 'red' ? '#ff4d4d' : timeCls === 'amber' ? '#f0b800' : '#1FAF73';
+  document.getElementById('ho-ratio-bars').innerHTML =
+    '<div style="font-size:12px;color:var(--tx3);margin-bottom:4px">Area ratio — ' + office + 'm² ÷ ' + total + 'm²</div>'
+    + '<div class="itax-ratio-bar"><div class="itax-ratio-fill" style="width:' + Math.min(100, areaRatio*100).toFixed(1) + '%;background:' + areaBarCol + '"></div></div>'
+    + '<div style="font-size:12px;color:var(--tx3);margin-top:10px;margin-bottom:4px">Time ratio — ' + Math.round(wfhDays) + ' ÷ ' + Math.round(workDays) + ' days</div>'
+    + '<div class="itax-ratio-bar"><div class="itax-ratio-fill" style="width:' + Math.min(100, timeRatio*100).toFixed(1) + '%;background:' + timeBarCol + '"></div></div>';
+
+  /* ── Sum lines ── */
+  let sumLines =
+    '<div class="itax-sum-line"><span class="lbl">Area ratio (' + office + 'm² ÷ ' + total + 'm²)</span><span class="val">' + (areaRatio * 100).toFixed(2) + '%</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">Time ratio (' + Math.round(wfhDays) + ' ÷ ' + Math.round(workDays) + ' days)</span><span class="val">' + (timeRatio * 100).toFixed(2) + '%</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">Combined ratio (area × time)</span><span class="val">' + (combined * 100).toFixed(2) + '%</span></div>';
+
+  if (isOwn) {
+    if (bondInt)  sumLines += '<div class="itax-sum-line"><span class="lbl">Bond interest (annual)</span><span class="val">' + hoFmt(bondInt) + '</span></div>';
+    if (rates)    sumLines += '<div class="itax-sum-line"><span class="lbl">Rates &amp; taxes (annual)</span><span class="val">' + hoFmt(rates) + '</span></div>';
+  } else {
+    if (rent)     sumLines += '<div class="itax-sum-line"><span class="lbl">Rent (R' + hoGv('ho-rent').toLocaleString('en-ZA') + '/mo × 12)</span><span class="val">' + hoFmt(rent) + '</span></div>';
+  }
+  if (elec)      sumLines += '<div class="itax-sum-line"><span class="lbl">Electricity &amp; water (annual)</span><span class="val">' + hoFmt(elec) + '</span></div>';
+  if (levies)    sumLines += '<div class="itax-sum-line"><span class="lbl">Levies / security / cleaning (annual)</span><span class="val">' + hoFmt(levies) + '</span></div>';
+  sumLines += '<div class="itax-sum-line"><span class="lbl">Total occupancy costs base</span><span class="val">' + hoFmt(occBase) + '</span></div>';
+  sumLines += '<div class="itax-sum-line"><span class="lbl">Occupancy × ' + (combined * 100).toFixed(2) + '% (apportioned)</span><span class="val">' + hoFmt(occDed) + '</span></div>';
+
+  if (direct > 0) {
+    if (phone)       sumLines += '<div class="itax-sum-line"><span class="lbl">Phone / internet (100% direct)</span><span class="val">' + hoFmt(phone) + '</span></div>';
+    if (otherDirect) sumLines += '<div class="itax-sum-line"><span class="lbl">Other direct costs (100%)</span><span class="val">' + hoFmt(otherDirect) + '</span></div>';
+  }
+
+  sumLines += '<div class="itax-sum-line total"><span class="lbl">Total Deductible — s23(b)</span><span class="val">' + hoFmt(totalDed) + '</span></div>';
+  document.getElementById('ho-sum-lines').innerHTML = sumLines;
+
+  /* ── Flags ── */
+  let flags = '';
+
+  if (timeRatio < 0.25) {
+    flags += '<div class="itax-note error"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>Duties test risk:</strong> WFH days are only ' + (timeRatio * 100).toFixed(1) + '% of working days — very unlikely to satisfy the SARS s23(b) requirement that more than 50% of duties be performed in the home office.</div>';
+  } else if (timeRatio < 0.50) {
+    flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i><strong>Duties test caution:</strong> WFH is ' + (timeRatio * 100).toFixed(1) + '% of working days. The 50% duties test may not be satisfied — verify your specific circumstances.</div>';
+  }
+
+  if (areaRatio > 0.35) {
+    flags += '<div class="itax-note error"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>Area ratio caution:</strong> Office is ' + (areaRatio * 100).toFixed(1) + '% of total floor area — above 35% is unusual and likely to attract SARS scrutiny. Verify your measurements.</div>';
+  } else if (areaRatio > 0.20) {
+    flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i>Area ratio of ' + (areaRatio * 100).toFixed(1) + '% is above 20% — may attract SARS scrutiny. Ensure floor plan documentation is on hand.</div>';
+  }
+
+  if (isOwn) {
+    flags += '<div class="itax-note warn" id="ho-cgt-note"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>CGT Warning:</strong> Claiming a home office deduction on an owner-occupied property means the office portion may not qualify for the primary residence CGT exclusion (R3,000,000 for 2026/27) when the property is sold. The exclusion is reduced pro-rata by the office area ratio and time of use for trade purposes.</div>';
+  }
+
+  if (totalDed > 0) {
+    flags += '<div class="itax-note green"><i class="fa-solid fa-circle-check" style="margin-right:5px"></i>Enter <strong>' + hoFmt(totalDed) + '</strong> as your home office deduction on your ITR12 return (code 4028 or under "Other Deductions").</div>';
+  }
+
+  document.getElementById('ho-flags').innerHTML = flags;
+
+  /* ── Tips ── */
+  const tips = [
+    {i:'fa-ruler-combined', t:'Area must be dedicated and exclusively for trade', d:'A dual-purpose room does not qualify. Measure and photograph the dedicated space. Keep a floor plan with dimensions.'},
+    {i:'fa-file-signature',  t:'Salaried employees need employer confirmation',   d:'A letter on employer letterhead confirming you are required to work from home — without this, SARS will disallow the claim.'},
+    {i:'fa-percent',         t:'More than 50% of duties must be performed there',  d:'SARS IN28 requires the majority of duties to be performed in the home office. Document this with calendar records, project logs, or email evidence.'},
+    {i:'fa-camera',          t:'Photograph and measure the office space',           d:'Keep 360° photographs and a scaled floor plan. These are frequently requested by SARS during audits or justification requests.'},
+    {i:'fa-receipt',         t:'Retain all cost documentation',                    d:'Keep invoices, municipal statements, lease agreement, and bond statements. Costs must be actually incurred and provable.'}
+  ];
+  document.getElementById('ho-tips-body').innerHTML = tips.map(function(t) {
+    return '<div class="itax-tip"><i class="fa-solid ' + t.i + '"></i><div><div class="itax-tip-title">' + t.t + '</div><div class="itax-tip-desc">' + t.d + '</div></div></div>';
+  }).join('');
+
+  resultsEl.classList.add('visible');
+}
+
+/* ── Tips accordion ── */
+function hoToggleTips() {
+  const toggle = document.getElementById('ho-tips-toggle');
+  const body   = document.getElementById('ho-tips-body');
+  if (toggle && body) {
+    toggle.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+}
+</script>
+
+</body>
+</html>
