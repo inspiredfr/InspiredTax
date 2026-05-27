@@ -83,6 +83,56 @@
   }
   </script>
 
+  <!-- Schema Markup — Free calculators list -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Free In-Browser Tax Calculators — InspiredTax Africa",
+    "description": "Free client-side tax calculators for South African freelancers and independent contractors, based on current SARS parameters for the 2026/27 tax year.",
+    "url": "https://inspiredtax.africa/#calculators",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Home Office Deduction Calculator",
+          "url": "https://inspiredtax.africa/calculators/home-office-light.html",
+          "description": "Calculate the SARS-compliant home office deduction for 2026/27. Enter your floor area ratio, rent, bond interest, rates, and utilities to get your exact s23(b) allowable deduction.",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ZAR" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Medical Tax Credits Calculator",
+          "url": "https://inspiredtax.africa/calculators/medical-light.html",
+          "description": "Calculate your Section 6A medical scheme tax credits and Section 6B out-of-pocket relief for South Africa 2026/27.",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ZAR" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Section 11F Retirement Deduction Calculator",
+          "url": "https://inspiredtax.africa/calculators/retirement-light.html",
+          "description": "Calculate your Section 11F retirement deduction for 2026/27 — 27.5% of remuneration or taxable income, capped at R350,000.",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ZAR" }
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -262,8 +312,8 @@
 
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Home Office Calculator Card -->
-        <button onclick="openCalcModal('home-office', 'Home Office Deduction Calculator')"
-          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full">
+        <a href="calculators/home-office-light.html" onclick="openCalcModal(event,'home-office','Home Office Deduction Calculator')"
+          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full block no-underline" style="text-decoration:none;">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(31,95,175,0.1);">
               <svg class="w-5 h-5" style="color:#1F5FAF;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -276,11 +326,11 @@
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Open Calculator
           </span>
-        </button>
+        </a>
 
         <!-- Medical Credits Calculator Card -->
-        <button onclick="openCalcModal('medical', 'Medical Tax Credits Calculator')"
-          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full">
+        <a href="calculators/medical-light.html" onclick="openCalcModal(event,'medical','Medical Tax Credits Calculator')"
+          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full block no-underline" style="text-decoration:none;">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(31,175,115,0.1);">
               <svg class="w-5 h-5" style="color:#1FAF73;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
@@ -293,11 +343,11 @@
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Open Calculator
           </span>
-        </button>
+        </a>
 
         <!-- Retirement / s11F Calculator Card -->
-        <button onclick="openCalcModal('retirement', 'Retirement Contribution Deduction (s11F)')"
-          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full">
+        <a href="calculators/retirement-light.html" onclick="openCalcModal(event,'retirement','Retirement Contribution Deduction (s11F)')"
+          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full block no-underline" style="text-decoration:none;">
           <div class="flex justify-between items-start mb-4">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(31,95,175,0.08);">
               <svg class="w-5 h-5" style="color:#1F5FAF;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -310,7 +360,7 @@
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Open Calculator
           </span>
-        </button>
+        </a>
       </div>
     </div>
   </section>
@@ -451,7 +501,8 @@
     let currentCalc = '';
     let isDarkTheme = false;
 
-    function openCalcModal(calcKey, title) {
+    function openCalcModal(event, calcKey, title) {
+      if (event) event.preventDefault();
       currentCalc = calcKey;
       isDarkTheme = false;
       document.getElementById('calc-modal-title').textContent = title;
