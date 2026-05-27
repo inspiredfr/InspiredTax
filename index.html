@@ -83,6 +83,56 @@
   }
   </script>
 
+  <!-- Schema Markup — Free calculators list -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Free In-Browser Tax Calculators — InspiredTax Africa",
+    "description": "Free client-side tax calculators for South African freelancers and independent contractors, based on current SARS parameters for the 2026/27 tax year.",
+    "url": "https://inspiredtax.africa/#calculators",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Home Office Deduction Calculator",
+          "url": "https://inspiredtax.africa/calculators/home-office-light.html",
+          "description": "Calculate the SARS-compliant home office deduction for 2026/27. Enter your floor area ratio, rent, bond interest, rates, and utilities to get your exact s23(b) allowable deduction.",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ZAR" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Medical Tax Credits Calculator",
+          "url": "https://inspiredtax.africa/calculators/medical-light.html",
+          "description": "Calculate your Section 6A medical scheme tax credits and Section 6B out-of-pocket relief for South Africa 2026/27.",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ZAR" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Section 11F Retirement Deduction Calculator",
+          "url": "https://inspiredtax.africa/calculators/retirement-light.html",
+          "description": "Calculate your Section 11F retirement deduction for 2026/27 — 27.5% of remuneration or taxable income, capped at R350,000.",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ZAR" }
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -220,44 +270,97 @@
     </div>
   </header>
   <!-- CALCULATORS SECTION (Interactive Ready) -->
+  <!-- CALCULATOR MODAL OVERLAY -->
+  <div id="calc-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="calc-modal-title">
+    <!-- Backdrop -->
+    <div id="calc-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <!-- Panel -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
+      <div class="w-full max-w-[720px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col" style="max-height:92vh;">
+        <!-- Modal Toolbar -->
+        <div class="flex items-center justify-between px-5 py-3 bg-[#0B1F3B] flex-shrink-0">
+          <span id="calc-modal-title" class="text-white font-semibold text-sm truncate mr-4">Calculator</span>
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <!-- Theme toggle -->
+            <button id="calc-theme-btn" onclick="toggleCalcTheme()" title="Toggle light / dark theme"
+              class="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg transition"
+              style="background:rgba(255,255,255,0.12);color:#fff;">
+              <svg id="calc-theme-icon-sun" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.36l-.71.71M5.64 18.36l-.71.71m12.73 0l-.71-.71M5.64 5.64l-.71-.71M12 7a5 5 0 100 10A5 5 0 0012 7z"/></svg>
+              <svg id="calc-theme-icon-moon" class="w-3.5 h-3.5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              <span id="calc-theme-label">Dark mode</span>
+            </button>
+            <!-- Close -->
+            <button onclick="closeCalcModal()" title="Close"
+              class="flex items-center justify-center w-8 h-8 rounded-lg transition hover:bg-white/20"
+              style="background:rgba(255,255,255,0.1);color:#fff;">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- iframe -->
+        <iframe id="calc-frame" src="" title="Tax Calculator" class="w-full flex-1 border-0" style="min-height:540px;"></iframe>
+      </div>
+    </div>
+  </div>
+
   <section id="calculators" class="py-16 bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl font-bold tracking-tight text-navy">Free In-Browser Calculators</h2>
-        <p class="text-lg text-gray-600 mt-2">Instant client-side evaluation models based on current SARS parameters.</p>
+        <p class="text-lg text-gray-600 mt-2">Instant client-side calculations based on current SARS parameters. No data leaves your browser.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Card Item -->
-        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Home Office Calculator Card -->
+        <a href="calculators/home-office-light.html" onclick="openCalcModal(event,'home-office','Home Office Deduction Calculator')"
+          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full block no-underline" style="text-decoration:none;">
           <div class="flex justify-between items-start mb-4">
-            <h3 class="text-lg font-bold text-navy">s11F Contribution Limit Tool</h3>
-            <span class="text-xs bg-brandBlue/10 text-brandBlue font-bold px-2 py-1 rounded">Tax Year: 2026/27</span>
-          </div>
-          <p class="text-sm text-gray-600 mb-4">Calculate maximum allowable retirement deductions relative to your gross income variables.</p>
-          
-          <!-- Embedded Live Calculator Form Mini-Engine -->
-          <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 space-y-3">
-            <div>
-              <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Estimated Taxable Income (R)</label>
-              <input type="number" id="calc-income" placeholder="e.g. 600000" class="w-full text-sm p-2 border border-gray-300 rounded focus:ring-1 focus:ring-brandGreen focus:outline-none">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(31,95,175,0.1);">
+              <svg class="w-5 h-5" style="color:#1F5FAF;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
             </div>
-            <button onclick="calculateS11F()" class="w-full py-2 bg-brandBlue text-white rounded text-xs font-bold hover:bg-brandBlue-dark transition">Compute Limit</button>
-            <div id="calc-result" class="text-xs text-brandGreen font-bold text-center mt-1 hidden"></div>
+            <span class="text-xs bg-brandGreen/10 text-brandGreen font-bold px-2 py-1 rounded flex-shrink-0">2026/27</span>
           </div>
-        </div>
+          <h3 class="text-lg font-bold text-navy mb-2 group-hover:text-brandBlue transition">Home Office Deduction</h3>
+          <p class="text-sm text-gray-600 mb-5">Calculate the deductible portion of home office expenses — rent, rates, utilities — based on SARS floor-area requirements.</p>
+          <span class="inline-flex items-center gap-1.5 text-brandBlue font-semibold text-sm group-hover:underline">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Open Calculator
+          </span>
+        </a>
 
-        <!-- Card Item -->
-        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-lg font-bold text-navy">Paragraph 20 Penalty Estimator</h3>
-              <span class="text-xs bg-brandBlue/10 text-brandBlue font-bold px-2 py-1 rounded">Underestimation</span>
+        <!-- Medical Credits Calculator Card -->
+        <a href="calculators/medical-light.html" onclick="openCalcModal(event,'medical','Medical Tax Credits Calculator')"
+          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full block no-underline" style="text-decoration:none;">
+          <div class="flex justify-between items-start mb-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(31,175,115,0.1);">
+              <svg class="w-5 h-5" style="color:#1FAF73;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
             </div>
-            <p class="text-sm text-gray-600">Simulate potential exposures if your declared provisional estimates differ substantially from final assessments below or above the R1.8m thresholds.</p>
+            <span class="text-xs bg-brandGreen/10 text-brandGreen font-bold px-2 py-1 rounded flex-shrink-0">2026/27</span>
           </div>
-          <button class="mt-6 w-full py-2 bg-gray-100 hover:bg-gray-200 text-navy font-bold text-xs rounded transition">Launch Interactive Simulator</button>
-        </div>
+          <h3 class="text-lg font-bold text-navy mb-2 group-hover:text-brandBlue transition">Medical Tax Credits</h3>
+          <p class="text-sm text-gray-600 mb-5">Estimate Section 6A and 6B medical tax credits — medical aid contributions plus qualifying out-of-pocket expenses.</p>
+          <span class="inline-flex items-center gap-1.5 text-brandBlue font-semibold text-sm group-hover:underline">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Open Calculator
+          </span>
+        </a>
+
+        <!-- Retirement / s11F Calculator Card -->
+        <a href="calculators/retirement-light.html" onclick="openCalcModal(event,'retirement','Retirement Contribution Deduction (s11F)')"
+          class="text-left p-6 bg-white rounded-xl border border-gray-200 shadow-sm transition hover:shadow-md hover:border-brandBlue group cursor-pointer w-full block no-underline" style="text-decoration:none;">
+          <div class="flex justify-between items-start mb-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(31,95,175,0.08);">
+              <svg class="w-5 h-5" style="color:#1F5FAF;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="text-xs bg-brandBlue/10 text-brandBlue font-bold px-2 py-1 rounded flex-shrink-0">s11F</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy mb-2 group-hover:text-brandBlue transition">Retirement Deduction (s11F)</h3>
+          <p class="text-sm text-gray-600 mb-5">Calculate your maximum 27.5% retirement contribution deduction and the R350,000 annual cap for the 2026/27 tax year.</p>
+          <span class="inline-flex items-center gap-1.5 text-brandBlue font-semibold text-sm group-hover:underline">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Open Calculator
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -388,29 +491,49 @@
 
   <!-- SCRIPT BLOCK -->
   <script>
-    // Mobile Navigation Drawer Toggle Handler Logic
+    // Mobile Navigation Drawer Toggle Handler
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    // Sample Client-side Local Calculation Formula Demo Engine
-    function calculateS11F() {
-      const incomeVal = parseFloat(document.getElementById('calc-income').value);
-      const outputBox = document.getElementById('calc-result');
-      if(isNaN(incomeVal) || incomeVal <= 0){
-         outputBox.innerText = "Please input a valid amount.";
-         outputBox.classList.remove('hidden');
-         return;
-      }
-      // Formula: 27.5% capped at R350,000 max limit threshold capping rule
-      let computedLimit = incomeVal * 0.275;
-      if (computedLimit > 350000) { computedLimit = 350000; }
-      
-      outputBox.innerText = "Maximum Deductible Limit: R " + computedLimit.toLocaleString('en-ZA', {minimumFractionDigits:2});
-      outputBox.classList.remove('hidden');
+    // Calculator Modal
+    const CALC_BASE = 'calculators/';
+    let currentCalc = '';
+    let isDarkTheme = false;
+
+    function openCalcModal(event, calcKey, title) {
+      if (event) event.preventDefault();
+      currentCalc = calcKey;
+      isDarkTheme = false;
+      document.getElementById('calc-modal-title').textContent = title;
+      document.getElementById('calc-frame').src = CALC_BASE + calcKey + '-light.html';
+      document.getElementById('calc-theme-label').textContent = 'Dark mode';
+      document.getElementById('calc-theme-icon-sun').classList.remove('hidden');
+      document.getElementById('calc-theme-icon-moon').classList.add('hidden');
+      document.getElementById('calc-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
+
+    function closeCalcModal() {
+      document.getElementById('calc-modal').classList.add('hidden');
+      document.getElementById('calc-frame').src = '';
+      document.body.style.overflow = '';
+    }
+
+    function toggleCalcTheme() {
+      isDarkTheme = !isDarkTheme;
+      const theme = isDarkTheme ? 'dark' : 'light';
+      document.getElementById('calc-frame').src = CALC_BASE + currentCalc + '-' + theme + '.html';
+      document.getElementById('calc-theme-label').textContent = isDarkTheme ? 'Light mode' : 'Dark mode';
+      document.getElementById('calc-theme-icon-sun').classList.toggle('hidden', isDarkTheme);
+      document.getElementById('calc-theme-icon-moon').classList.toggle('hidden', !isDarkTheme);
+    }
+
+    // Close on backdrop click or Escape key
+    document.getElementById('calc-backdrop').addEventListener('click', closeCalcModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeCalcModal();
+    });
   </script>
 </body>
 </html>

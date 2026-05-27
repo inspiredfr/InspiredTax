@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://inspiredtax.africa/calculators/medical-light.html">
+<title>Medical Expenses Tax Credits Calculator — InspiredTax Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ── InspiredTax Africa — Medical Credits Calculator Embed ── */
+.itax-calc-wrap *,
+.itax-calc-wrap *::before,
+.itax-calc-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.itax-calc-wrap {
+  --bg:    #0d1117;
+  --sf:    #161b22;
+  --sf2:   #1a2535;
+  --sf3:   #243040;
+  --bd:    rgba(255,255,255,0.07);
+  --tx:    #e8ecf4;
+  --tx2:   #d0dae8;
+  --tx3:   #7a91a8;
+  --navy:  #0B1F3B;
+  --blue:  #1F5FAF;
+  --green: #1FAF73;
+  --greenl:#3EDC97;
+  --ok:    #00c98a;
+  --er:    #ff4d4d;
+  --wa:    #f0b800;
+  --in:    #3b82f6;
+  --r:     12px;
+  --ff:    'Inter', system-ui, sans-serif;
+  --fh:    'Space Grotesk', 'Inter', sans-serif;
+  --mono:  'JetBrains Mono', monospace;
+  font-family: var(--ff);
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--tx);
+  border-radius: 16px;
+  padding: 0;
+  max-width: 680px;
+  width: 100%;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Header */
+.itax-header {
+  background: var(--navy);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 16px 16px 0 0;
+}
+.itax-header-icon {
+  width: 44px; height: 44px;
+  background: rgba(31,175,115,0.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--green); flex-shrink: 0;
+}
+.itax-header-text { flex: 1; }
+.itax-header-title {
+  font-family: var(--fh); font-size: 16px; font-weight: 700; color: #fff;
+}
+.itax-header-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.itax-wordmark { text-align: right; flex-shrink: 0; }
+.itax-wm-inspired { font-family: var(--fh); font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 0.3px; display: block; }
+.itax-wm-tax     { font-family: var(--fh); font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: 0.5px; display: block; }
+.itax-wm-africa  { font-family: var(--fh); font-size: 9px;  font-weight: 600; color: #4d8ad4; letter-spacing: 2px; text-transform: uppercase; display: block; }
+
+/* Body */
+.itax-body { padding: 20px 24px; background: var(--bg); }
+
+/* Form */
+.itax-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.itax-row.single { grid-template-columns: 1fr; }
+@media(max-width:520px){ .itax-row { grid-template-columns: 1fr; } }
+.itax-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.itax-label { font-size: 13px; font-weight: 600; color: var(--tx2); }
+.itax-input, .itax-select {
+  padding: 12px 14px;
+  background: var(--sf2);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--tx);
+  font-size: 15px;
+  font-family: var(--ff);
+  transition: border-color .15s;
+  width: 100%;
+}
+.itax-input:focus, .itax-select:focus { outline: none; border-color: var(--blue); }
+.itax-input::placeholder { color: var(--tx3); }
+.itax-select { cursor: pointer; appearance: auto; }
+.itax-input.mono { font-family: var(--mono); font-weight: 500; }
+
+.itax-section-label {
+  font-size: 11px; font-weight: 700; color: var(--tx3);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin: 20px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.itax-note {
+  font-size: 13px; line-height: 1.7;
+  padding: 12px 14px; border-radius: 10px;
+  margin-bottom: 14px; border-left: 4px solid;
+}
+.itax-note.info  { background: rgba(59,130,246,0.06); color: var(--in); border-left-color: var(--in); }
+.itax-note.warn  { background: rgba(240,184,0,0.06);  color: var(--wa); border-left-color: var(--wa); }
+.itax-note.error { background: rgba(255,77,77,0.06);  color: var(--er); border-left-color: var(--er); }
+.itax-note.green { background: rgba(31,175,115,0.06); color: var(--greenl); border-left-color: var(--green); }
+
+/* Conditional blocks */
+.itax-cond-block { display: none; }
+.itax-cond-block.visible { display: block; }
+
+/* Calc button */
+.itax-calc-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--ff);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s;
+}
+.itax-calc-btn:hover { background: var(--greenl); color: var(--navy); }
+
+/* Results */
+.itax-results {
+  background: var(--sf);
+  border-radius: var(--r);
+  padding: 20px;
+  margin-top: 20px;
+  display: none;
+}
+.itax-results.visible { display: block; }
+.itax-results-title {
+  font-family: var(--fh); font-size: 14px; font-weight: 700;
+  color: #fff; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.itax-results-title i { color: var(--green); }
+
+.itax-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media(max-width:420px){ .itax-stat-row { grid-template-columns: 1fr 1fr; } }
+.itax-stat {
+  background: var(--sf2);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+.itax-stat-val {
+  font-family: var(--mono); font-size: 18px; font-weight: 700; color: #fff;
+  white-space: nowrap;
+}
+.itax-stat-val.green { color: var(--greenl); }
+.itax-stat-val.amber { color: var(--wa); }
+.itax-stat-val.red   { color: var(--er); }
+.itax-stat-lbl { font-size: 11px; color: var(--tx3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.itax-sum-line { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bd); }
+.itax-sum-line:last-child { border-bottom: none; }
+.itax-sum-line .lbl { color: var(--tx2); }
+.itax-sum-line .val { font-family: var(--mono); font-weight: 600; color: #fff; }
+.itax-sum-line.total .lbl { font-weight: 700; color: #fff; }
+.itax-sum-line.total .val { color: var(--greenl); font-size: 15px; }
+
+/* Explanation accordion */
+.itax-expl-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tx2);
+  border-top: 1px solid var(--bd);
+  margin-top: 12px;
+  user-select: none;
+}
+.itax-expl-toggle:hover { color: var(--tx); }
+.itax-expl-toggle .chevron { transition: transform .2s; font-size: 12px; color: var(--tx3); }
+.itax-expl-toggle.open .chevron { transform: rotate(180deg); }
+.itax-expl-body { display: none; font-size: 12px; color: var(--tx2); line-height: 1.8; padding: 12px 0; }
+.itax-expl-body.open { display: block; }
+
+/* Footer */
+.itax-footer {
+  background: var(--sf);
+  padding: 12px 24px;
+  border-top: 1px solid var(--bd);
+  font-size: 11px;
+  color: var(--tx3);
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.itax-footer a { color: var(--blue); text-decoration: none; }
+.itax-footer a:hover { color: var(--greenl); }
+</style>
+</head>
+<body style="background:transparent;margin:0;padding:16px;">
+
+<div class="itax-calc-wrap" id="itax-med-calc">
+
+  <!-- Header -->
+  <div class="itax-header">
+    <div class="itax-header-icon"><i class="fa-solid fa-staff-snake"></i></div>
+    <div class="itax-header-text">
+      <div class="itax-header-title">Medical Expenses Tax Credits — s6A &amp; s6B Calculator</div>
+      <div class="itax-header-sub">Medical Scheme Fees Credit · Additional Medical Expenses Credit</div>
+    </div>
+    <div class="itax-wordmark">
+      <span class="itax-wm-inspired">Inspired</span>
+      <span class="itax-wm-tax">Tax</span>
+      <span class="itax-wm-africa">Africa</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="itax-body">
+
+    <!-- Tax Year + Age -->
+    <div class="itax-row">
+      <div class="itax-group">
+        <label class="itax-label" for="med-tax-year">Tax Year</label>
+        <select class="itax-select" id="med-tax-year" onchange="medCalc()">
+          <option value="2027" selected>2026/27 (1 Mar 2026 – 28 Feb 2027)</option>
+          <option value="2026">2025/26 (1 Mar 2025 – 28 Feb 2026)</option>
+          <option value="2025">2024/25 (1 Mar 2024 – 28 Feb 2025)</option>
+          <option value="2024">2023/24 (1 Mar 2023 – 29 Feb 2024)</option>
+          <option value="2023">2022/23 (1 Mar 2022 – 28 Feb 2023)</option>
+          <option value="2022">2021/22 (1 Mar 2021 – 28 Feb 2022)</option>
+        </select>
+      </div>
+      <div class="itax-group">
+        <label class="itax-label" for="med-age">Your Age at End of Tax Year
+          <span title="Your age on the last day of the tax year (28 February). Age 65+ qualifies for more favourable s6B treatment — no 7.5% income threshold." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="med-age" placeholder="e.g. 45" min="0" max="110" step="1" oninput="medCalc()">
+      </div>
+    </div>
+
+    <!-- Taxable Income (needed for s6B threshold under-65) -->
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="med-taxable-income">Taxable Income for the Year (R)
+          <span title="Your taxable income (after retirement deductions and other deductions but before medical credits are applied). Used to calculate the 7.5% s6B threshold for taxpayers under 65." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="med-taxable-income" placeholder="0" min="0" step="1" oninput="medCalc()">
+      </div>
+    </div>
+
+    <!-- Medical Aid membership -->
+    <div class="itax-section-label">Medical Aid Membership</div>
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="med-self-premium">Are you on a medical aid and do you pay contributions yourself?</label>
+        <select class="itax-select" id="med-self-premium" onchange="medToggleMedAid(); medCalc()">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Medical aid contributions (conditional) -->
+    <div class="itax-cond-block" id="med-aid-block">
+      <div class="itax-row">
+        <div class="itax-group">
+          <label class="itax-label" for="med-self-contrib">Annual contributions paid by YOU (R)</label>
+          <input type="number" class="itax-input mono" id="med-self-contrib" placeholder="0" min="0" step="1" oninput="medCalc()">
+        </div>
+        <div class="itax-group">
+          <label class="itax-label" for="med-emp-contrib">Annual contributions paid by your EMPLOYER (R)
+            <span title="Employer contributions to your medical aid (IRP5 code 4474 or 3810). These are included in qualifying contributions for s6B even though they may be taxed as a fringe benefit." style="color:#7a91a8;cursor:help"> ⓘ</span>
+          </label>
+          <input type="number" class="itax-input mono" id="med-emp-contrib" placeholder="0" min="0" step="1" oninput="medCalc()">
+        </div>
+      </div>
+
+      <!-- Dependants -->
+      <div class="itax-row single">
+        <div class="itax-group">
+          <label class="itax-label" for="med-has-deps">Do you have dependants on your medical aid?</label>
+          <select class="itax-select" id="med-has-deps" onchange="medToggleDeps(); medCalc()">
+            <option value="no">No (main member only)</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="itax-cond-block" id="med-deps-block">
+        <div class="itax-row single">
+          <div class="itax-group">
+            <label class="itax-label" for="med-deps">Number of dependants
+              <span title="Count all registered dependants on your medical aid. The first dependant qualifies for the same monthly credit as the main member. Additional dependants (2nd and beyond) each receive a lower credit." style="color:#7a91a8;cursor:help"> ⓘ</span>
+            </label>
+            <input type="number" class="itax-input mono" id="med-deps" value="1" min="1" max="20" step="1" oninput="medCalc()">
+            <div id="med-deps-warn"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disability -->
+      <div class="itax-row single">
+        <div class="itax-group">
+          <label class="itax-label" for="med-disability">Are you, your spouse, or your child disabled? (ITR-DD confirmed)
+            <span title="Applies only to the taxpayer, spouse, or child — not extended family. Enables the more favourable s6B formula (33.3%, no 7.5% income threshold). An ITR-DD certificate from a registered medical practitioner is required." style="color:#7a91a8;cursor:help"> ⓘ</span>
+          </label>
+          <select class="itax-select" id="med-disability" onchange="medCalc()">
+            <option value="0">No</option>
+            <option value="1">Yes (ITR-DD confirmed)</option>
+          </select>
+          <div class="itax-note info" style="margin-top:8px;font-size:12px;margin-bottom:0">
+            <i class="fa-solid fa-circle-info" style="margin-right:5px"></i>Disability scope: applies only to the <strong>taxpayer, spouse, or child</strong> (own or spouse's child). Extended family members do not qualify for full s6B treatment.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Out-of-pocket (always visible) -->
+    <div class="itax-section-label">Out-of-Pocket Medical Expenses</div>
+    <div class="itax-row single">
+      <div class="itax-group">
+        <label class="itax-label" for="med-oop">Qualifying Out-of-Pocket Expenses — Annual (R)
+          <span title="Unreimbursed expenses paid to registered practitioners, dentists, optometrists, hospitals, nursing homes, pharmacists (for prescribed medicine). Does NOT include over-the-counter medication, cosmetic procedures, gym fees, or any amounts reimbursed by your medical scheme." style="color:#7a91a8;cursor:help"> ⓘ</span>
+        </label>
+        <input type="number" class="itax-input mono" id="med-oop" placeholder="0" min="0" step="1" oninput="medCalc()">
+        <div class="itax-note info" style="margin-top:8px;margin-bottom:0;font-size:12px">
+          <i class="fa-solid fa-circle-info" style="margin-right:5px"></i>
+          <strong>Qualifying:</strong> registered medical practitioners, dentists, optometrists, hospitals, nursing homes, pharmacist for prescribed medicines.
+          <strong>Not qualifying:</strong> OTC medication, cosmetic procedures, gym fees, supplements (unless prescribed), amounts recovered from scheme.
+          <em>Out-of-pocket expenses can be claimed even without a medical aid.</em>
+        </div>
+        <div id="med-oop-warn" style="margin-top:6px"></div>
+      </div>
+    </div>
+
+    <!-- Calculate button -->
+    <button class="itax-calc-btn" onclick="medCalc()">
+      <i class="fa-solid fa-calculator"></i> Calculate Medical Tax Credits
+    </button>
+
+    <!-- Results -->
+    <div class="itax-results" id="med-results">
+      <div class="itax-results-title"><i class="fa-solid fa-chart-simple"></i> Medical Tax Credit Result</div>
+      <div class="itax-stat-row" id="med-stat-row"></div>
+      <div id="med-sum-lines" style="margin-bottom:14px"></div>
+      <div id="med-flags"></div>
+
+      <!-- How it works accordion -->
+      <div class="itax-expl-toggle" id="med-expl-toggle" onclick="medToggleExpl()">
+        <span><i class="fa-solid fa-book-open" style="margin-right:6px;color:#1F5FAF"></i>How medical tax credits are calculated</span>
+        <i class="fa-solid fa-chevron-down chevron"></i>
+      </div>
+      <div class="itax-expl-body" id="med-expl-body"></div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- Footer -->
+  <div class="itax-footer">
+    <span>Credits reduce tax payable — they are not refundable in cash. Results are indicative — verify against your ITR12.</span>
+    <a href="https://www.inspiredtaxafrica.co.za" target="_blank">inspiredtaxafrica.co.za</a>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+/* ── Tax Year Data ── */
+const MED_TAX_YEARS = {
+  '2027': {label:'2026/27', medical:{main:376, firstDep:376, addDep:254}},
+  '2026': {label:'2025/26', medical:{main:364, firstDep:364, addDep:246}},
+  '2025': {label:'2024/25', medical:{main:347, firstDep:347, addDep:234}},
+  '2024': {label:'2023/24', medical:{main:347, firstDep:347, addDep:234}},
+  '2023': {label:'2022/23', medical:{main:347, firstDep:347, addDep:234}},
+  '2022': {label:'2021/22', medical:{main:347, firstDep:347, addDep:234}}
+};
+
+/* ── Helpers ── */
+function medFmt(n) {
+  if (n === undefined || n === null || isNaN(n)) return 'R 0';
+  return 'R\u00a0' + Math.round(n).toLocaleString('en-ZA');
+}
+function medGv(id) {
+  const el = document.getElementById(id);
+  if (!el) return 0;
+  const v = parseFloat(el.value);
+  return isNaN(v) ? 0 : Math.round(v);
+}
+function medGs(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : '';
+}
+
+/* ── Toggle blocks ── */
+function medToggleMedAid() {
+  const show = medGs('med-self-premium') === 'yes';
+  const block = document.getElementById('med-aid-block');
+  if (block) {
+    block.classList.toggle('visible', show);
+    if (!show) {
+      ['med-self-contrib','med-emp-contrib','med-oop'].forEach(function(id) {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+      const hasDeps = document.getElementById('med-has-deps');
+      if (hasDeps) hasDeps.value = 'no';
+      const depsBlock = document.getElementById('med-deps-block');
+      if (depsBlock) depsBlock.classList.remove('visible');
+    }
+  }
+}
+function medToggleDeps() {
+  const show = medGs('med-has-deps') === 'yes';
+  const block = document.getElementById('med-deps-block');
+  if (block) {
+    block.classList.toggle('visible', show);
+    if (!show) {
+      const el = document.getElementById('med-deps');
+      if (el) el.value = '0';
+    }
+  }
+}
+function medToggleExpl() {
+  const toggle = document.getElementById('med-expl-toggle');
+  const body = document.getElementById('med-expl-body');
+  if (toggle && body) {
+    toggle.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+}
+
+/* ── Main calculation ── */
+function medCalc() {
+  const tyKey = medGs('med-tax-year') || '2027';
+  const ty = MED_TAX_YEARS[tyKey] || MED_TAX_YEARS['2027'];
+  const m = ty.medical;
+
+  const age = medGv('med-age');
+  const taxableIncome = medGv('med-taxable-income');
+  const isMain = medGs('med-self-premium') === 'yes';
+  const hasDeps = medGs('med-has-deps') === 'yes';
+  const deps = hasDeps ? Math.max(0, medGv('med-deps')) : 0;
+  const selfContrib = medGv('med-self-contrib');
+  const empContrib = medGv('med-emp-contrib');
+  const oop = medGv('med-oop');
+  const isDisability = parseInt(medGs('med-disability') || '0') === 1;
+
+  /* s6A — Medical Scheme Fees Tax Credit */
+  let s6a = 0;
+  if (isMain) {
+    s6a += m.main * 12;           // main member
+    if (deps >= 1) s6a += m.firstDep * 12;  // first dependant
+    if (deps > 1)  s6a += (deps - 1) * m.addDep * 12;  // additional dependants
+  }
+  s6a = Math.round(s6a);
+
+  const totalContributions = selfContrib + empContrib;
+  const ti = Math.max(0, taxableIncome);
+
+  /* s6B — Additional Medical Expenses Tax Credit */
+  let s6b = 0;
+  let s6bFormula = '';
+  const ageFlag = age >= 65 || isDisability;
+
+  if (ageFlag) {
+    // Age 65+ or disability: 33.3% × max(0, contributions − 3×s6A) + OOP
+    const excessContrib = Math.max(0, totalContributions - 3 * s6a);
+    s6b = (excessContrib + oop) / 3;
+    s6bFormula = 'age65_disability';
+  } else {
+    // Under 65, no disability: 25% × max(0, [max(0, contributions − 4×s6A) + OOP] − 7.5% of TI)
+    const excessContrib = Math.max(0, totalContributions - 4 * s6a);
+    const combined = excessContrib + oop;
+    const threshold = 0.075 * ti;
+    s6b = 0.25 * Math.max(0, combined - threshold);
+    s6bFormula = 'under65';
+  }
+  s6b = Math.round(s6b);
+  const total = s6a + s6b;
+
+  /* ── Dependant warnings ── */
+  const depsWarn = document.getElementById('med-deps-warn');
+  if (depsWarn) {
+    if (deps >= 10) {
+      depsWarn.innerHTML = '<div class="itax-note error" style="margin:6px 0 0;font-size:12px"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i>Dependent count of ' + deps + ' is unusually high. SARS may flag or reject the return. Verify accuracy.</div>';
+    } else if (deps >= 7) {
+      depsWarn.innerHTML = '<div class="itax-note warn" style="margin:6px 0 0;font-size:12px"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i>Dependent count of ' + deps + ' is above the typical range. Retain documentation for each dependant.</div>';
+    } else {
+      depsWarn.innerHTML = '';
+    }
+  }
+
+  /* ── OOP warning ── */
+  const oopWarn = document.getElementById('med-oop-warn');
+  if (oopWarn) {
+    if (oop > 0 && ti > 0) {
+      const oopPct = (oop / ti) * 100;
+      if (oopPct > 25) {
+        oopWarn.innerHTML = '<div class="itax-note error" style="margin:0;font-size:12px"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>OOP is ' + oopPct.toFixed(1) + '% of taxable income</strong> — SARS audit risk (&gt;25%). Ensure all receipts and ITR-DD (if disability) are on hand.</div>';
+      } else if (oopPct > 15) {
+        oopWarn.innerHTML = '<div class="itax-note warn" style="margin:0;font-size:12px"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i>OOP is ' + oopPct.toFixed(1) + '% of taxable income — elevated SARS scrutiny likely (&gt;15%). Retain receipts.</div>';
+      } else {
+        oopWarn.innerHTML = '';
+      }
+    } else {
+      oopWarn.innerHTML = '';
+    }
+  }
+
+  /* ── Stat cards ── */
+  const statRow = document.getElementById('med-stat-row');
+  statRow.innerHTML =
+    '<div class="itax-stat">'
+      + '<div class="itax-stat-val">' + medFmt(s6a) + '</div>'
+      + '<div class="itax-stat-lbl">s6A Credit</div>'
+    + '</div>'
+    + '<div class="itax-stat">'
+      + '<div class="itax-stat-val">' + medFmt(s6b) + '</div>'
+      + '<div class="itax-stat-lbl">s6B Credit</div>'
+    + '</div>'
+    + '<div class="itax-stat">'
+      + '<div class="itax-stat-val green">' + medFmt(total) + '</div>'
+      + '<div class="itax-stat-lbl">Total Medical Credit</div>'
+    + '</div>';
+
+  /* ── Sum lines ── */
+  let sumLines = '';
+
+  // s6A breakdown
+  if (isMain) {
+    sumLines += '<div class="itax-sum-line"><span class="lbl">s6A: Main member (' + m.main + '/mo × 12)</span><span class="val">' + medFmt(m.main * 12) + '</span></div>';
+    if (deps >= 1) {
+      sumLines += '<div class="itax-sum-line"><span class="lbl">s6A: First dependant (' + m.firstDep + '/mo × 12)</span><span class="val">' + medFmt(m.firstDep * 12) + '</span></div>';
+    }
+    if (deps > 1) {
+      sumLines += '<div class="itax-sum-line"><span class="lbl">s6A: Additional ' + (deps-1) + ' dependant(s) (' + m.addDep + '/mo × 12 × ' + (deps-1) + ')</span><span class="val">' + medFmt((deps-1) * m.addDep * 12) + '</span></div>';
+    }
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Total s6A annual credit</span><span class="val">' + medFmt(s6a) + '</span></div>';
+  } else {
+    sumLines += '<div class="itax-sum-line"><span class="lbl">s6A credit (no medical aid membership)</span><span class="val">' + medFmt(0) + '</span></div>';
+  }
+
+  // s6B breakdown
+  sumLines += '<div class="itax-sum-line" style="margin-top:6px"><span class="lbl">Total contributions (self + employer)</span><span class="val">' + medFmt(totalContributions) + '</span></div>';
+
+  if (ageFlag) {
+    const excessC = Math.max(0, totalContributions - 3 * s6a);
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Contributions exceeding 3 × s6A credit</span><span class="val">' + medFmt(excessC) + '</span></div>';
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Out-of-pocket expenses</span><span class="val">' + medFmt(oop) + '</span></div>';
+    sumLines += '<div class="itax-sum-line"><span class="lbl">s6B: 33.3% × (excess contributions + OOP)</span><span class="val">' + medFmt(s6b) + '</span></div>';
+  } else {
+    const threshold = 0.075 * ti;
+    const excessC = Math.max(0, totalContributions - 4 * s6a);
+    const combined = excessC + oop;
+    const overThreshold = Math.max(0, combined - threshold);
+    sumLines += '<div class="itax-sum-line"><span class="lbl">7.5% income threshold (R' + ti.toLocaleString('en-ZA') + ')</span><span class="val">' + medFmt(threshold) + '</span></div>';
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Contributions exceeding 4 × s6A + OOP</span><span class="val">' + medFmt(combined) + '</span></div>';
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Amount over threshold</span><span class="val">' + medFmt(overThreshold) + '</span></div>';
+    sumLines += '<div class="itax-sum-line"><span class="lbl">s6B: 25% × amount over threshold</span><span class="val">' + medFmt(s6b) + '</span></div>';
+  }
+
+  sumLines += '<div class="itax-sum-line total"><span class="lbl">Total Medical Tax Credit (s6A + s6B)</span><span class="val">' + medFmt(total) + '</span></div>';
+  document.getElementById('med-sum-lines').innerHTML = sumLines;
+
+  /* ── Flags ── */
+  let flags = '';
+  if (ti <= 0 && total > 0) {
+    flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i><strong>Note:</strong> Medical tax credits reduce tax payable but are <strong>not refundable in cash</strong>. If your taxable income is zero or negative, unused credits are forfeited.</div>';
+  }
+  if (total > 0) {
+    flags += '<div class="itax-note green"><i class="fa-solid fa-circle-check" style="margin-right:5px"></i>Enter <strong>' + medFmt(total) + '</strong> as your total medical credit on your ITR12 return. This credit is applied directly against your tax liability after rebates.</div>';
+  }
+  if (!isMain && oop === 0) {
+    flags += '<div class="itax-note info"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i>No medical aid contributions and no out-of-pocket expenses entered — no credit calculated. If you have out-of-pocket expenses, enter them above even without medical scheme membership.</div>';
+  }
+  document.getElementById('med-flags').innerHTML = flags;
+
+  /* ── Explanation ── */
+  const ageLabel = age >= 65 ? 'Age 65+' : (isDisability ? 'Disability' : 'Under 65, no disability');
+  const expl =
+    '<strong style="color:#3EDC97">Section 6A — Medical Scheme Fees Tax Credit (MTC)</strong><br>'
+    + 'A fixed monthly credit per member/dependant applied directly against tax payable (not a deduction from income).<br>'
+    + '<strong>' + ty.label + ' rates:</strong> Main member R' + m.main + '/mo · First dependant R' + m.firstDep + '/mo · Each additional dependant R' + m.addDep + '/mo<br>'
+    + 'Annual credit = sum of monthly credits × 12 months<br><br>'
+    + '<strong style="color:#3EDC97">Section 6B — Additional Medical Expenses Tax Credit (AMTC)</strong><br>'
+    + 'Additional relief when qualifying medical expenses exceed the s6A threshold.<br>'
+    + '<strong>' + ageLabel + ' formula used:</strong><br>'
+    + (ageFlag
+      ? '33⅓% × [Max(0, contributions − 3 × s6A credit) + OOP] — no 7.5% income threshold'
+      : '25% × Max(0, [Max(0, contributions − 4 × s6A credit) + OOP] − 7.5% × taxable income)')
+    + '<br><br>'
+    + '<strong>Qualifying contributions:</strong> amounts paid to a registered medical scheme by you and/or your employer.<br>'
+    + '<strong>Qualifying OOP:</strong> unreimbursed payments to registered medical practitioners, dentists, optometrists, hospitals, nursing homes, pharmacists (prescribed medicines only).<br>'
+    + '<strong>Not qualifying:</strong> cosmetic procedures, gym fees, OTC medication, dietary supplements (unless prescribed), amounts recovered from your scheme.';
+
+  const explBody = document.getElementById('med-expl-body');
+  if (explBody) explBody.innerHTML = expl;
+
+  document.getElementById('med-results').classList.add('visible');
+}
+</script>
+
+</body>
+</html>
