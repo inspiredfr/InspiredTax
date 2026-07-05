@@ -283,3 +283,7 @@ Short, confident, specific, South African. Use real numbers (R350,000 cap, 27.5%
 IRP6) instead of adjectives. Ban list: "unlock", "seamless", "empower", "revolutionize",
 "journey", "effortless", em-dash chains, exclamation marks, emoji outside the two specced
 (🇿🇦 badge, ✓ success). Every sentence must survive "would a Joburg accountant say this?".
+
+---
+
+**IMPLEMENTATION NOTE (2026-07-05):** This spec has been implemented on branch `claude/tax-app-landing-page-nagnwi`. See STATUS.md for what was built and the remaining owner blockers. This document is now the design reference, not a to-do list.
