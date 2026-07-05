@@ -1,27 +1,55 @@
 # Redesign Project Status
 
 **Branch:** `claude/tax-app-landing-page-nagnwi`
-**Phase:** SPEC COMPLETE — awaiting implementation
-**Last updated:** 2026-07-05 (spec-authoring AI)
+**Phase:** IMPLEMENTED — awaiting owner review + final copy
+**Last updated:** 2026-07-05
 
 ## Workflow
-1. ✅ Site audit (see HANDOVER.md §1)
-2. ✅ Owner interview (see DECISIONS.md)
-3. ✅ Spec + handover written (HANDOVER.md)
-4. ⬜ IMPLEMENTATION — done by a separate AI following HANDOVER.md exactly
+1. ✅ Site audit (HANDOVER.md §1)
+2. ✅ Owner interview (DECISIONS.md)
+3. ✅ Spec + handover written (HANDOVER.md) — merged in PR #5
+4. ✅ IMPLEMENTATION — done per HANDOVER.md (see "What was built" below)
 5. ⬜ Owner review + supply of FAQ/guide copy and Formspree ID
 6. ⬜ Merge/deploy (GitHub Pages, domain inspiredtax.co.za)
 
-## For the implementing AI
-- Read DECISIONS.md then HANDOVER.md top-to-bottom before touching code.
-- Work on this same branch. Commit in the batches listed in HANDOVER.md §9.
-- Update this file after each batch: tick the checklist in §9 and note anything skipped/blocked.
-- BLOCKERS the owner must resolve (do not wait — use placeholders as specced):
-  - Formspree form ID (placeholder `YOUR_FORM_ID` in waitlist form)
-  - Final copy for tax-faq.html, app-faq.html, tax-guide.html (build pages with clearly-marked placeholder copy)
-  - Logo image assets: owner attached 5 brand images in chat (see HANDOVER.md §3). They are NOT in the repo yet. Owner must add them to /assets/. Until then keep using existing logo.png and build the inline-SVG fallbacks specced in §3.
+## What was built (this branch)
+- `assets/site.css` — hand-written design system (indigo→cyan brand, dark/light bands,
+  buttons, cards, nav, modal, FAQ accordions, guide TOC, reveal animations,
+  prefers-reduced-motion support). Tailwind CDN removed entirely.
+- `assets/site.js` — nav blur/elevate, mobile slide-in panel, IntersectionObserver
+  scroll-reveal with stagger, phone count-up + bar fills + pointer tilt, calculator
+  modal (light/dark iframe toggle preserved), Formspree fetch submit with success
+  animation, guide TOC active-state.
+- `assets/favicon.svg` — gradient Africa+calculator mark (also used as inline brand mark).
+- `index.html` — full rewrite: hero (CSS phone mockup, visible on mobile), 4-feature strip,
+  3 calculator cards + restyled modal, 3 featured articles, `#download` waitlist band
+  (fixes old dead anchor), full footer. Roadmap/AI section and alpha wording removed.
+- New pages, shared shell: `faq/tax-faq.html` (8 Q accordions + FAQPage JSON-LD),
+  `faq/app-faq.html` (7 Q + JSON-LD), `guides/tax-guide.html` (7 sections, sticky TOC),
+  `privacy.html`, `articles/index.html` (all 8 articles).
+- SEO: all canonical/OG/schema/sitemap URLs migrated inspiredtax.africa → inspiredtax.co.za
+  site-wide (email addresses left as-is). sitemap.xml: +5 new pages.
+- Verified headless (Chromium): desktop 1280px + mobile 360px screenshots, zero console
+  errors, zero horizontal scroll, local link crawl clean.
 
-## Open items / notes
-- CNAME = inspiredtax.co.za is canonical; all metadata currently says inspiredtax.africa → must be updated (§7).
-- Calculators exist as separate light/dark HTML files in /calculators/ — keep as-is, only restyle the landing-page cards/modal chrome.
-- articles-data.json + build-articles.py generate article pages; landing page article cards are hand-written HTML. Do not break the article build.
+## BLOCKERS for the owner
+1. **Formspree form ID** — replace `YOUR_FORM_ID` in index.html waitlist form
+   (`<!-- OWNER: ... -->` comment marks it). Until then submissions fail gracefully.
+2. **Final copy** — placeholders marked `<!-- OWNER COPY -->` + visible "Placeholder" chips
+   in faq/tax-faq.html, faq/app-faq.html, guides/tax-guide.html, privacy.html.
+3. **Logo assets** — assets/logos_lockups is currently a text file, not the images. Add the
+   approved PNGs; then optionally swap the SVG/text brand lockup for `<img>` in nav/footer
+   (the `.brand` component wraps it) and update og:image (currently old logo.png).
+4. **Email domain** — site uses founder@inspiredtax.africa (existing address). Confirm
+   whether it should become @inspiredtax.co.za.
+5. **At app launch** — replace the "Coming soon on Google Play" badge with the official
+   badge link; marked `<!-- SWAP AT LAUNCH -->` in index.html.
+
+## Notes for any AI taking over
+- No build step: pure static HTML/CSS/JS. Inner pages share a byte-identical nav/footer
+  shell — edit all of them together (a generator script existed only in a scratchpad;
+  regenerating by hand-editing each file is fine).
+- Do not touch: `calculators/*.html` (self-contained), `build-articles.py`,
+  `article-template.html` (old Tailwind styling — restyling article pages is a possible
+  future pass), `CNAME`.
+- HANDOVER.md remains the design reference for any further UI work.
