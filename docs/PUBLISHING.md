@@ -5,10 +5,10 @@ This document explains how to add articles and calculators to the InspiredTax we
 ## Overview
 
 The publishing system uses:
-- **`articles-data.json`** - Central metadata store for all articles and calculators
-- **Markdown files** in `articles/` - Article content
-- **`article-template.html`** - Professional HTML template
-- **`build-articles.py`** - Build script that generates HTML from data
+- **`content/articles/data/articles-data.json`** - Central metadata store for all articles and calculators
+- **Markdown files** in `content/articles/sources/` - Article source content
+- **`templates/article-template.html`** - Professional HTML template
+- **`scripts/build-articles.py`** - Build script that generates HTML from data
 
 This system is designed to be:
 - ✓ Easy to maintain (edit JSON + markdown)
@@ -20,7 +20,7 @@ This system is designed to be:
 
 ### 1. Add Article Metadata
 
-Edit `articles-data.json` and add an entry to the `"articles"` array:
+Edit `content/articles/data/articles-data.json` and add an entry to the `"articles"` array:
 
 ```json
 {
@@ -54,7 +54,7 @@ Edit `articles-data.json` and add an entry to the `"articles"` array:
 
 ### 2. Create Article Content
 
-Create a markdown file at `articles/SLUG.md` where SLUG matches your article's slug:
+Create a markdown file at `content/articles/sources/SLUG.md` where SLUG matches your article's slug:
 
 ```markdown
 ## Section Title
@@ -87,7 +87,7 @@ Even more detailed content.
 Run the build script:
 
 ```bash
-python3 build-articles.py
+python3 scripts/build-articles.py
 ```
 
 This generates HTML files in the `articles/` directory:
@@ -96,9 +96,9 @@ This generates HTML files in the `articles/` directory:
 ### 4. Update Homepage (Optional)
 
 If your article is featured, it automatically appears on the homepage. To change which articles appear:
-1. Edit `articles-data.json`
+1. Edit `content/articles/data/articles-data.json`
 2. Set `"featured": true` to show on homepage
-3. Re-run `python3 build-articles.py`
+3. Re-run `python3 scripts/build-articles.py`
 4. Rebuild homepage (or articles are auto-linked)
 
 ## Adding a Calculator
@@ -127,18 +127,28 @@ Calculators currently display on the homepage with a status indicator. To make t
 
 ```
 InspiredTax/
-├── articles-data.json          # Metadata for all articles
-├── article-template.html       # Template (do not edit frequently)
-├── build-articles.py           # Build script (one-time setup)
-├── articles/
-│   ├── freelancers-provisional-tax.md
-│   ├── freelancers-provisional-tax.html      (auto-generated)
-│   ├── paragraph-20-threshold.md
-│   ├── paragraph-20-threshold.html           (auto-generated)
-│   ├── offline-first-security.md
-│   └── offline-first-security.html           (auto-generated)
-├── index.html                  # Homepage (links to articles)
-└── PUBLISHING.md               # This file
+├── content/
+│   ├── articles/
+│   │   ├── data/articles-data.json           # Metadata for all articles
+│   │   └── sources/                          # Article source content (.md files)
+│   │       ├── freelancers-provisional-tax.md
+│   │       ├── paragraph-20-threshold.md
+│   │       └── offline-first-security.md
+│   ├── calculators/                          # Calculator HTML files
+│   ├── faq/                                  # FAQ pages
+│   └── guides/                               # Guide pages
+├── articles/                                 # Published article HTML (public URLs)
+│   ├── freelancers-provisional-tax.html      (auto-generated from sources)
+│   ├── paragraph-20-threshold.html           (auto-generated from sources)
+│   ├── offline-first-security.html           (auto-generated from sources)
+│   └── index.html
+├── scripts/
+│   └── build-articles.py                     # Build script
+├── templates/
+│   └── article-template.html                 # HTML template (do not edit frequently)
+├── index.html                                # Homepage (links to articles)
+└── docs/
+    └── PUBLISHING.md                         # This file
 ```
 
 ## Customizing Article Appearance
@@ -165,7 +175,7 @@ The article header has a colored background with text. Customize:
 
 To change the article layout, HTML structure, or styling:
 1. Edit `article-template.html`
-2. Re-run `python3 build-articles.py`
+2. Re-run `python3 scripts/build-articles.py`
 3. All articles will regenerate with new template
 
 ## Automation & CI/CD
@@ -184,7 +194,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run build script
-        run: python3 build-articles.py
+        run: python3 scripts/build-articles.py
       - name: Commit changes
         run: |
           git config user.name "Article Bot"
@@ -200,15 +210,15 @@ This automatically regenerates articles whenever you push to the repository.
 
 ### Articles not appearing
 
-1. Check `articles-data.json` is valid JSON (use jsonlint.com)
-2. Verify markdown file exists at `articles/SLUG.md`
-3. Run `python3 build-articles.py` again
+1. Check `content/articles/data/articles-data.json` is valid JSON (use jsonlint.com)
+2. Verify markdown file exists at `content/articles/sources/SLUG.md`
+3. Run `python3 scripts/build-articles.py` again
 4. Check `articles/SLUG.html` was created
 
 ### Template not updating
 
-1. Edit `article-template.html`
-2. Run `python3 build-articles.py`
+1. Edit `templates/article-template.html`
+2. Run `python3 scripts/build-articles.py`
 3. Clear browser cache (hard refresh with Ctrl+Shift+R or Cmd+Shift+R)
 
 ### Styling looks wrong
@@ -216,7 +226,7 @@ This automatically regenerates articles whenever you push to the repository.
 1. Check Tailwind CSS is loading (view page source)
 2. Verify color classes match defined colors
 3. Check `categoryColor` matches available colors
-4. Rebuild with `python3 build-articles.py`
+4. Rebuild with `python3 scripts/build-articles.py`
 
 ## Best Practices
 
@@ -230,11 +240,11 @@ This automatically regenerates articles whenever you push to the repository.
 
 ## Next Steps
 
-1. Create new markdown file in `articles/`
-2. Add metadata to `articles-data.json`
-3. Run `python3 build-articles.py`
+1. Create new markdown file in `content/articles/sources/`
+2. Add metadata to `content/articles/data/articles-data.json`
+3. Run `python3 scripts/build-articles.py`
 4. Test the generated HTML file
-5. Commit to git: `git add articles-data.json articles/*.md articles/*.html`
+5. Commit to git: `git add content/articles/data/articles-data.json content/articles/sources/*.md articles/*.html`
 6. Push to your branch
 
 That's it! Your article is now live on the website.
