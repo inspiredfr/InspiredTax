@@ -3,10 +3,10 @@ name: Publish Articles
 on:
   push:
     paths:
-      - 'articles/*.md'
-      - 'articles/*.txt'
-      - 'article-template.html'
-      - 'build-articles.py'
+      - 'content/articles/sources/*.md'
+      - 'content/articles/sources/*.txt'
+      - 'templates/article-template.html'
+      - 'scripts/build-articles.py'
 
 jobs:
   build:
@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "Article Publisher"
           git config user.email "bot@inspiredtax.africa"
-          git add articles/*.html articles-data.json
+          git add articles/*.html content/articles/data/articles-data.json
           git diff --staged --quiet || git commit -m "Publish articles"
           git push

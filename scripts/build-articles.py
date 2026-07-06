@@ -100,13 +100,13 @@ def to_html(text):
 
 
 def build_articles():
-    with open('article-template.html') as f:
+    with open('templates/article-template.html') as f:
         template = f.read()
 
-    with open('articles-data.json') as f:
+    with open('content/articles/data/articles-data.json') as f:
         data = json.load(f)
 
-    articles_dir = Path('articles')
+    articles_dir = Path('content/articles/sources')
     existing_ids = {a['id'] for a in data['articles']}
     new_articles_added = False
 
@@ -200,13 +200,13 @@ def build_articles():
         }.items():
             html = html.replace(placeholder, value)
 
-        out_path = articles_dir / f'{slug}.html'
+        out_path = Path('articles') / f'{slug}.html'
         out_path.write_text(html)
         built += 1
         print(f'✓ Built: {slug}.html')
 
     if new_articles_added:
-        with open('articles-data.json', 'w') as f:
+        with open('content/articles/data/articles-data.json', 'w') as f:
             json.dump(data, f, indent=2)
         print('  ✓ Updated articles-data.json')
 
