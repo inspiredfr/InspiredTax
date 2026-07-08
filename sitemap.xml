@@ -33,6 +33,13 @@
 
   <!-- Articles -->
   <url>
+    <loc>https://inspiredtax.co.za/articles/vehicle-travel-expenses-south-africa.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://inspiredtax.co.za/articles/tax-deductions-south-africa-freelancers.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
