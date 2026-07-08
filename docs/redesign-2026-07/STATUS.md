@@ -1,8 +1,8 @@
 # Redesign Project Status
 
 **Branch:** `claude/tax-app-landing-page-nagnwi`
-**Phase:** IMPLEMENTED — awaiting owner review + final copy
-**Last updated:** 2026-07-05
+**Phase:** IMPLEMENTED — legal docs added, awaiting owner review + final copy
+**Last updated:** 2026-07-08
 
 ## Workflow
 1. ✅ Site audit (HANDOVER.md §1)
@@ -26,9 +26,13 @@
   (fixes old dead anchor), full footer. Roadmap/AI section and alpha wording removed.
 - New pages, shared shell: `faq/tax-faq.html` (8 Q accordions + FAQPage JSON-LD),
   `faq/app-faq.html` (7 Q + JSON-LD), `guides/tax-guide.html` (7 sections, sticky TOC),
-  `privacy.html`, `articles/index.html` (all 8 articles).
+  `privacy.html` (with SARS disclaimer C-E4 integrated), `terms.html` (full Terms of Service C-E5),
+  `articles/index.html` (all 8 articles).
+- Legal docs: `privacy.html` now includes "Not Affiliated with SARS" disclaimer from C-E4.
+  `terms.html` new page with full Terms of Service (C-E5, 8 sections). All footers updated with
+  Legal links (Privacy, Terms of Service, Contact). Sitemap.xml includes new terms page.
 - SEO: all canonical/OG/schema/sitemap URLs migrated inspiredtax.africa → inspiredtax.co.za
-  site-wide (email addresses left as-is). sitemap.xml: +5 new pages.
+  site-wide (email addresses in schema left as-is pending owner review). sitemap.xml: +6 new pages.
 - Verified headless (Chromium): desktop 1280px + mobile 360px screenshots, zero console
   errors, zero horizontal scroll, local link crawl clean.
 
