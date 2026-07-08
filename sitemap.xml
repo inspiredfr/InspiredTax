@@ -3,7 +3,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://inspiredtax.africa/</loc>
+    <loc>https://inspiredtax.co.za/</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,21 +11,21 @@
 
   <!-- Free Calculators -->
   <url>
-    <loc>https://inspiredtax.africa/calculators/home-office-light.html</loc>
+    <loc>https://inspiredtax.co.za/calculators/home-office-light.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/calculators/medical-light.html</loc>
+    <loc>https://inspiredtax.co.za/calculators/medical-light.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/calculators/retirement-light.html</loc>
+    <loc>https://inspiredtax.co.za/calculators/retirement-light.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
@@ -33,59 +33,102 @@
 
   <!-- Articles -->
   <url>
-    <loc>https://inspiredtax.africa/articles/vehicle-travel-expenses-south-africa.html</loc>
+    <loc>https://inspiredtax.co.za/articles/vehicle-travel-expenses-south-africa.html</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/tax-deductions-south-africa-freelancers.html</loc>
+    <loc>https://inspiredtax.co.za/articles/tax-deductions-south-africa-freelancers.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/how-to-reduce-tax-south-africa.html</loc>
+    <loc>https://inspiredtax.co.za/articles/how-to-reduce-tax-south-africa.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/paragraph-20-threshold.html</loc>
+    <loc>https://inspiredtax.co.za/articles/paragraph-20-threshold.html</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/freelancers-provisional-tax.html</loc>
+    <loc>https://inspiredtax.co.za/articles/freelancers-provisional-tax.html</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/offline-first-security.html</loc>
+    <loc>https://inspiredtax.co.za/articles/offline-first-security.html</loc>
     <lastmod>2025-12-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/provisional-tax-calculator-south-africa.html</loc>
+    <loc>https://inspiredtax.co.za/articles/provisional-tax-calculator-south-africa.html</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://inspiredtax.africa/articles/how-to-submit-irp6-south-africa.html</loc>
+    <loc>https://inspiredtax.co.za/articles/how-to-submit-irp6-south-africa.html</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Article index, FAQs, Guide, Privacy -->
+  <url>
+    <loc>https://inspiredtax.co.za/articles/index.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/faq/tax-faq.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/faq/app-faq.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/guides/tax-guide.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/privacy.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/terms.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>
