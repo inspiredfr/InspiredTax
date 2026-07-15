@@ -6,7 +6,7 @@ READ_TIME: 10 min read
 AUTHOR: Allan Lombard
 KEYWORDS: how to reduce tax South Africa, reduce tax bill South Africa, legal tax deductions South Africa, tax saving strategies South Africa, minimize tax SARS, freelancer tax South Africa
 FAQ: Is it legal to reduce your tax in South Africa?|Yes. SARS distinguishes between tax evasion (illegal) and tax avoidance (legal). Using allowable deductions, retirement contributions, and structuring your income correctly are all legal and encouraged by the tax system.
-FAQ: What is the most effective way to reduce tax in South Africa?|For freelancers and contractors, the s11F retirement annuity deduction is the single most powerful tax reduction tool. Contributing up to 27.5% of your taxable income (capped at R350,000) directly reduces the income on which tax is calculated.
+FAQ: What is the most effective way to reduce tax in South Africa?|For freelancers and contractors, the s11F retirement annuity deduction is the single most powerful tax reduction tool. Contributing up to 27.5% of your taxable income (capped at R430,000) directly reduces the income on which tax is calculated.
 FAQ: Can I deduct home office expenses from my South African tax?|Yes, if you work from a dedicated home office space used exclusively and regularly for your business. SARS allows a proportional deduction based on the floor area of your office relative to your total home size.
 FAQ: When should I start planning to reduce my tax in South Africa?|Tax planning should happen year-round, not at filing time. The most effective strategies — like retirement contributions and provisional tax management — require decisions made throughout the year, not in the final weeks before a deadline.
 
@@ -25,7 +25,7 @@ The section 11F deduction — commonly called the s11F or retirement funding ded
 **How it works:**
 
 - You can deduct up to **27.5% of the greater of your remuneration or taxable income**
-- The deduction is **capped at R350,000 per year**
+- The deduction is **capped at R430,000 per year**
 - Contributions can go to a pension fund, provident fund, or retirement annuity (RA)
 
 **Real example:**

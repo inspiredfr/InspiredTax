@@ -46,7 +46,7 @@ This is your **gross income estimate**.
 
 Before applying tax tables, reduce your gross income by:
 
-- Retirement annuity contributions (s11F) — up to 27.5% of taxable income, capped at R350,000
+- Retirement annuity contributions (s11F) — up to 27.5% of taxable income, capped at R430,000
 - Home office expenses (proportional)
 - Business travel (with logbook)
 - Professional expenses and subscriptions
@@ -94,7 +94,7 @@ Divide your estimated annual tax liability by two. This is your **Period 1 or Pe
 - Total gross income: R862,000
 
 **Deductions:**
-- s11F retirement annuity (27.5% of R862,000 = R237,050, within R350,000 cap): -R180,000 (actual contribution)
+- s11F retirement annuity (27.5% of R862,000 = R237,050, within R430,000 cap): -R180,000 (actual contribution)
 - Home office (10% of R60,000 annual costs): -R6,000
 - Professional subscriptions and software: -R18,000
 - Business travel: -R12,000

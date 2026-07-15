@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy — InspiredTax Africa</title>
-  <meta name="description" content="How InspiredTax Africa handles your data: offline-first app, AES-256 encryption, no tracking cookies on this site.">
+  <meta name="description" content="How InspiredTax Africa handles your data: offline-first app, AES-GCM-256 encryption, no tracking cookies on this site.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://inspiredtax.co.za/privacy.html">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://inspiredtax.co.za/privacy.html">
   <meta property="og:title" content="Privacy — InspiredTax Africa">
-  <meta property="og:description" content="How InspiredTax Africa handles your data: offline-first app, AES-256 encryption, no tracking cookies on this site.">
+  <meta property="og:description" content="How InspiredTax Africa handles your data: offline-first app, AES-GCM-256 encryption, no tracking cookies on this site.">
   <meta property="og:site_name" content="InspiredTax Africa">
   <meta property="og:locale" content="en_ZA">
   <link rel="stylesheet" href="assets/site.css">
@@ -69,7 +69,15 @@
     <div class="narrow">
       <div class="guide-sec" data-reveal>
         <h2>The app</h2>
-        <p>InspiredTax Africa is offline-first. All tax data you enter in the app is stored only on your device, encrypted with AES-256. We do not collect, transmit, or sell your financial information.</p>
+        <p>InspiredTax Africa is offline-first. All tax data you enter — income, deductions, and other figures — is stored only on your device, encrypted with AES-GCM-256. The app makes zero network requests: there is no server, so nothing is ever transmitted to us, sold, or shared with any third party. We simply never see your data.</p>
+      </div>
+      <div class="guide-sec" data-reveal>
+        <h2>Automatic local backup (Android)</h2>
+        <p>On Android, the app writes an encrypted snapshot of your data to its own private storage every time it locks — the same encrypted format as a manual export. If your device's own Android backup setting is turned on, the operating system may sync that encrypted snapshot to your Google account in the background; this is Android's own OS-level backup feature, not a service InspiredTax operates, and the snapshot is unreadable without your in-app PIN either way. You can turn this off at any time in your device's Settings &gt; System &gt; Backup.</p>
+      </div>
+      <div class="guide-sec" data-reveal>
+        <h2>Deleting your data</h2>
+        <p>You're always in control. In-app, you can reset all tax data while keeping your account, or delete your account entirely — both from the Profile screen. Uninstalling the app removes all local data immediately and permanently, including any local backup snapshot; there is no server copy for us to separately delete, because none exists.</p>
       </div>
       <div class="guide-sec" data-reveal>
         <h2>This website</h2>
