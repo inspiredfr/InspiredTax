@@ -7,7 +7,7 @@ AUTHOR: Allan Lombard
 KEYWORDS: provisional tax freelancers South Africa, s11F deduction independent contractor, IRP6 payment dates, retirement annuity tax deduction South Africa, freelance tax planning SARS
 HERO_TEXT: Freelancers & s11F
 FAQ: When are provisional tax payments due for freelancers in South Africa?|The first IRP6 payment falls due on 31 August (six months into the tax year) and the second on 28 February. A voluntary third payment can be submitted by 30 September after year-end to settle any remaining liability and reduce interest exposure.
-FAQ: Can freelancers claim the s11F retirement deduction on provisional tax?|Yes. Section 11F allows you to deduct contributions to approved retirement funds — pension, provident, or retirement annuity — up to 27.5% of the greater of your remuneration or taxable income, capped at R350,000 per year. Freelancers with no employer contribution access this fully through a retirement annuity, and it directly reduces their provisional tax liability.
+FAQ: Can freelancers claim the s11F retirement deduction on provisional tax?|Yes. Section 11F allows you to deduct contributions to approved retirement funds — pension, provident, or retirement annuity — up to 27.5% of the greater of your remuneration or taxable income, capped at R430,000 per year. Freelancers with no employer contribution access this fully through a retirement annuity, and it directly reduces their provisional tax liability.
 FAQ: What happens if a freelancer underestimates taxable income on their IRP6?|If the second provisional payment falls significantly below your actual tax liability, SARS can impose a Paragraph 20 underestimation penalty. This applies automatically — it does not require an audit or intent to evade. Conservative estimates or a voluntary third payment are the best defences.
 
 ## Provisional Tax Is Not Optional
@@ -34,7 +34,7 @@ From this, you can deduct allowable business expenses. For contractors, these ty
 
 ## The s11F Deduction: The Largest Legal Reduction Available
 
-Section 11F of the Income Tax Act allows contributions to approved retirement funds to be deducted from your taxable income. The annual limit is **27.5% of the greater of your remuneration or taxable income**, capped at R350,000 per year.
+Section 11F of the Income Tax Act allows contributions to approved retirement funds to be deducted from your taxable income. The annual limit is **27.5% of the greater of your remuneration or taxable income**, capped at R430,000 per year.
 
 For employed individuals, this limit works against salary. For contractors with no employer, it applies to your full taxable income — and it's fully accessible through a Retirement Annuity (RA).
 
