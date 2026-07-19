@@ -1,0 +1,30 @@
+name: Publish Scheduled Articles
+
+# Publishes any article in content/articles/queue/ whose DATE: has arrived.
+# Articles are queued 10 days apart, so this effectively publishes one
+# article every 10 days. See docs/ARTICLE-AUTOMATION.md.
+
+on:
+  schedule:
+    - cron: '20 3 * * *'   # daily 03:20 UTC = 05:20 SAST
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish due articles
+        run: python3 scripts/publish-scheduled.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Article Publisher"
+          git config user.email "bot@inspiredtax.co.za"
+          git add content/articles articles sitemap.xml
+          git diff --staged --quiet || git commit -m "Publish scheduled article(s)"
+          git push

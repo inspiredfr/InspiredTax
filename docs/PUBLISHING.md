@@ -2,6 +2,13 @@
 
 This document explains how to add articles and calculators to the InspiredTax website.
 
+> **Scheduled publishing:** articles can also be queued in
+> `content/articles/queue/` with a future `DATE:` header — a daily GitHub
+> Action publishes each one automatically on its date (article HTML, the
+> articles index page, and the sitemap are all updated). One article
+> publishes every 10 days, and a Claude routine keeps the queue topped up.
+> See `docs/ARTICLE-AUTOMATION.md` and `docs/EDITORIAL-CALENDAR.md`.
+
 ## Overview
 
 The publishing system uses:
