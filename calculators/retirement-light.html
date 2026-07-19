@@ -50,99 +50,128 @@
 }
 </script>
 
+<link rel="icon" href="../assets/brand/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* ── InspiredTax Africa — Retirement Calculator Embed ── */
+/* ── InspiredTax Africa — Calculator Embed (navy/cyan R-monogram identity) ── */
 .itax-calc-wrap *,
 .itax-calc-wrap *::before,
 .itax-calc-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.itax-calc-wrap {
-  --bg:    #f5f6fa;
+:root {
+  --bg:    #F8F9FC;
   --sf:    #ffffff;
-  --sf2:   #f0f2f5;
-  --sf3:   #e2e6eb;
-  --bd:    rgba(0,0,0,0.09);
+  --sf2:   #f4f6f9;
+  --sf3:   #e7ebf1;
+  --bd:    rgba(15,30,55,0.10);
   --tx:    #1a202c;
-  --tx2:   #374151;
-  --tx3:   #6b7280;
-  --navy:  #0B1F3B;
-  --blue:  #1F5FAF;
-  --green: #1FAF73;
-  --greenl:#3EDC97;
-  --ok:    #00c98a;
-  --er:    #ff4d4d;
-  --wa:    #f0b800;
-  --in:    #3b82f6;
-  --r:     12px;
-  --ff:    'Inter', system-ui, sans-serif;
-  --fh:    'Space Grotesk', 'Inter', sans-serif;
-  --mono:  'JetBrains Mono', monospace;
+  --tx2:   #4a5568;
+  --tx3:   #5b6878;
+  --navy:  #010D30;
+  --cyan:  #1ADDE3;
+  --blue:  #0B52DA;
+  --bluehl:#0B52DA;
+  --green: #188759;
+  --greenl:#0e6e47;
+  --strong:#010D30;
+  --ok:    #00885d;
+  --er:    #d92d20;
+  --wa:    #947200;
+  --in:    #0B52DA;
+  --note-info-tx:  #0a45b5;
+  --note-warn-tx:  #92400e;
+  --note-error-tx: #b91c1c;
+  --note-green-tx: #065f46;
+  --rb-bg: linear-gradient(135deg, rgba(24,135,89,0.10), rgba(24,135,89,0.02));
+  --rb-bd: rgba(24,135,89,0.28);
+  --rb-tx: #188759;
+}
+
+.itax-calc-wrap {
+  --r:     16px;
+  --r-sm:  12px;
+  --ff:    'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono:  'JetBrains Mono', 'Consolas', monospace;
+  --grad:  linear-gradient(135deg, var(--cyan), var(--blue) 65%);
   font-family: var(--ff);
   font-size: 14px;
   background: var(--bg);
   color: var(--tx);
-  border-radius: 16px;
+  border: 1px solid var(--bd);
+  border-radius: 20px;
   padding: 0;
   max-width: 680px;
   width: 100%;
+  margin: 0 auto;
   line-height: 1.6;
   overflow: hidden;
 }
 
-/* Header */
+/* Header — brand navy in both themes, like the app header */
 .itax-header {
   background: var(--navy);
-  padding: 18px 24px;
+  padding: 16px 22px;
   display: flex;
   align-items: center;
   gap: 14px;
-  border-radius: 16px 16px 0 0;
 }
-.itax-header-icon {
-  width: 44px; height: 44px;
-  background: rgba(31,175,115,0.15);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; color: var(--green); flex-shrink: 0;
+.itax-header-mark {
+  width: 34px; height: 46px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .itax-header-text { flex: 1; }
 .itax-header-title {
-  font-family: var(--fh); font-size: 16px; font-weight: 700; color: #fff;
+  font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: #fff;
+  line-height: 1.25;
 }
 .itax-header-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
-.itax-wordmark { text-align: right; flex-shrink: 0; }
-.itax-wm-inspired { font-family: var(--fh); font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 0.3px; display: block; }
-.itax-wm-tax     { font-family: var(--fh); font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: 0.5px; display: block; }
-.itax-wm-africa  { font-family: var(--fh); font-size: 9px;  font-weight: 600; color: #4d8ad4; letter-spacing: 2px; text-transform: uppercase; display: block; }
+.itax-wordmark { text-align: right; flex-shrink: 0; line-height: 1.15; }
+.itax-wm-line1 { font-size: 13px; font-weight: 800; letter-spacing: -0.01em; color: #fff; display: block; }
+.itax-wm-line1 .wm-grad {
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.itax-wm-line2 {
+  font-size: 9px; font-weight: 700; color: #6C7BB3;
+  letter-spacing: 2.4px; text-transform: uppercase; display: block; margin-top: 1px;
+}
 
 /* Body */
-.itax-body { padding: 20px 24px; background: var(--bg); }
+.itax-body { padding: 20px 22px; background: var(--bg); }
 
 /* Form */
 .itax-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .itax-row.single { grid-template-columns: 1fr; }
 @media(max-width:520px){ .itax-row { grid-template-columns: 1fr; } }
 .itax-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-.itax-group.full { grid-column: 1/-1; }
 .itax-label { font-size: 13px; font-weight: 600; color: var(--tx2); }
 .itax-input, .itax-select {
-  padding: 12px 14px;
+  padding: 11px 14px;
   background: var(--sf2);
-  border: 1px solid transparent;
-  border-radius: 10px;
+  border: 1px solid var(--bd);
+  border-radius: var(--r-sm);
   color: var(--tx);
   font-size: 15px;
   font-family: var(--ff);
-  transition: border-color .15s;
+  transition: border-color .15s, box-shadow .15s;
   width: 100%;
 }
-.itax-input:focus, .itax-select:focus { outline: none; border-color: var(--blue); }
-.itax-input::placeholder { color: var(--tx3); }
+.itax-input:focus, .itax-select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(11,82,218,0.14);
+}
+.itax-input::placeholder { color: var(--tx3); opacity: .8; }
 .itax-select { cursor: pointer; appearance: auto; }
 .itax-input.mono { font-family: var(--mono); font-weight: 500; }
+.itax-input:disabled { opacity: .45; cursor: not-allowed; }
+.itax-field-na { font-size: 11px; font-weight: 600; color: var(--wa); }
+.itax-hint { font-size: 11px; color: var(--tx3); }
 
 /* Section label */
 .itax-section-label {
@@ -153,45 +182,67 @@
   border-bottom: 1px solid var(--bd);
 }
 
-/* Note */
+/* Notes — mirror the app's .note styles */
 .itax-note {
-  font-size: 13px; line-height: 1.7;
-  padding: 12px 14px; border-radius: 10px;
+  font-size: 13px; line-height: 1.6;
+  padding: 11px 14px; border-radius: var(--r-sm);
   margin-bottom: 14px; border-left: 4px solid;
 }
-.itax-note.info  { background: rgba(59,130,246,0.06); color: #1d4ed8; border-left-color: var(--in); }
-.itax-note.warn  { background: rgba(240,184,0,0.06);  color: #92400e; border-left-color: var(--wa); }
-.itax-note.error { background: rgba(255,77,77,0.06);  color: #b91c1c; border-left-color: var(--er); }
-.itax-note.green { background: rgba(31,175,115,0.06); color: #065f46; border-left-color: var(--green); }
+.itax-note.info  { background: rgba(59,130,246,0.06); color: var(--note-info-tx);  border-left-color: var(--in); }
+.itax-note.warn  { background: rgba(240,184,0,0.07);  color: var(--note-warn-tx);  border-left-color: var(--wa); }
+.itax-note.error { background: rgba(255,77,77,0.06);  color: var(--note-error-tx); border-left-color: var(--er); }
+.itax-note.green { background: rgba(31,175,115,0.07); color: var(--note-green-tx); border-left-color: var(--green); }
+.itax-note.teal  { background: rgba(11,82,218,0.05);  color: var(--note-info-tx);  border-left-color: var(--blue); }
 
-/* IT3(f) verify block */
+/* Conditional blocks */
+.itax-cond-block { display: none; }
+.itax-cond-block.visible { display: block; }
+.itax-hidden { display: none !important; }
+
+/* Verify block (IT3(f)) */
 .itax-verify-block {
   display: none;
   margin: 4px 0 14px;
   padding: 12px 14px;
-  background: rgba(31,95,175,0.06);
+  background: rgba(11,82,218,0.05);
   border-left: 3px solid var(--blue);
-  border-radius: 6px;
+  border-radius: 8px;
 }
 .itax-verify-block label.itax-label { margin-bottom: 8px; display: block; }
 .itax-radio-group { display: flex; gap: 18px; font-size: 13px; }
 .itax-radio-group label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
 
-/* Divider */
-.itax-divider { border: none; border-top: 1px solid var(--bd); margin: 20px 0; }
+/* Result box — the app's calc-result-box pattern */
+.itax-result-box {
+  text-align: left;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  background: var(--rb-bg);
+  border: 1px solid var(--rb-bd);
+  border-radius: var(--r);
+}
+.itax-result-big {
+  font-family: var(--mono);
+  font-size: 30px; font-weight: 700;
+  color: var(--rb-tx);
+  line-height: 1.05;
+  white-space: nowrap;
+}
+.itax-result-sub { font-size: 12px; color: var(--tx3); margin-top: 6px; }
 
-/* Results */
+/* Results container */
 .itax-results {
   background: var(--sf);
+  border: 1px solid var(--bd);
   border-radius: var(--r);
-  padding: 20px;
+  padding: 18px;
   margin-top: 20px;
   display: none;
 }
 .itax-results.visible { display: block; }
 .itax-results-title {
-  font-family: var(--fh); font-size: 14px; font-weight: 700;
-  color: var(--navy); margin-bottom: 16px;
+  font-size: 14px; font-weight: 800;
+  color: var(--strong); margin-bottom: 14px;
   display: flex; align-items: center; gap: 8px;
 }
 .itax-results-title i { color: var(--green); }
@@ -200,85 +251,140 @@
 @media(max-width:420px){ .itax-stat-row { grid-template-columns: 1fr 1fr; } }
 .itax-stat {
   background: var(--sf2);
-  border-radius: 10px;
-  padding: 14px 12px;
+  border: 1px solid var(--bd);
+  border-radius: var(--r-sm);
+  padding: 13px 10px;
   text-align: center;
 }
 .itax-stat-val {
-  font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--navy);
+  font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--strong);
   white-space: nowrap;
 }
-.itax-stat-val.green { color: #047857; }
-.itax-stat-val.amber { color: #92400e; }
-.itax-stat-val.red   { color: #b91c1c; }
-.itax-stat-lbl { font-size: 11px; color: var(--tx3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.itax-stat-val.green { color: var(--green); }
+.itax-stat-val.amber { color: var(--wa); }
+.itax-stat-val.red   { color: var(--er); }
+.itax-stat-lbl { font-size: 10px; color: var(--tx3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-.itax-sum-line { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bd); }
+.itax-sum-line { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bd); }
 .itax-sum-line:last-child { border-bottom: none; }
 .itax-sum-line .lbl { color: var(--tx2); }
-.itax-sum-line .val { font-family: var(--mono); font-weight: 600; color: var(--navy); }
-.itax-sum-line.total .lbl { font-weight: 700; color: var(--navy); }
-.itax-sum-line.total .val { color: #047857; font-size: 15px; }
+.itax-sum-line .val { font-family: var(--mono); font-weight: 600; color: var(--strong); white-space: nowrap; }
+.itax-sum-line.total .lbl { font-weight: 700; color: var(--strong); }
+.itax-sum-line.total .val { color: var(--green); font-size: 15px; }
 
-/* Calc button */
+/* Ratio bar */
+.itax-ratio-bar { height: 8px; background: var(--sf3); border-radius: 999px; overflow: hidden; }
+.itax-ratio-fill { height: 100%; border-radius: 999px; transition: width .3s ease; }
+
+/* Calculate button — brand gradient, app pill shape */
 .itax-calc-btn {
   display: flex; align-items: center; justify-content: center; gap: 8px;
   width: 100%;
   padding: 14px;
-  background: var(--green);
+  background: var(--grad);
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 999px;
   font-family: var(--ff);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: .01em;
   cursor: pointer;
   margin-top: 6px;
-  transition: background .15s;
+  box-shadow: 0 10px 26px rgba(11,82,218,0.30);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.itax-calc-btn:hover { background: var(--greenl); color: var(--navy); }
+.itax-calc-btn:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(11,82,218,0.38); }
+.itax-calc-btn:active { transform: translateY(0); }
+
+/* Accordion (explanations / tips) */
+.itax-expl-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; margin-top: 14px;
+  background: var(--sf2);
+  border: 1px solid var(--bd);
+  border-radius: var(--r-sm);
+  font-size: 13px; font-weight: 700; color: var(--tx);
+  cursor: pointer; user-select: none;
+}
+.itax-expl-toggle .chevron { transition: transform .2s; color: var(--tx3); }
+.itax-expl-toggle.open .chevron { transform: rotate(180deg); }
+.itax-expl-body {
+  display: none;
+  padding: 14px; margin-top: 8px;
+  background: var(--sf2);
+  border: 1px solid var(--bd);
+  border-radius: var(--r-sm);
+  font-size: 13px; line-height: 1.7; color: var(--tx2);
+}
+.itax-expl-body.open { display: block; }
+.itax-expl-body strong.itax-hl { color: var(--bluehl); }
+
+/* Tip cards — the app's tip-card pattern */
+.itax-tip { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+.itax-tip:last-child { border-bottom: none; }
+.itax-tip i { color: var(--bluehl); font-size: 16px; margin-top: 2px; flex-shrink: 0; width: 20px; text-align: center; }
+.itax-tip-title { font-size: 13px; font-weight: 700; color: var(--tx); }
+.itax-tip-desc { font-size: 12px; color: var(--tx3); line-height: 1.55; }
 
 /* Flags */
 .itax-flag-area { margin-top: 14px; }
+.itax-flag-area .itax-note:last-child { margin-bottom: 0; }
 
 /* Footer */
 .itax-footer {
   background: var(--sf);
-  padding: 12px 24px;
+  padding: 12px 22px;
   border-top: 1px solid var(--bd);
   font-size: 11px;
   color: var(--tx3);
-  border-radius: 0 0 16px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
 }
-.itax-footer a { color: var(--blue); text-decoration: none; }
-.itax-footer a:hover { color: var(--greenl); }
+.itax-footer a { color: var(--bluehl); text-decoration: none; font-weight: 600; }
+.itax-footer a:hover { text-decoration: underline; }
+
+/* Page nav / footer (hidden when embedded) */
+.itax-page-nav {
+  max-width: 680px; width: 100%; margin: 0 auto 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'DM Sans', system-ui, sans-serif; font-size: 12px;
+}
+.itax-page-nav a { text-decoration: none; }
+.itax-page-nav .back { color: var(--bluehl); font-weight: 700; }
+.itax-page-nav .all { color: var(--tx3); }
+.itax-page-footer {
+  max-width: 680px; width: 100%; margin: 14px auto 0;
+  text-align: center;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px; color: var(--tx3);
+}
+.itax-page-footer a { color: var(--bluehl); text-decoration: none; font-weight: 700; }
+
 </style>
 </head>
-<body style="background:#f5f6fa;margin:0;padding:16px;">
+<body style="background:#F8F9FC;margin:0;padding:16px;">
 
-<nav id="itax-page-nav" style="max-width:680px;width:100%;margin:0 auto 12px;display:flex;align-items:center;justify-content:space-between;font-family:'Inter',system-ui,sans-serif;font-size:12px;">
-  <a href="../index.html" style="color:#1F5FAF;text-decoration:none;font-weight:600;">&#8592; InspiredTax Africa</a>
-  <a href="../index.html#calculators" style="color:#6b7280;text-decoration:none;">All calculators</a>
+<nav id="itax-page-nav" class="itax-page-nav">
+  <a class="back" href="../index.html">&#8592; InspiredTax Africa</a>
+  <a class="all" href="../index.html#calculators">All calculators</a>
 </nav>
 
 <div class="itax-calc-wrap" id="itax-ret-calc">
 
   <!-- Header -->
   <div class="itax-header">
-    <div class="itax-header-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+    <img class="itax-header-mark" src="../assets/brand/mark-dark.png" alt="InspiredTax R monogram" width="34" height="46">
     <div class="itax-header-text">
       <div class="itax-header-title">Retirement Fund Contributions — s11F Deduction Calculator</div>
       <div class="itax-header-sub">Pension · Provident · Retirement Annuity</div>
     </div>
     <div class="itax-wordmark">
-      <span class="itax-wm-inspired">Inspired</span>
-      <span class="itax-wm-tax">Tax</span>
-      <span class="itax-wm-africa">Africa</span>
+      <span class="itax-wm-line1">Inspired<span class="wm-grad">Tax</span></span>
+      <span class="itax-wm-line2">Africa</span>
     </div>
   </div>
 
@@ -290,19 +396,19 @@
       <div class="itax-group">
         <label class="itax-label" for="ret-tax-year">Tax Year</label>
         <select class="itax-select" id="ret-tax-year" onchange="retCalc()">
-          <option value="2027" selected>2026/27 (1 Mar 2026 – 28 Feb 2027)</option>
-          <option value="2026">2025/26 (1 Mar 2025 – 28 Feb 2026)</option>
-          <option value="2025">2024/25 (1 Mar 2024 – 28 Feb 2025)</option>
-          <option value="2024">2023/24 (1 Mar 2023 – 29 Feb 2024)</option>
-          <option value="2023">2022/23 (1 Mar 2022 – 28 Feb 2023)</option>
-          <option value="2022">2021/22 (1 Mar 2021 – 28 Feb 2022)</option>
+          <option value="2027" selected>2026/27 (1 Mar 2026 &ndash; 28 Feb 2027)</option>
+          <option value="2026">2025/26 (1 Mar 2025 &ndash; 28 Feb 2026)</option>
+          <option value="2025">2024/25 (1 Mar 2024 &ndash; 28 Feb 2025)</option>
+          <option value="2024">2023/24 (1 Mar 2023 &ndash; 29 Feb 2024)</option>
+          <option value="2023">2022/23 (1 Mar 2022 &ndash; 28 Feb 2023)</option>
+          <option value="2022">2021/22 (1 Mar 2021 &ndash; 28 Feb 2022)</option>
         </select>
       </div>
     </div>
 
     <div class="itax-note info">
       <i class="fa-solid fa-circle-info" style="margin-right:6px"></i>
-      <strong>s11F rule:</strong> The allowable deduction is the <strong>lesser</strong> of (a) 27.5% of the greater of your remuneration or taxable income (excluding lump sums), or (b) the annual rand cap. Excess contributions carry forward indefinitely.
+      <strong>s11F rule:</strong> The allowable deduction is the <strong>least</strong> of (a) 27.5% of the greater of your remuneration or taxable income (excluding lump sums), (b) the annual rand cap, and (c) your taxable income before this deduction. Excess contributions carry forward indefinitely.
     </div>
 
     <!-- Income base -->
@@ -310,13 +416,13 @@
     <div class="itax-row">
       <div class="itax-group">
         <label class="itax-label" for="ret-remuneration">Remuneration (R)
-          <span title="Gross employment income per Fourth Schedule par 1 — salary, bonus, commission, allowances, fringe benefits. Excludes lump sums and severance." style="color:#7a91a8;cursor:help"> ⓘ</span>
+          <span title="Gross employment income per Fourth Schedule par 1 — salary, bonus, commission, allowances, fringe benefits. Excludes lump sums and severance." style="color:var(--tx3);cursor:help"> &#9432;</span>
         </label>
         <input type="number" class="itax-input mono" id="ret-remuneration" placeholder="0" min="0" step="1" oninput="retCalc()">
       </div>
       <div class="itax-group">
         <label class="itax-label" for="ret-taxable-income">Taxable Income before s11F (R)
-          <span title="If you have business, rental or investment income in addition to employment income, enter your taxable income (before this s11F deduction). The calculator uses the higher of remuneration or taxable income." style="color:#7a91a8;cursor:help"> ⓘ</span>
+          <span title="If you have business, rental or investment income in addition to employment income, enter your taxable income (before this s11F deduction). The 27.5% test uses the higher of remuneration or taxable income, and the deduction can never exceed this taxable income (s11F(2)(c))." style="color:var(--tx3);cursor:help"> &#9432;</span>
         </label>
         <input type="number" class="itax-input mono" id="ret-taxable-income" placeholder="0" min="0" step="1" oninput="retCalc()">
       </div>
@@ -325,7 +431,9 @@
     <!-- Prior year excess -->
     <div class="itax-row single">
       <div class="itax-group">
-        <label class="itax-label" for="ret-py-excess">Prior Year Disallowed Excess Carried Forward (R)</label>
+        <label class="itax-label" for="ret-py-excess">Prior Year Disallowed Excess Carried Forward (R)
+          <span title="Contributions disallowed in earlier years under s11F(3). Treated as a current-year contribution and subject to this year's cap — it does not stack on top of the cap." style="color:var(--tx3);cursor:help"> &#9432;</span>
+        </label>
         <input type="number" class="itax-input mono" id="ret-py-excess" placeholder="0" min="0" step="1" oninput="retCalc()">
       </div>
     </div>
@@ -372,6 +480,7 @@
     <!-- Results -->
     <div class="itax-results" id="ret-results">
       <div class="itax-results-title"><i class="fa-solid fa-chart-simple"></i> s11F Deduction Result</div>
+      <div class="itax-result-box" id="ret-result-box"></div>
       <div class="itax-stat-row" id="ret-stat-row"></div>
       <div id="ret-sum-lines" style="margin-bottom:14px"></div>
       <div id="ret-flags" class="itax-flag-area"></div>
@@ -382,13 +491,13 @@
   <!-- Footer -->
   <div class="itax-footer">
     <span>For the purpose of completing ITR12 / provisional tax. Results are indicative — verify against your tax return.</span>
-    <a href="https://www.inspiredtaxafrica.co.za" target="_blank">inspiredtaxafrica.co.za</a>
+    <a href="https://inspiredtax.co.za" target="_blank" rel="noopener">inspiredtax.co.za</a>
   </div>
 
 </div><!-- /wrap -->
 
 <script>
-/* ── Tax Year Data ── */
+/* ── Tax Year Data — mirrors the InspiredTax app engine (TAX_YEARS / HIST_TAX) ── */
 const RET_TAX_YEARS = {
   '2027': {label:'2026/27', pct:27.5, cap:430000},
   '2026': {label:'2025/26', pct:27.5, cap:350000},
@@ -401,7 +510,7 @@ const RET_TAX_YEARS = {
 /* ── Helpers ── */
 function retFmt(n) {
   if (n === undefined || n === null || isNaN(n)) return 'R 0';
-  return 'R\u00a0' + Math.round(n).toLocaleString('en-ZA');
+  return 'R ' + Math.round(n).toLocaleString('en-ZA');
 }
 function retGv(id) {
   const el = document.getElementById(id);
@@ -450,22 +559,34 @@ function retCalc() {
   const provident = retGv('ret-provident');
   const ra = retGv('ret-ra');
 
+  /* s11F(2)(b): 27.5% of the HIGHER of remuneration or taxable income */
   const s11FBase = Math.max(0, remuneration, taxableIncome);
   const pctTest = Math.round(s11FBase * (ty.pct / 100));
   const capTest = ty.cap;
-  const retMax = Math.min(pctTest, capTest);
+  /* s11F(2)(c): the deduction may also never exceed taxable income before
+     s11F/s18A. When only remuneration is captured, taxable income is taken
+     as the remuneration itself (pure salary case), so the limit never
+     binds below the 27.5% test. */
+  const tiCap = taxableIncome > 0 ? taxableIncome : remuneration;
+  const retMax = Math.min(pctTest, capTest, tiCap);
 
   const contributions = pension + provident + ra;
   const combined = contributions + pyExcess;
   const allowed = Math.min(combined, retMax);
   const excess = Math.max(0, combined - allowed);
+  const tiCapBinds = tiCap < Math.min(pctTest, capTest);
+
+  /* ── Result box ── */
+  document.getElementById('ret-result-box').innerHTML =
+    '<div class="itax-result-big">' + retFmt(allowed) + '</div>'
+    + '<div class="itax-result-sub">Allowable retirement deduction — s11F (' + ty.label + ')</div>';
 
   /* ── Stat cards ── */
   const statRow = document.getElementById('ret-stat-row');
   statRow.innerHTML =
     '<div class="itax-stat">'
-      + '<div class="itax-stat-val green">' + retFmt(allowed) + '</div>'
-      + '<div class="itax-stat-lbl">Allowable Deduction</div>'
+      + '<div class="itax-stat-val">' + retFmt(contributions) + '</div>'
+      + '<div class="itax-stat-lbl">Contributions</div>'
     + '</div>'
     + '<div class="itax-stat">'
       + '<div class="itax-stat-val">' + retFmt(retMax) + '</div>'
@@ -479,9 +600,12 @@ function retCalc() {
   /* ── Sum lines ── */
   let sumLines =
     '<div class="itax-sum-line"><span class="lbl">Income base used (max of remuneration / taxable income)</span><span class="val">' + retFmt(s11FBase) + '</span></div>'
-    + '<div class="itax-sum-line"><span class="lbl">27.5% percentage test</span><span class="val">' + retFmt(pctTest) + '</span></div>'
-    + '<div class="itax-sum-line"><span class="lbl">Annual rand cap (' + ty.label + ')</span><span class="val">' + retFmt(capTest) + '</span></div>'
-    + '<div class="itax-sum-line"><span class="lbl">Effective cap (lesser of above)</span><span class="val">' + retFmt(retMax) + '</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">' + ty.pct + '% percentage test — s11F(2)(b)</span><span class="val">' + retFmt(pctTest) + '</span></div>'
+    + '<div class="itax-sum-line"><span class="lbl">Annual rand cap (' + ty.label + ')</span><span class="val">' + retFmt(capTest) + '</span></div>';
+  if (taxableIncome > 0) {
+    sumLines += '<div class="itax-sum-line"><span class="lbl">Taxable income limit — s11F(2)(c)</span><span class="val">' + retFmt(tiCap) + '</span></div>';
+  }
+  sumLines += '<div class="itax-sum-line"><span class="lbl">Effective cap (least of the above)</span><span class="val">' + retFmt(retMax) + '</span></div>'
     + '<div class="itax-sum-line"><span class="lbl">Current year contributions</span><span class="val">' + retFmt(contributions) + '</span></div>';
   if (pyExcess > 0) {
     sumLines += '<div class="itax-sum-line"><span class="lbl">Prior year excess (subject to cap)</span><span class="val">' + retFmt(pyExcess) + '</span></div>'
@@ -489,7 +613,7 @@ function retCalc() {
   }
   sumLines += '<div class="itax-sum-line total"><span class="lbl">Allowable deduction (s11F)</span><span class="val">' + retFmt(allowed) + '</span></div>';
   if (excess > 0) {
-    sumLines += '<div class="itax-sum-line"><span class="lbl" style="color:#f0b800">Excess disallowed — carried forward</span><span class="val" style="color:#f0b800">' + retFmt(excess) + '</span></div>';
+    sumLines += '<div class="itax-sum-line"><span class="lbl" style="color:var(--wa)">Excess disallowed — carried forward</span><span class="val" style="color:var(--wa)">' + retFmt(excess) + '</span></div>';
   }
   document.getElementById('ret-sum-lines').innerHTML = sumLines;
 
@@ -507,6 +631,10 @@ function retCalc() {
     }
   }
 
+  if (tiCapBinds && combined > retMax) {
+    flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-info" style="margin-right:5px"></i><strong>s11F(2)(c) limit applied:</strong> your taxable income before s11F (' + retFmt(tiCap) + ') is lower than the 27.5% test, so the deduction is limited to it. The balance carries forward.</div>';
+  }
+
   if (excess > 0) {
     flags += '<div class="itax-note warn"><i class="fa-solid fa-circle-exclamation" style="margin-right:5px"></i><strong>Audit risk:</strong> ' + retFmt(excess) + ' is disallowed (over cap) and carries forward. Ensure this is tracked correctly on your ITR12 in future years.</div>';
   }
@@ -521,9 +649,9 @@ function retCalc() {
 }
 </script>
 
-<footer id="itax-page-footer" style="max-width:680px;width:100%;margin:14px auto 0;text-align:center;font-family:'Inter',system-ui,sans-serif;font-size:11px;color:#9ca3af;">
+<footer id="itax-page-footer" class="itax-page-footer">
   Results are indicative only. Verify with a registered tax practitioner before submitting to SARS. &mdash;
-  <a href="../index.html" style="color:#1F5FAF;text-decoration:none;font-weight:600;">InspiredTax Africa</a>
+  <a href="../index.html">InspiredTax Africa</a>
 </footer>
 
 <script>
