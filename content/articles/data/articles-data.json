@@ -1,10 +1,24 @@
 {
   "articles": [
     {
+      "id": "tax-filing-season-2026-provisional-taxpayers",
+      "slug": "tax-filing-season-2026-provisional-taxpayers",
+      "title": "Filing Season 2026: What Provisional Taxpayers Need to Know Before Touching Their ITR12",
+      "description": "Filing season is open \u2014 but if you're a provisional taxpayer, the rules, deadlines, and risks are different. What to gather, why auto-assessments don't apply to you, and how your ITR12 reconciles with the IRP6 payments you've already made.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-07-28",
+      "featured": true,
+      "readTime": "8 min read",
+      "heroColor": "navy-light",
+      "heroText": "Filing Season"
+    },
+    {
       "id": "vehicle-travel-expenses-south-africa",
       "slug": "vehicle-travel-expenses-south-africa",
       "title": "Vehicle and Travel Expenses: What South African Freelancers Can Actually Claim",
-      "description": "Independent contractors can deduct business travel costs under s11(a) — but the deduction lives or dies on a compliant logbook. Two calculation methods, apportionment rules, and common audit triggers explained.",
+      "description": "Independent contractors can deduct business travel costs under s11(a) \u2014 but the deduction lives or dies on a compliant logbook. Two calculation methods, apportionment rules, and common audit triggers explained.",
       "category": "Deductions",
       "categoryColor": "green",
       "author": "Allan Lombard",
