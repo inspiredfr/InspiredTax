@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "estimating-freelance-income-irp6",
+      "slug": "estimating-freelance-income-irp6",
+      "title": "How to Estimate Irregular Freelance Income for Your August IRP6",
+      "description": "Your first provisional payment for 2026/27 is due 31 August \u2014 six months into a year you can't fully see. A practical method for estimating irregular income: annualising the half-year, adjusting for known changes, and documenting the logic.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-08-07",
+      "featured": true,
+      "readTime": "8 min read",
+      "heroColor": "navy-light",
+      "heroText": "Estimating Income"
+    },
+    {
       "id": "tax-filing-season-2026-provisional-taxpayers",
       "slug": "tax-filing-season-2026-provisional-taxpayers",
       "title": "Filing Season 2026: What Provisional Taxpayers Need to Know Before Touching Their ITR12",

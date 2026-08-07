@@ -91,7 +91,7 @@
   <!-- Article index, FAQs, Guide, Privacy -->
   <url>
     <loc>https://inspiredtax.co.za/articles/index.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -134,6 +134,13 @@
   <url>
     <loc>https://inspiredtax.co.za/articles/tax-filing-season-2026-provisional-taxpayers.html</loc>
     <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/articles/estimating-freelance-income-irp6.html</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
