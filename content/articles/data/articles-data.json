@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "common-irp6-mistakes",
+      "slug": "common-irp6-mistakes",
+      "title": "Seven IRP6 Mistakes That Cost Provisional Taxpayers Money",
+      "description": "With the 31 August deadline approaching, these are the recurring IRP6 errors we see \u2014 from ignoring the pre-populated basic amount's staleness to forgetting PAYE credits \u2014 and what each one costs in penalties, interest, or overpaid tax.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-08-17",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "navy-light",
+      "heroText": "IRP6 Pitfalls"
+    },
+    {
       "id": "estimating-freelance-income-irp6",
       "slug": "estimating-freelance-income-irp6",
       "title": "How to Estimate Irregular Freelance Income for Your August IRP6",
