@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "salaried-tax-deductions",
+      "slug": "salaried-tax-deductions",
+      "title": "Tax Deductions Salaried Employees Can Actually Claim in South Africa",
+      "description": "PAYE does not mean there is nothing to claim. The deductions and credits ordinary South African employees most often qualify for, and the documents SARS expects behind each one.",
+      "category": "Deductions",
+      "categoryColor": "green",
+      "author": "Allan Lombard",
+      "date": "2026-02-10",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "navy-light",
+      "heroText": "What Employees Can Claim"
+    },
+    {
       "id": "common-irp6-mistakes",
       "slug": "common-irp6-mistakes",
       "title": "Seven IRP6 Mistakes That Cost Provisional Taxpayers Money",
