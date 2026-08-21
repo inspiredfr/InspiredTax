@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#04060F">
+  <meta name="color-scheme" content="dark">
   <title>All Tax Articles — InspiredTax Africa</title>
   <meta name="description" content="All InspiredTax Africa articles on South African provisional tax, deductions, SARS compliance, and data privacy.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://inspiredtax.co.za/articles/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/brand/favicon-light-32.png" sizes="32x32" media="(prefers-color-scheme: light)">
   <link rel="icon" href="../assets/brand/favicon-dark-32.png" sizes="32x32" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="../assets/brand/favicon.ico">
@@ -43,6 +45,7 @@
         <span></span><span></span><span></span>
       </button>
     </div>
+    <div class="nav-progress" aria-hidden="true"></div>
   </nav>
   <div id="nav-panel" class="nav-panel">
     <a href="../index.html#calculators">Calculators</a>
@@ -55,7 +58,7 @@
 
   <!-- PAGE HEAD -->
   <header class="band-dark dotgrid page-head">
-    <div class="glow" style="width:440px;height:440px;top:-180px;left:-120px;background:#0B52DA;opacity:.4"></div>
+    <div class="bloom-head" aria-hidden="true"></div>
     <div class="wrap" style="position:relative;z-index:1">
       <span class="kicker" style="color:var(--cyan)">Insights</span>
       <h1>Tax insights & <span class="grad-text">articles</span></h1>
@@ -177,8 +180,19 @@
             <span class="meta">8 min read</span>
           </div>
         </a>
-        <a class="card" href="paragraph-20-threshold.html" data-reveal data-reveal-delay="80">
+        <a class="card" href="salaried-tax-deductions.html" data-reveal data-reveal-delay="80">
           <div class="cover cover-c">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span class="tag">Deductions</span>
+          </div>
+          <div class="card-body">
+            <h3>Tax Deductions Salaried Employees Can Actually Claim in South Africa</h3>
+            <p class="desc">PAYE does not mean there is nothing to claim. The deductions and credits ordinary South African employees most often qualify for, and the documents SARS expects behind each one.</p>
+            <span class="meta">7 min read</span>
+          </div>
+        </a>
+        <a class="card" href="paragraph-20-threshold.html" data-reveal data-reveal-delay="160">
+          <div class="cover cover-d">
             <svg fill="none" viewBox="0 0 24 24" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             <span class="tag">Compliance</span>
           </div>
@@ -188,8 +202,8 @@
             <span class="meta">10 min read</span>
           </div>
         </a>
-        <a class="card" href="offline-first-security.html" data-reveal data-reveal-delay="160">
-          <div class="cover cover-d">
+        <a class="card" href="offline-first-security.html" data-reveal>
+          <div class="cover cover-a">
             <svg fill="none" viewBox="0 0 24 24" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             <span class="tag">Technology</span>
           </div>

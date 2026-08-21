@@ -66,7 +66,10 @@ def to_html(text):
         return s
 
     for line in lines:
-        if line.startswith('### '):
+        if line.startswith('> '):
+            close_lists()
+            out.append(f'<blockquote>{inline(line[2:])}</blockquote>')
+        elif line.startswith('### '):
             close_lists()
             out.append(f'<h3>{inline(line[4:])}</h3>')
         elif line.startswith('## '):
@@ -167,17 +170,21 @@ def build_articles():
     {{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{faq_items_schema}]}}
     </script>'''
 
+            chevron = ('<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">'
+                       '<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>')
             faq_html_items = ''.join(
-                f'''<div class="border-b border-gray-200 py-4">
-                        <h3 class="font-bold text-navy text-base mb-2">{f["q"]}</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">{f["a"]}</p>
-                    </div>'''
+                f'''
+            <details class="faq">
+              <summary>{f["q"]}{chevron}</summary>
+              <div class="faq-body"><p>{f["a"]}</p></div>
+            </details>'''
                 for f in faqs
             )
-            faq_html = f'''<div class="mt-10 pt-8 border-t border-gray-200">
-                    <h2 class="text-xl font-bold text-navy mb-4">Frequently Asked Questions</h2>
-                    {faq_html_items}
-                </div>'''
+            faq_html = f'''<section class="article-faq" aria-labelledby="article-faq-title">
+            <h2 id="article-faq-title">Frequently asked questions</h2>
+            <div class="faq-list">{faq_html_items}
+            </div>
+          </section>'''
         else:
             faq_schema = ''
             faq_html = ''
