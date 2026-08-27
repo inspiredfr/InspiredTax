@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "irp6-deadline-checklist-august",
+      "slug": "irp6-deadline-checklist-august",
+      "title": "The Final Stretch: Your 31 August IRP6 Checklist",
+      "description": "The first 2026/27 provisional payment is due Monday 31 August. A step-by-step run-through for the final days \u2014 estimate, submission, payment clearance, and the proof you keep \u2014 so nothing slips on deadline day.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-08-27",
+      "featured": true,
+      "readTime": "6 min read",
+      "heroColor": "navy-light",
+      "heroText": "Deadline Week"
+    },
+    {
       "id": "salaried-tax-deductions",
       "slug": "salaried-tax-deductions",
       "title": "Tax Deductions Salaried Employees Can Actually Claim in South Africa",

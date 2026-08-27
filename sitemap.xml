@@ -91,7 +91,7 @@
   <!-- Article index, FAQs, Guide, Privacy -->
   <url>
     <loc>https://inspiredtax.co.za/articles/index.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -155,6 +155,13 @@
   <url>
     <loc>https://inspiredtax.co.za/articles/salaried-tax-deductions.html</loc>
     <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/articles/irp6-deadline-checklist-august.html</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
