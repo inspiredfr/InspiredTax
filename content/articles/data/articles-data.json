@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "missed-irp6-deadline-what-now",
+      "slug": "missed-irp6-deadline-what-now",
+      "title": "Missed the August IRP6 Deadline? Penalties, Interest, and How to Limit the Damage",
+      "description": "The 31 August deadline has passed. If your first provisional payment didn't happen \u2014 or didn't clear in time \u2014 here's exactly what it costs, what to do in the next 48 hours, and when a penalty remission request is worth making.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-09-06",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "navy-light",
+      "heroText": "After the Deadline"
+    },
+    {
       "id": "irp6-deadline-checklist-august",
       "slug": "irp6-deadline-checklist-august",
       "title": "The Final Stretch: Your 31 August IRP6 Checklist",
