@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "voluntary-third-provisional-payment",
+      "slug": "voluntary-third-provisional-payment",
+      "title": "The Voluntary Third Provisional Payment: Who Should Top Up Before 30 September",
+      "description": "The optional \"third\" provisional payment for the 2025/26 tax year is due by 30 September 2026. It exists for one reason \u2014 stopping section 89quat interest on an underpaid year. How to work out whether topping up saves you money.",
+      "category": "Tax Planning",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-09-16",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "navy-light",
+      "heroText": "The Top-Up"
+    },
+    {
       "id": "missed-irp6-deadline-what-now",
       "slug": "missed-irp6-deadline-what-now",
       "title": "Missed the August IRP6 Deadline? Penalties, Interest, and How to Limit the Damage",
