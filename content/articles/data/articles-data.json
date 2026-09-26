@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "freelancer-record-keeping-sars",
+      "slug": "freelancer-record-keeping-sars",
+      "title": "Record-Keeping for Freelancers: What SARS Expects You to Keep for Five Years",
+      "description": "Every deduction you claim is only as strong as the record behind it. What the Tax Administration Act actually requires, the documents that decide verifications, and a filing system that takes 15 minutes a month.",
+      "category": "Compliance",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-09-26",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "navy-light",
+      "heroText": "Records & Proof"
+    },
+    {
       "id": "voluntary-third-provisional-payment",
       "slug": "voluntary-third-provisional-payment",
       "title": "The Voluntary Third Provisional Payment: Who Should Top Up Before 30 September",
