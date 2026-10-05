@@ -7,7 +7,7 @@ AUTHOR: Allan Lombard
 KEYWORDS: how to submit IRP6, IRP6 South Africa, IRP6 eFiling, provisional tax August deadline, period 1 provisional tax, how to calculate provisional tax, SARS eFiling provisional tax
 FAQ: What is an IRP6 form in South Africa?|The IRP6 is the SARS return used to declare your provisional tax estimate and make payment. It is submitted twice a year — at the end of August (Period 1) and at the end of February (Period 2) — via SARS eFiling.
 FAQ: What is the provisional tax deadline for August in South Africa?|The first provisional tax return (IRP6 – Period 1) must be submitted and paid by 31 August each year. Late submission results in a 20% penalty on the tax liability for that period.
-FAQ: Do I need an accountant to submit my IRP6?|No. SARS eFiling allows you to submit your IRP6 yourself. However, having an accurate calculation of your taxable income and deductions before you log in is essential. InspiredTax Africa helps you prepare this calculation privately and accurately before submission.
+FAQ: Do I need an accountant to submit my IRP6?|No. SARS eFiling allows you to submit your IRP6 yourself. However, having an accurate calculation of your taxable income and deductions before you log in is essential. InspiredTax helps you prepare this calculation privately and accurately before submission.
 FAQ: What happens if I submit a zero IRP6?|If you submit an IRP6 with zero estimated income, SARS will use your prior year's taxable income as the basis and charge provisional tax accordingly. You may also face a 20% penalty for underestimation if your actual income is significantly higher.
 FAQ: Can I pay provisional tax without submitting an IRP6?|No. The IRP6 return must be submitted first, and payment follows from the declared estimate. Payment without a return, or a return without matching payment, creates an administrative problem with SARS that can attract penalties.
 
@@ -179,4 +179,4 @@ Once your Period 1 IRP6 is submitted and paid, your provisional tax obligations 
 
 The best time to review your Period 2 estimate is November or December, when you have a clearer picture of actual full-year income. This avoids the scramble in February and allows time for any additional retirement contributions before the Period 2 payment.
 
-InspiredTax Africa is built to support this entire cycle — calculating provisional tax accurately, tracking your liability throughout the year, and helping you arrive at each deadline fully prepared.
+InspiredTax is built to support this entire cycle — calculating provisional tax accurately, tracking your liability throughout the year, and helping you arrive at each deadline fully prepared.

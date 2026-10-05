@@ -1,5 +1,5 @@
 /* ============================================================================
-   InspiredTax Africa — motion & behaviour layer
+   InspiredTax — motion & behaviour layer
    No dependencies. Everything gated on IntersectionObserver + reduced-motion.
    ========================================================================= */
 (function () {

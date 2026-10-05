@@ -165,4 +165,4 @@ The line is crossed when transactions are structured purely to create a tax bene
 
 The most effective time to implement these strategies is **before your next provisional tax payment**, not at filing time. Decisions made during the year — particularly around retirement contributions and expense documentation — have a direct impact on your liability.
 
-InspiredTax Africa is purpose-built to help South African freelancers and contractors model these deductions, calculate their provisional tax accurately, and plan their tax position year-round — completely offline and private.
+InspiredTax is purpose-built to help South African freelancers and contractors model these deductions, calculate their provisional tax accurately, and plan their tax position year-round — completely offline and private.

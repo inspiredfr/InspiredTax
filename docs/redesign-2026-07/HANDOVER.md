@@ -1,4 +1,4 @@
-# InspiredTax Africa — Landing Site Redesign: Implementation Handover
+# InspiredTax — Landing Site Redesign: Implementation Handover
 
 Audience: the implementing AI (Sonnet/Opus). This document + DECISIONS.md is the complete
 instruction set. Follow it exactly; where it is silent, choose the option that looks most
@@ -168,7 +168,7 @@ replace with the official badge `<a>` in one edit — leave a `<!-- SWAP AT LAUN
 
 **Footer.** Dark. 3 columns (stack on mobile): (1) brand + one-liner + "Made in South
 Africa 🇿🇦"; (2) Explore: Calculators, Articles, Tax FAQ, App FAQ, Tax Guide; (3) Contact:
-founder@inspiredtax.co.za (mailto), Privacy. Bottom row: © 2026 InspiredTax Africa ·
+founder@inspiredtax.co.za (mailto), Privacy. Bottom row: © 2026 InspiredTax ·
 "Information on this site is general guidance, not tax advice." **Every link must resolve** —
 no `#` stubs, no social icons for accounts that don't exist.
 

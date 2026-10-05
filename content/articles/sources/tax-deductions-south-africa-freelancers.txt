@@ -245,4 +245,4 @@ Before each provisional tax payment and before filing your annual return, work t
 - **Medical aid**: Are my credits and additional expense credits correctly calculated?
 - **Donations**: Do I have valid Section 18A receipts for any qualifying donations?
 
-InspiredTax Africa is built to help you track these deductions throughout the year, calculate your provisional tax liability accurately, and arrive at filing time with a complete picture of your tax position — without sharing your financial data with any external server.
+InspiredTax is built to help you track these deductions throughout the year, calculate your provisional tax liability accurately, and arrive at filing time with a complete picture of your tax position — without sharing your financial data with any external server.
