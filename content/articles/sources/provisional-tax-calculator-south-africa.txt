@@ -144,7 +144,7 @@ Generic calculators don't account for South Africa's specific tax mechanics:
 - The impact of prior-year PAYE on provisional obligations
 - Multi-source income that crosses provisional tax thresholds
 
-InspiredTax Africa is purpose-built to handle all of these. It calculates your provisional tax liability accurately, models different deduction scenarios, and shows you exactly what to pay — completely offline, with no financial data leaving your device.
+InspiredTax is purpose-built to handle all of these. It calculates your provisional tax liability accurately, models different deduction scenarios, and shows you exactly what to pay — completely offline, with no financial data leaving your device.
 
 ## When to Use the Provisional Tax Calculator
 
@@ -175,4 +175,4 @@ The most effective use of a provisional tax calculator is continuous — not jus
 - Ensure Period 2 estimate is within 80% of actual liability
 - Consider an optional third payment to settle any shortfall
 
-InspiredTax Africa automates every step of this process, giving South African freelancers and contractors a clear, accurate provisional tax calculation throughout the year.
+InspiredTax automates every step of this process, giving South African freelancers and contractors a clear, accurate provisional tax calculation throughout the year.
