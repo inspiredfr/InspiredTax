@@ -91,7 +91,7 @@
   <!-- Article index, FAQs, Guide, Privacy -->
   <url>
     <loc>https://inspiredtax.co.za/articles/index.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -183,6 +183,13 @@
   <url>
     <loc>https://inspiredtax.co.za/articles/freelancer-record-keeping-sars.html</loc>
     <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/articles/home-office-deduction-south-africa.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>

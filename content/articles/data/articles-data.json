@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "home-office-deduction-south-africa",
+      "slug": "home-office-deduction-south-africa",
+      "title": "The Home Office Deduction: How Freelancers Qualify Under Section 23(b)",
+      "description": "For most independent professionals the home office is the single largest recurring deduction \u2014 and the most commonly disallowed. The exclusive-use test, the floor-area apportionment, which costs qualify, and the CGT trade-off nobody mentions.",
+      "category": "Deductions",
+      "categoryColor": "green",
+      "author": "Allan Lombard",
+      "date": "2026-10-06",
+      "featured": true,
+      "readTime": "9 min read",
+      "heroColor": "navy-light",
+      "heroText": "Home Office"
+    },
+    {
       "id": "freelancer-record-keeping-sars",
       "slug": "freelancer-record-keeping-sars",
       "title": "Record-Keeping for Freelancers: What SARS Expects You to Keep for Five Years",
