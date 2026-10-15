@@ -4,33 +4,71 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="robots" content="noindex"/>
-<title>Install InspiredTax</title>
-<meta property="og:title" content="Install InspiredTax"/>
-<meta property="og:description" content="For invited testers: install InspiredTax on your Android phone."/>
-<meta property="og:image" content="https://inspiredtax.co.za/og-join-square.png"/>
+<title>Get InspiredTax</title>
+<meta property="og:title" content="Get InspiredTax"/>
+<meta property="og:description" content="Work out your SARS income tax on your Android phone. Your figures stay on your phone."/>
+<meta property="og:image" content="https://inspiredtax.co.za/og-join-square.png?v=3"/>
 <meta property="og:image:width" content="1000"/>
 <meta property="og:image:height" content="1000"/>
+<meta property="og:image:type" content="image/png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://inspiredtax.co.za/get/"/>
+<!--
+  /get is the one link the app shares (app repo: APP_SHARE_URL in
+  src/js/01-data.js, BACKLOG 78, DECISIONS SHARE-1) and the install page sent
+  to invited testers. Installed copies of the app keep sharing this URL, so
+  where it leads is decided HERE, not in the app.
+
+  AT PRODUCTION LAUNCH change one line below: PLAY_LIVE = true.
+  People are then forwarded straight to the Play listing; link-preview
+  crawlers (WhatsApp, Facebook) still read this page's preview card.
+  The Play listing URL itself is the same before and after launch.
+-->
+<script>
+var PLAY_LIVE = false;
+var PLAY_LISTING = "https://play.google.com/store/apps/details?id=za.co.inspiredtax.app";
+document.documentElement.className = PLAY_LIVE ? "live" : "testing";
+var isBot = /facebookexternalhit|facebookcatalog|whatsapp|twitterbot|linkedin|slackbot|telegrambot|googlebot/i.test(navigator.userAgent);
+if (PLAY_LIVE && !isBot) window.location.replace(PLAY_LISTING);
+</script>
 <style>
 body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:system-ui,sans-serif;background:#0b1220;color:#e8eef7;padding:16px;line-height:1.5}
 main{max-width:420px;width:100%}
 h1{font-size:24px;margin:0 0 4px;text-align:center}
+h2{font-size:17px;margin:24px 0 8px}
 .sub{margin:0 0 20px;opacity:.7;font-size:14px;text-align:center}
 ol{margin:0;padding-left:22px}
 li{margin-bottom:10px}
 .btn{display:block;margin:20px 0 8px;padding:14px 22px;border-radius:12px;background:#1a73e8;color:#fff;font-weight:600;text-decoration:none;text-align:center}
 .alt{display:block;text-align:center;font-size:14px;color:#8ab4f8}
+.card{padding:14px 16px;border-radius:12px;background:#141d2e;font-size:15px}
+.card p{margin:0 0 8px}
+.card .btn{margin:12px 0 0}
 .help{margin-top:24px;padding:14px 16px;border-radius:12px;background:#141d2e;font-size:14px}
 .help p{margin:0 0 8px}
 .help p:last-child{margin:0}
 .help a{color:#8ab4f8}
+.live .testing-only{display:none}
+.live-only{display:none}
+.live .live-only{display:block}
 </style>
 </head>
 <body>
 <main>
-<h1>Install InspiredTax</h1>
-<p class="sub">For invited testers · Android only</p>
+<h1>Get InspiredTax</h1>
+<p class="sub">South African income tax on your phone · Android</p>
+
+<div class="live-only">
+<a class="btn" href="https://play.google.com/store/apps/details?id=za.co.inspiredtax.app">Get it on Google Play</a>
+</div>
+
+<div class="testing-only">
+<div class="card">
+<p><b>No invite yet?</b> InspiredTax is in a closed test on Google Play, so you need an invite before you can install it. Send us the email your Play Store uses and we'll add you.</p>
+<a class="btn" href="/join/">Ask for an invite on WhatsApp</a>
+</div>
+
+<h2>Already invited? Install it</h2>
 <ol>
 <li>Tap the blue button below <b>on your Android phone</b>.</li>
 <li>Using more than one Google account? Check the profile picture at the top right of the Google Play page and switch to the email you sent us.</li>
@@ -42,7 +80,7 @@ li{margin-bottom:10px}
 <div class="help">
 <p><b>Seeing "App not available"?</b> You may not be activated yet. Google can take a while after you're added, so wait an hour and try again.</p>
 <p>Still stuck? <a href="https://wa.me/27748724304?text=HELP">Message us on WhatsApp</a></p>
-<p>Not a tester yet? <a href="/join/">Join here</a></p>
+</div>
 </div>
 </main>
 </body>
