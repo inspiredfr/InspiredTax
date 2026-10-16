@@ -4,11 +4,11 @@ CATEGORY: Technology
 DATE: 2026-01-15
 READ_TIME: 6 min read
 AUTHOR: Allan Lombard
-KEYWORDS: offline tax app South Africa, POPIA compliant tax software, AES-GCM-256 encryption tax data, private provisional tax calculator, secure tax planning app South Africa
+KEYWORDS: offline tax app South Africa, POPIA tax data, AES-GCM-256 encryption tax data, private provisional tax calculator, secure tax planning app South Africa
 HERO_TEXT: Data Privacy
-FAQ: Is InspiredTax POPIA compliant?|Yes. Because InspiredTax processes all calculations on your device without transmitting financial data to any remote server, there is no personal information collected or stored on our end. Your data stays on your device, which is the simplest and most robust POPIA compliance posture possible.
-FAQ: What does offline-first mean for a tax calculation app?|Offline-first means every calculation happens on your device — your income figures, deduction amounts, and tax projections never leave your phone or laptop. You get accurate results without any of the privacy exposure that comes with cloud-based tools.
-FAQ: What is AES-GCM-256 encryption and does InspiredTax use it?|AES-GCM-256 is the encryption standard used by financial institutions, government agencies, and defence organisations worldwide. It provides both confidentiality (data cannot be read without the key) and integrity verification (any tampering is detectable). InspiredTax uses it for any calculations you choose to save locally on your device.
+FAQ: Does InspiredTax send my tax data anywhere?|No. Every calculation runs on your phone and your tax figures are stored there, encrypted. We run no server. The app goes online for two things only: Google Play purchases, and a one-time Google sign-in that saves your trial start date in a hidden app folder in your own Google Drive.
+FAQ: What does offline-first mean for a tax calculation app?|Offline-first means every calculation happens on your device — your income figures, deduction amounts, and tax projections never leave your phone. You get accurate results without any of the privacy exposure that comes with cloud-based tools.
+FAQ: What is AES-GCM-256 encryption and does InspiredTax use it?|AES-GCM-256 is a widely used, well-studied encryption standard. It provides both confidentiality (data cannot be read without the key) and integrity (any tampering is detectable). InspiredTax uses it for everything you enter, with a key made from your PIN.
 
 ## The Risk Nobody Mentions About Cloud Tax Tools
 
@@ -26,24 +26,24 @@ The consequence is structural: there is nothing to intercept in transit, and not
 
 For provisional tax planning, this approach fits the actual workflow. You're estimating annual income, modelling deduction scenarios, and projecting your IRP6 payment. None of that requires a server connection. A well-built local application processes this faster than a cloud tool that requires a round-trip, and it does so entirely within your control.
 
-## AES-GCM-256 for Saved Calculations
+## AES-GCM-256 for Everything You Enter
 
-If you choose to save your calculations, InspiredTax encrypts them using AES-GCM-256. This is the same standard used by banks, government departments, and intelligence agencies — not because it's fashionable, but because it has been subjected to decades of cryptographic analysis and remains secure.
+InspiredTax encrypts everything you enter with AES-GCM-256, using a key made from your PIN. The key is held in memory only while the app is unlocked, and the app locks itself after 5 minutes. AES-GCM is widely used because it has had decades of cryptographic analysis and remains secure.
 
 AES-GCM-256 provides two guarantees simultaneously. Confidentiality: the contents of your file cannot be read without the correct encryption key. Integrity: if someone tampers with the encrypted file, the tampering is detectable when you next open it. This combination is what makes it suitable for sensitive financial data at rest.
 
-In practice, even if someone gains access to the storage on your device — through theft, malware, or a shared machine — they cannot read your tax calculations without the key. The file is genuinely protected, not just hidden.
+In practice, even if someone gains access to the storage on your device — through theft, malware, or a shared machine — they cannot read your tax calculations without your PIN. A longer PIN makes that much harder. The data is protected, not just hidden.
 
 ## POPIA and Architecture
 
 South Africa's Protection of Personal Information Act places obligations on any organisation that collects, processes, or stores personal information. Financial data falls clearly within scope. For cloud-based tax tools serving South African users, this means data retention policies, breach notification procedures, and a designated responsible party.
 
-InspiredTax's architecture makes most of this redundant. When your data never leaves your device, there is nothing for us to report if a breach occurs on our infrastructure — because your financial information doesn't exist in our infrastructure. This isn't a policy position; it's a structural one.
+InspiredTax's architecture changes what is at stake. When your tax figures never leave your device, there is nothing of yours on our infrastructure to breach — because we run none. The app's only network use is Google Play billing and a trial start date in your own Google Drive; the privacy policy sets out exactly what each one sees.
 
 ## An Honest Note on Limitations
 
 Offline-first creates friction in specific workflows. If you need your calculations across multiple devices, or want to share projections with an accountant in a collaborative environment, your data living on one device becomes a constraint. It's the trade-off of the architecture.
 
-The practical solution is selective export — sharing a summary or specific figures rather than the raw file. You decide what leaves your device and when. For most people doing their own provisional tax planning, this limitation never materialises. Your calculations live on the device where you do the work, and they stay there.
+The practical solution is export: an encrypted backup file to move to a new phone, or the ITR12 figures or a CSV for your accountant. You decide what leaves your device and when. For most people doing their own provisional tax planning, this limitation never materialises. Your calculations live on the device where you do the work, and they stay there.
 
 The alternative — putting all your financial data through someone else's server for convenience — is a trade-off too, just one that runs in the other direction.
