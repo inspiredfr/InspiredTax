@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "medical-aid-credits-self-employed",
+      "slug": "medical-aid-credits-self-employed",
+      "title": "Medical Aid Credits for the Self-Employed: Sections 6A and 6B Explained",
+      "description": "Freelancers pay their own medical scheme contributions \u2014 and the tax system gives some of that back through two credits that work nothing like deductions. How the s6A and s6B credits are calculated, and why your IRP6 estimates should include them.",
+      "category": "Deductions",
+      "categoryColor": "green",
+      "author": "Allan Lombard",
+      "date": "2026-10-16",
+      "featured": true,
+      "readTime": "8 min read",
+      "heroColor": "navy-light",
+      "heroText": "Medical Credits"
+    },
+    {
       "id": "home-office-deduction-south-africa",
       "slug": "home-office-deduction-south-africa",
       "title": "The Home Office Deduction: How Freelancers Qualify Under Section 23(b)",
