@@ -343,6 +343,15 @@
         c.style.strokeDashoffset = String(201 * (1 - pct / 100));
       });
       runCounts(scr);
+      /* Real app clips: only the screen on show plays, from its first frame,
+         so its figures count up as it appears. Reduced motion keeps the poster. */
+      $$('video', root).forEach(function (v) { if (!scr.contains(v)) v.pause(); });
+      var clip = $('video', scr);
+      if (clip && !reduced) {
+        try { clip.currentTime = 0; } catch (e) {}
+        var p = clip.play();
+        if (p && p.catch) p.catch(function () {});
+      }
     }
 
     function show(i, force) {
