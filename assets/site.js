@@ -496,15 +496,17 @@
     var wf = $('#wf');
     if (!wf) return;
 
+    // 2026/27 brackets, primary rebate R17,820, medical credits R376 x 2 members x 12
+    // (InspiredTax_App src/js/01-data.js TAX_YEARS['2027']). Recompute every budget.
     var GROSS = 862000;
     var SET = {
       planned: {
-        rows: { ret: 180000, home: 38400, travel: 41200, gear: 22800, taxable: 579600, tax: 145523 - 17235, cred: 8736 },
-        due: 119552, saved: 107416, rate: 13.9
+        rows: { ret: 180000, home: 38400, travel: 41200, gear: 22800, taxable: 579600, tax: 143383 - 17820, cred: 9024 },
+        due: 116539, saved: 106650, rate: 13.5
       },
       unplanned: {
-        rows: { ret: 0, home: 0, travel: 0, gear: 0, taxable: 862000, tax: 252939 - 17235, cred: 8736 },
-        due: 226968, saved: 0, rate: 26.3
+        rows: { ret: 0, home: 0, travel: 0, gear: 0, taxable: 862000, tax: 250033 - 17820, cred: 9024 },
+        due: 223189, saved: 0, rate: 25.9
       }
     };
 
