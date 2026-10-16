@@ -869,3 +869,10 @@ details.faq[open] summary svg{transform:rotate(180deg)}
   .swap>i{filter:none}
   #hero-fx{display:none}
 }
+
+/* Real app captures in the phone frames: the screenshot fills the glass at its own aspect ratio. */
+.phone.real::after{display:none}
+.phone-screen.real{padding:0;min-height:0;aspect-ratio:412/915;background:#05060A}
+.phone-screen.real::before{display:none}
+.phone-screen.real .scr{inset:0;gap:0}
+.phone-screen.real .scr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
