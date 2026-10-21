@@ -7,9 +7,9 @@ AUTHOR: Allan Lombard
 KEYWORDS: second provisional tax payment February, IRP6 period 2 estimate, paragraph 20 underestimation penalty, 28 February provisional deadline, February IRP6 South Africa
 HERO_TEXT: Period Two
 COLOR: blue
-FAQ: How is the second IRP6 different from the first?|The August estimate is a mid-year forecast with no accuracy penalty attached; the February estimate is made with the year almost complete and is tested by paragraph 20 — underestimate materially and a 20% penalty applies to the shortfall. February also settles the balance of the whole year's tax, so it's usually the larger payment.
+FAQ: How is the second IRP6 different from the first?|The August estimate is a mid-year forecast with no accuracy penalty attached; the February estimate is made with the year almost complete and is tested by paragraph 20 — fall below the required minimum and a penalty of 20% of the shortfall in tax applies. February also settles the balance of the whole year's tax, so it's usually the larger payment.
 FAQ: When must the February 2027 provisional payment actually be made?|The period ends Sunday 28 February 2027. Payments must be cleared by the last business day — treat Friday 26 February 2027 as the true deadline, and authorise payment days earlier to be safe.
-FAQ: What accuracy does SARS require from the February estimate?|If your taxable income is at or below the R1.8 million threshold, your estimate is safe if it's at least the basic amount, or within 90% of actual taxable income. Above R1.8 million, the basic amount offers no protection — the estimate must come to at least 80% of actual taxable income to avoid the 20% underestimation penalty.
+FAQ: What accuracy does SARS require from the February estimate?|If your taxable income is at or below the R1.8 million threshold, your estimate is safe if it's at least the lesser of 90% of actual taxable income and the basic amount. Above R1.8 million, the basic amount offers no protection — the estimate must come to at least 80% of actual taxable income to avoid the 20% underestimation penalty.
 
 ## Two Payments, Two Different Games
 

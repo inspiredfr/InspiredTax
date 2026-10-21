@@ -6,25 +6,25 @@ READ_TIME: 7 min read
 AUTHOR: Allan Lombard
 KEYWORDS: paragraph 20 provisional tax penalty South Africa, SARS underestimation penalty 2026, R1.8 million threshold provisional tax, IRP6 underestimation penalty, second provisional tax payment SARS
 HERO_TEXT: Navigating Paragraph 20
-FAQ: What is the Paragraph 20 underestimation penalty?|Paragraph 20 of the Fourth Schedule to the Income Tax Act imposes a penalty when a provisional taxpayer's second IRP6 payment falls significantly below their actual tax liability. The penalty applies automatically based on the shortfall and the taxpayer's income bracket — no audit or intent to evade is required for it to trigger.
-FAQ: How does the R1.8 million threshold affect my provisional tax penalty in 2026/27?|Taxpayers with taxable income below R1.8 million face a more lenient accuracy requirement on their second provisional payment. Those at or above R1.8 million face stricter rules with less margin for error. The threshold applies to total taxable income from all sources, not just freelance or consulting income.
+FAQ: What is the Paragraph 20 underestimation penalty?|Paragraph 20 of the Fourth Schedule to the Income Tax Act imposes a penalty when a provisional taxpayer's second-period IRP6 estimate of taxable income is too low compared with actual taxable income. If your actual taxable income (as finally assessed) is R1.8 million or less, your second-period estimate must be at least the lesser of 90% of actual taxable income and the basic amount. Above R1.8 million, it must be at least 80% of actual taxable income, and the basic amount gives no protection. The penalty is 20% of the shortfall in tax. No audit or intent to evade is required for it to trigger.
+FAQ: How does the R1.8 million threshold affect my provisional tax penalty in 2026/27?|If actual taxable income is R1.8 million or less, the February estimate must be at least the lesser of 90% of actual taxable income and the basic amount — so an estimate at the basic amount is protected. Above R1.8 million, the estimate must be at least 80% of actual taxable income and the basic amount gives no protection. The threshold applies to total taxable income from all sources, not just freelance or consulting income.
 FAQ: Can I avoid the Paragraph 20 penalty after I've already underpaid?|Once the conditions are met at the second payment stage, the penalty cannot be reversed. However, making the optional third payment by 30 September reduces the interest that accrues on the underpaid balance between February and your final assessment. If you know by June that your second payment fell short, the third payment almost always reduces your total exposure.
 
 ## What Paragraph 20 Actually Does
 
 Most provisional taxpayers focus on whether they've paid enough tax. Paragraph 20 of the Fourth Schedule to the Income Tax Act adds a second test: did they estimate accurately enough?
 
-The provision allows SARS to impose a penalty not merely for underpaying, but specifically for underestimating. If your second IRP6 payment falls materially short of your actual tax liability — because your income estimate was too conservative — a penalty applies on the shortfall at a rate determined by your income bracket.
+The provision allows SARS to impose a penalty not merely for underpaying, but specifically for underestimating. If your second-period IRP6 estimate of taxable income falls below the required minimum, a penalty of **20% of the shortfall in tax** applies: the difference between the normal tax on the required minimum estimate and the tax on your actual estimate.
 
 This matters because the penalty is automatic. SARS does not need to allege bad faith, negligence, or an intention to understate. If the numbers trigger the provision, the penalty follows. Understanding where the bracket lines fall is therefore not academic — it directly affects how carefully you need to estimate.
 
 ## The New R1.8 Million Threshold for 2026/27
 
-The 2026/27 tax year introduces a revised taxable income threshold of **R1,800,000**, which determines which penalty bracket applies.
+For years of assessment starting on or after 1 March 2026, Budget 2026 raised the paragraph 20 threshold from R1 million to **R1,800,000**. It is measured against your **actual** taxable income as finally assessed, and decides which test your February estimate must pass.
 
-For taxpayers with taxable income below this threshold, the accuracy requirement on the second provisional payment is more lenient. The margin between your estimate and your actual income is wider before a penalty triggers, and the rate on any qualifying shortfall is lower. This reflects that smaller businesses and solo practitioners face more income uncertainty than higher-earning contractors.
+**At or below R1.8 million**, your estimate must be at least the **lesser of 90% of actual taxable income and the basic amount** (the figure pre-populated on your IRP6). In practice, an estimate at or above the basic amount is protected even if your year ran well ahead of it — and an honest estimate within 90% of actual is protected even if it is below the basic amount.
 
-At or above R1.8 million, a stricter accuracy standard applies. The margin narrows materially, and the penalty rate on any qualifying shortfall increases. Taxpayers in this bracket need to estimate with considerably more precision — a percentage miss that caused no penalty at lower income levels may now result in a meaningful charge.
+**Above R1.8 million**, your estimate must be at least **80% of actual taxable income**, and the basic amount gives no protection. The penalty rate does not change — it is 20% of the shortfall in tax on either side of the line — but the safe harbour disappears, so an estimate anchored to last year's figures can trigger a meaningful charge.
 
 ## The Threshold Applies to Total Taxable Income
 
@@ -36,11 +36,11 @@ Growth trajectories create the same exposure. A contractor who earned R1.3 milli
 
 ## Why the Second Payment Is the Critical One
 
-SARS distinguishes between first and second provisional payments in how it applies Paragraph 20. The first payment, due 31 August, is treated as a preliminary estimate — you have only five months of trading data, and SARS provides meaningful flexibility.
+Paragraph 20 tests only the second-period estimate. The first payment, due 31 August, is a preliminary estimate made with about six months of trading data, and paragraph 20 does not test it.
 
 The second payment, due 28 February, is different. Ten months of the tax year have passed. SARS expects your estimate to reflect a reasonably accurate view of your full-year income. This is where underestimation becomes expensive.
 
-If your second payment estimate falls short by enough to trigger the provision, the penalty is calculated on the difference between what you paid and what you should have paid — at the rate corresponding to your income bracket. For higher-earning contractors, this can represent a substantial addition to an already material tax bill.
+If your second payment estimate falls short by enough to trigger the provision, the penalty is 20% of the difference between the normal tax on the required minimum estimate and the tax on the estimate you submitted. For higher-earning contractors, this can represent a substantial addition to an already material tax bill.
 
 ## The Optional Third Payment
 

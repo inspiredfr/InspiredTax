@@ -8,7 +8,7 @@ KEYWORDS: provisional tax calculator South Africa, provisional tax calculator 20
 FAQ: How do I calculate provisional tax in South Africa?|Calculate your estimated taxable income for the full year. Apply the current SARS tax tables to determine gross tax. Subtract your primary rebate, medical tax credits, and any PAYE already paid. Divide the result by two for your Period 1 or Period 2 payment.
 FAQ: Who needs to pay provisional tax in South Africa?|You must pay provisional tax if you earn income not subject to PAYE — including freelance income, consulting fees, rental income, or interest above the exemption threshold. Even part-time contractors earning alongside a salary may qualify.
 FAQ: What is the provisional tax deadline in South Africa?|The first provisional tax payment (Period 1) is due at the end of August each year. The second payment (Period 2) is due at the end of February. An optional third payment can be made by 30 September after year-end.
-FAQ: What happens if I underestimate my provisional tax in South Africa?|If your second provisional tax estimate is significantly lower than your actual taxable income, SARS imposes a 20% underestimation penalty on the shortfall. For taxpayers earning above R1.8 million, stricter rules apply.
+FAQ: What happens if I underestimate my provisional tax in South Africa?|It depends on your February (second-period) estimate. If actual taxable income is R1.8 million or less, the estimate must be at least the lesser of 90% of actual taxable income and the basic amount; above R1.8 million it must be at least 80% of actual taxable income. Fall short and SARS levies a penalty of 20% of the shortfall in tax.
 FAQ: Can I use last year's income to calculate provisional tax?|Yes. SARS accepts the prior year's taxable income as a safe estimate for Period 1 without imposing an underestimation penalty. For Period 2, your estimate must be more accurate and reflect your actual year-to-date income.
 
 ## What Is Provisional Tax in South Africa?
@@ -22,7 +22,7 @@ If you earn any of the following in the 2026/27 tax year, you are likely a provi
 - Freelance or consulting fees
 - Contract income billed directly to clients
 - Rental income from property
-- Interest income above R30,900 (for those under 65)
+- Interest income above the annual exemption (R23,800 under 65, R34,500 from 65) — unless your only non-PAYE income is interest, dividends or rent that leaves taxable income at R30,000 or less
 - Business income from a sole proprietorship or partnership
 - Directors' fees from a company
 
@@ -60,22 +60,22 @@ Apply the current year's tax tables to your estimated taxable income to calculat
 
 **2026/27 Individual Tax Brackets:**
 
-- R0 – R237,100: 18%
-- R237,101 – R370,500: R42,678 + 26% of excess above R237,100
-- R370,501 – R512,800: R77,362 + 31% of excess above R370,500
-- R512,801 – R673,000: R121,475 + 36% of excess above R512,800
-- R673,001 – R857,900: R179,147 + 39% of excess above R673,000
-- R857,901 – R1,817,000: R251,258 + 41% of excess above R857,900
-- Above R1,817,000: R644,489 + 45% of excess above R1,817,000
+- R0 – R245,100: 18%
+- R245,101 – R383,100: R44,118 + 26% of excess above R245,100
+- R383,101 – R530,200: R79,998 + 31% of excess above R383,100
+- R530,201 – R695,800: R125,599 + 36% of excess above R530,200
+- R695,801 – R887,000: R185,215 + 39% of excess above R695,800
+- R887,001 – R1,878,600: R259,783 + 41% of excess above R887,000
+- Above R1,878,600: R666,339 + 45% of excess above R1,878,600
 
 **Step 4: Subtract rebates and credits**
 
 From your gross tax, deduct:
 
-- **Primary rebate**: R17,235 (all taxpayers under 65)
-- **Secondary rebate**: R9,444 (taxpayers aged 65–74)
-- **Tertiary rebate**: R3,145 (taxpayers aged 75 and above)
-- **Medical aid tax credits**: R364/month per main member and first dependant, R246/month per additional dependant
+- **Primary rebate**: R17,820 (all taxpayers)
+- **Secondary rebate**: an extra R9,765 (taxpayers aged 65 and above)
+- **Tertiary rebate**: an extra R3,249 (taxpayers aged 75 and above)
+- **Medical aid tax credits**: R376/month per main member and first dependant, R254/month per additional dependant
 - **PAYE already paid** (if you also receive a salary with PAYE deduction)
 
 The result is your **estimated annual tax liability**.
@@ -90,31 +90,31 @@ Divide your estimated annual tax liability by two. This is your **Period 1 or Pe
 
 **Income estimate for 2026/27:**
 - Consulting fees: R850,000
-- Interest income: R12,000
-- Total gross income: R862,000
+- Interest income: R12,000 (fully exempt — below the R23,800 annual interest exemption, so it adds nothing to taxable income)
+- Income for tax purposes: R850,000
 
 **Deductions:**
-- s11F retirement annuity (27.5% of R862,000 = R237,050, within R430,000 cap): -R180,000 (actual contribution)
+- s11F retirement annuity (27.5% of R850,000 = R233,750, within R430,000 cap): -R180,000 (actual contribution)
 - Home office (10% of R60,000 annual costs): -R6,000
 - Professional subscriptions and software: -R18,000
 - Business travel: -R12,000
 
-**Estimated taxable income:** R646,000
+**Estimated taxable income:** R634,000
 
 **Gross tax (2026/27 tables):**
-- Tax on R512,800: R121,475
-- 36% on remaining R133,200 (R646,000 – R512,800): R47,952
-- Gross tax: **R169,427**
+- Tax on R530,200: R125,599
+- 36% on remaining R103,800 (R634,000 – R530,200): R37,368
+- Gross tax: **R162,967**
 
 **Deduct rebates and credits:**
-- Primary rebate: -R17,235
-- Medical aid credit (R364 × 12): -R4,368
+- Primary rebate: -R17,820
+- Medical aid credit (R376 × 12): -R4,512
 
-**Annual tax liability: R147,824**
+**Annual tax liability: R140,635**
 
-**Period 1 provisional tax payment: R73,912**
+**Period 1 provisional tax payment: R70,318**
 
-Without the retirement annuity contribution, this taxpayer's liability would have been approximately R217,000 per year — a difference of R69,000. That's the power of applying the s11F deduction before calculating provisional tax.
+Without the retirement annuity contribution, this taxpayer's liability would have been approximately R209,000 per year — a difference of about R68,000. That's the power of applying the s11F deduction before calculating provisional tax.
 
 ## The Paragraph 20 Underestimation Penalty: What Your Provisional Tax Calculator Must Account For
 
@@ -122,16 +122,17 @@ South Africa's provisional tax system penalises significant underestimation of t
 
 **How the penalty works:**
 
-If your second provisional tax payment (Period 2, due end of February) is based on an estimate significantly lower than your actual taxable income, SARS applies a **20% penalty on the tax shortfall**.
+The test applies to your second-period estimate (Period 2, due end of February), measured against your actual taxable income once assessed.
 
-**The R1.8 million threshold:**
+**The R1.8 million threshold (2026/27 onward):**
 
-For taxpayers with taxable income above R1,817,000, stricter rules apply. The acceptable margin for estimation error is reduced, and the penalty applies at lower levels of underestimation.
+If your actual taxable income for the year (as finally assessed) is **R1.8 million or less**, your second-period (February) estimate must be at least the **lesser of 90% of actual taxable income and the basic amount** shown on your IRP6. If actual taxable income is **above R1.8 million**, the estimate must be at least **80% of actual taxable income** — the basic amount gives no protection. Fall short and SARS levies a penalty of **20% of the shortfall in tax**: the difference between the normal tax on the required minimum estimate and the tax on your estimate.
 
 **Protecting yourself:**
 
 - For Period 1 (August): SARS accepts the prior year's assessed income without penalty
-- For Period 2 (February): Your estimate must be at least 80% of your actual liability (for income below R1.8m)
+- For Period 2 (February), actual taxable income R1.8m or less: estimate at least the lesser of 90% of actual taxable income and the basic amount
+- For Period 2 (February), actual taxable income above R1.8m: estimate at least 80% of actual taxable income
 - The optional third payment (by 30 September) settles remaining liability at lower cost than the penalty
 
 ## Why You Need a Provisional Tax Calculator Built for South Africa
@@ -172,7 +173,7 @@ The most effective use of a provisional tax calculator is continuous — not jus
 - Apply 2026/27 tax tables to estimated taxable income
 - Subtract primary rebate, medical credits, and any PAYE
 - Divide annual liability by two for each provisional payment
-- Ensure Period 2 estimate is within 80% of actual liability
+- Ensure the Period 2 estimate meets the paragraph 20 test (R1.8m or less: lesser of 90% of actual and the basic amount; above R1.8m: 80% of actual)
 - Consider an optional third payment to settle any shortfall
 
 InspiredTax automates every step of this process, giving South African freelancers and contractors a clear, accurate provisional tax calculation throughout the year.

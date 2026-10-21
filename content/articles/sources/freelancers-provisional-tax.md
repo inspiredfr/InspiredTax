@@ -8,7 +8,7 @@ KEYWORDS: provisional tax freelancers South Africa, s11F deduction independent c
 HERO_TEXT: Freelancers & s11F
 FAQ: When are provisional tax payments due for freelancers in South Africa?|The first IRP6 payment falls due on 31 August (six months into the tax year) and the second on 28 February. A voluntary third payment can be submitted by 30 September after year-end to settle any remaining liability and reduce interest exposure.
 FAQ: Can freelancers claim the s11F retirement deduction on provisional tax?|Yes. Section 11F allows you to deduct contributions to approved retirement funds — pension, provident, or retirement annuity — up to 27.5% of the greater of your remuneration or taxable income, capped at R430,000 per year. Freelancers with no employer contribution access this fully through a retirement annuity, and it directly reduces their provisional tax liability.
-FAQ: What happens if a freelancer underestimates taxable income on their IRP6?|If the second provisional payment falls significantly below your actual tax liability, SARS can impose a Paragraph 20 underestimation penalty. This applies automatically — it does not require an audit or intent to evade. Conservative estimates or a voluntary third payment are the best defences.
+FAQ: What happens if a freelancer underestimates taxable income on their IRP6?|If your second-period estimate is too low, SARS imposes the Paragraph 20 underestimation penalty. If your actual taxable income (as finally assessed) is R1.8 million or less, your second-period estimate must be at least the lesser of 90% of actual taxable income and the basic amount. Above R1.8 million, it must be at least 80% of actual taxable income, and the basic amount gives no protection. The penalty is 20% of the shortfall in tax. This applies automatically — it does not require an audit or intent to evade. Conservative estimates or a voluntary third payment are the best defences.
 
 ## Provisional Tax Is Not Optional
 
@@ -22,7 +22,7 @@ Every provisional taxpayer makes two compulsory IRP6 submissions per tax year.
 
 The **first payment**, due 31 August, is based on an estimate of your total taxable income for the year. SARS allows more flexibility here — you can base your estimate on your prior year's assessment if current-year figures aren't solid yet, and the accuracy rules are less strict at this stage.
 
-The **second payment**, due 28 February, is where precision matters. By the end of February, you have eight months of trading information. SARS expects your estimate at this point to closely reflect your actual income. A significant underestimate at the second payment stage is what triggers the Paragraph 20 penalty.
+The **second payment**, due 28 February, is where precision matters. By the end of February, you have eight months of trading information. SARS expects your estimate at this point to closely reflect your actual income. Paragraph 20 tests this second-period estimate: if actual taxable income is R1.8 million or less, the estimate must be at least the lesser of 90% of actual taxable income and the basic amount; above R1.8 million, at least 80% of actual taxable income. Fall short and the penalty is 20% of the shortfall in tax.
 
 There is also a voluntary **third payment** available after year-end, due 30 September. This lets you settle any remaining liability once your actual income is confirmed, and it reduces the interest that accumulates between your second payment and your final assessment. If you know your February estimate was conservative, this is worth using.
 

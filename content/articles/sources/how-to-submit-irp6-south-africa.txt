@@ -8,7 +8,7 @@ KEYWORDS: how to submit IRP6, IRP6 South Africa, IRP6 eFiling, provisional tax A
 FAQ: What is an IRP6 form in South Africa?|The IRP6 is the SARS return used to declare your provisional tax estimate and make payment. It is submitted twice a year — at the end of August (Period 1) and at the end of February (Period 2) — via SARS eFiling.
 FAQ: What is the provisional tax deadline for August in South Africa?|The first provisional tax return (IRP6 – Period 1) must be submitted and paid by 31 August each year. Late submission results in a 20% penalty on the tax liability for that period.
 FAQ: Do I need an accountant to submit my IRP6?|No. SARS eFiling allows you to submit your IRP6 yourself. However, having an accurate calculation of your taxable income and deductions before you log in is essential. InspiredTax helps you prepare this calculation privately and accurately before submission.
-FAQ: What happens if I submit a zero IRP6?|If you submit an IRP6 with zero estimated income, SARS will use your prior year's taxable income as the basis and charge provisional tax accordingly. You may also face a 20% penalty for underestimation if your actual income is significantly higher.
+FAQ: What happens if I submit a zero IRP6?|If you submit an IRP6 with zero estimated income, SARS will use your prior year's taxable income as the basis and charge provisional tax accordingly. If the February estimate is too low, you may also face the paragraph 20 penalty of 20% of the shortfall in tax: at R1.8 million or less of actual taxable income the estimate must be at least the lesser of 90% of actual and the basic amount; above R1.8 million, at least 80% of actual.
 FAQ: Can I pay provisional tax without submitting an IRP6?|No. The IRP6 return must be submitted first, and payment follows from the declared estimate. Payment without a return, or a return without matching payment, creates an administrative problem with SARS that can attract penalties.
 
 ## What Is an IRP6 and Why Does the August Deadline Matter?
@@ -68,17 +68,17 @@ Many provisional taxpayers calculate their IRP6 using gross income and miss this
 
 Once you have your estimated taxable income, apply the 2026/27 tax tables:
 
-- R0 – R237,100: 18%
-- R237,101 – R370,500: R42,678 + 26% of excess
-- R370,501 – R512,800: R77,362 + 31% of excess
-- R512,801 – R673,000: R121,475 + 36% of excess
-- R673,001 – R857,900: R179,147 + 39% of excess
-- R857,901 – R1,817,000: R251,258 + 41% of excess
-- Above R1,817,000: R644,489 + 45% of excess
+- R0 – R245,100: 18%
+- R245,101 – R383,100: R44,118 + 26% of excess
+- R383,101 – R530,200: R79,998 + 31% of excess
+- R530,201 – R695,800: R125,599 + 36% of excess
+- R695,801 – R887,000: R185,215 + 39% of excess
+- R887,001 – R1,878,600: R259,783 + 41% of excess
+- Above R1,878,600: R666,339 + 45% of excess
 
 Then deduct:
 
-- Primary rebate: **R17,235**
+- Primary rebate: **R17,820**
 - Medical aid tax credits (if applicable)
 - PAYE deducted by any employer during the year
 
