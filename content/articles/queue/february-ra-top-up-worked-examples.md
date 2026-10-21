@@ -21,15 +21,15 @@ First, the rule being worked: contributions to retirement funds deduct up to **2
 
 Thandi projects R450,000 of taxable income before retirement contributions. Her R3,000 monthly debit order has contributed R36,000. Her ceiling: 27.5% × R450,000 = **R123,750** — she has R87,750 of unused room.
 
-She can spare R50,000 without touching her tax reserve. At R450,000 she sits in the 36% bracket, and the R50,000 deduction lands entirely within it: roughly **R18,000 of tax saved**. Taxable income falls to R364,000; her February IRP6 estimate uses the lower figure, so part of the benefit arrives immediately as a smaller period-2 payment rather than waiting for assessment.
+She can spare R50,000 without touching her tax reserve. After her R36,000 of debit orders she is at R414,000, in the 31% bracket on the 2026/27 tables; the R50,000 deduction takes R30,900 out of that bracket and R19,100 out of the 26% bracket below it: roughly **R14,500 of tax saved**. Taxable income falls to R364,000; her February IRP6 estimate uses the lower figure, so part of the benefit arrives immediately as a smaller period-2 payment rather than waiting for assessment.
 
-Cost-benefit stated honestly: she's converted R50,000 of cash into retirement capital plus R18,000 of tax relief. The R32,000 net is invested, compounding untaxed inside the fund — but locked until at least 55. For money she was saving anyway, the deduction is a 36% head start no discretionary investment matches.
+Cost-benefit stated honestly: she's converted R50,000 of cash into retirement capital plus about R14,500 of tax relief. The R35,500 net is invested, compounding untaxed inside the fund — but locked until at least 55. For money she was saving anyway, the deduction is a 26–31% head start no discretionary investment matches.
 
 ## Example Two: The Consultant at the Cap's Edge — R950,000, R100,000 Top-Up
 
 Sipho's taxable income before contributions is R950,000; monthly contributions total R60,000. Ceiling: 27.5% × R950,000 = **R261,250**. Room: R201,250.
 
-A R100,000 lump sum deducts fully. At his level the rand displaced sit in the 41% bracket: about **R41,000 saved**, taxable income down to R790,000. Two knock-on effects worth noticing:
+A R100,000 lump sum deducts fully. After his R60,000 of contributions he is at R890,000; on the 2026/27 tables the rand displaced sit mostly in the 39% bracket (R3,000 at 41%, R97,000 at 39%): about **R39,000 saved**, taxable income down to R790,000. Two knock-on effects worth noticing:
 
 - His February estimate drops meaningfully — the top-up is part of an honest period-2 calculation *provided the contribution is actually made* before year-end. Claiming a planned-but-unexecuted contribution in the estimate is how an RA strategy becomes a paragraph 20 problem.
 - He's still nowhere near the R430,000 cap — the binding constraint at his level is the 27.5%, and that's what the October planning exercise establishes each year.

@@ -45,7 +45,7 @@ For a salaried employee, the 27.5% is calculated on remuneration — their salar
 - 27.5% limit: R247,500
 - RA contribution made: R247,500
 - Taxable income after deduction: R652,500
-- Tax saving at marginal rate of 39%: approximately **R96,525**
+- Tax saving on the 2026/27 tables (the deduction comes off the 41%, 39% and 36% bands): approximately **R95,486**
 
 That's money back in your pocket while simultaneously growing a tax-free retirement fund.
 
@@ -191,11 +191,11 @@ Medical aid credits work differently from deductions — they reduce your tax li
 
 **2026/27 medical aid tax credits:**
 
-- Main member: **R364 per month (R4,368 per year)**
-- First dependant: **R364 per month (R4,368 per year)**
-- Each additional dependant: **R246 per month (R2,952 per year)**
+- Main member: **R376 per month (R4,512 per year)**
+- First dependant: **R376 per month (R4,512 per year)**
+- Each additional dependant: **R254 per month (R3,048 per year)**
 
-A freelancer with a spouse and two children on medical aid saves **R16,236 per year** in tax before considering any additional out-of-pocket medical expense credits.
+A freelancer with a spouse and two children on medical aid saves **R15,120 per year** in tax before considering any additional out-of-pocket medical expense credits.
 
 ## Donations to SARS-Approved Organisations
 

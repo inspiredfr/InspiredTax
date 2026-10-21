@@ -34,9 +34,9 @@ If your taxable income is R800,000 and you contribute R220,000 to a retirement a
 
 - 27.5% of R800,000 = R220,000 (within the cap)
 - Your taxable income drops to R580,000
-- At marginal tax rates, this saves approximately R77,000 in tax
+- On the 2026/27 tables, this saves approximately R82,000 in tax
 
-That's R77,000 back — while simultaneously building your retirement savings. No other single strategy comes close for South African freelancers.
+That's about R82,000 back — while simultaneously building your retirement savings. No other single strategy comes close for South African freelancers.
 
 **For contractors, the calculation uses taxable income, not salary.** This is important because contractors often have higher taxable income than an equivalent salaried employee after expenses, meaning their 27.5% limit is calculated on a larger base.
 
@@ -99,9 +99,9 @@ South Africa offers tax credits for medical aid contributions, not a deduction f
 
 **Medical Aid Tax Credits (Section 6A):**
 
-- Main member: **R364 per month**
-- First dependant: **R364 per month**
-- Each additional dependant: **R246 per month**
+- Main member: **R376 per month**
+- First dependant: **R376 per month**
+- Each additional dependant: **R254 per month**
 
 These credits are subtracted directly from your tax liability — more valuable than an income deduction.
 
@@ -134,7 +134,7 @@ Reducing your tax bill isn't only about deductions. **Managing provisional tax c
 
 **The underestimation penalty (Paragraph 20):**
 
-If your second provisional tax estimate is significantly lower than your actual liability, SARS imposes a penalty of **20% of the shortfall**. For a R100,000 shortfall, that's an R20,000 penalty on top of the actual tax owed.
+If your actual taxable income for the year (as finally assessed) is **R1.8 million or less**, your second-period (February) estimate must be at least the **lesser of 90% of actual taxable income and the basic amount** shown on your IRP6. If actual taxable income is **above R1.8 million**, the estimate must be at least **80% of actual taxable income** — the basic amount gives no protection. Fall short and SARS levies a penalty of **20% of the shortfall in tax**: the difference between the normal tax on the required minimum estimate and the tax on your estimate. For a R100,000 shortfall in tax, that's a R20,000 penalty on top of the tax itself.
 
 **How to avoid it:**
 
