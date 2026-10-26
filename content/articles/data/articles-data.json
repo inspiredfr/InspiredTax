@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "retirement-annuity-planning-october",
+      "slug": "retirement-annuity-planning-october",
+      "title": "Why October Is the Right Time to Plan Your Retirement Annuity Top-Up",
+      "description": "The s11F deduction \u2014 27.5% of income, capped at R430,000 \u2014 resets every 28 February. Freelancers who plan the top-up in October spread the cash flow over five months; those who discover it in February scramble or miss it.",
+      "category": "Tax Planning",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-10-26",
+      "featured": true,
+      "readTime": "7 min read",
+      "heroColor": "navy-light",
+      "heroText": "RA Season"
+    },
+    {
       "id": "medical-aid-credits-self-employed",
       "slug": "medical-aid-credits-self-employed",
       "title": "Medical Aid Credits for the Self-Employed: Sections 6A and 6B Explained",

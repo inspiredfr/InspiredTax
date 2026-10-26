@@ -91,7 +91,7 @@
   <!-- Article index, FAQs, Guide, Privacy -->
   <url>
     <loc>https://inspiredtax.co.za/articles/index.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -197,6 +197,13 @@
   <url>
     <loc>https://inspiredtax.co.za/articles/medical-aid-credits-self-employed.html</loc>
     <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://inspiredtax.co.za/articles/retirement-annuity-planning-october.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
