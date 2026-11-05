@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "vat-registration-freelancers-south-africa",
+      "slug": "vat-registration-freelancers-south-africa",
+      "title": "VAT and the Freelancer: When You Must Register \u2014 and When You Shouldn't",
+      "description": "Cross R1 million of turnover in any 12-month period and VAT registration stops being optional. What the thresholds actually mean, what registration does to your pricing and admin, and how to think about voluntary registration below the line.",
+      "category": "Business",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-11-05",
+      "featured": true,
+      "readTime": "8 min read",
+      "heroColor": "navy-light",
+      "heroText": "VAT Threshold"
+    },
+    {
       "id": "retirement-annuity-planning-october",
       "slug": "retirement-annuity-planning-october",
       "title": "Why October Is the Right Time to Plan Your Retirement Annuity Top-Up",
