@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "sole-proprietor-vs-company-south-africa",
+      "slug": "sole-proprietor-vs-company-south-africa",
+      "title": "Sole Proprietor or Company? How Freelancers Should Think About Incorporating",
+      "description": "At some income level every freelancer hears \"you should have a company.\" Sometimes it's true. A clear-eyed comparison of trading in your own name versus through a private company \u2014 tax rates, the two layers, SBC relief, and the admin nobody prices in.",
+      "category": "Business",
+      "categoryColor": "blue",
+      "author": "Allan Lombard",
+      "date": "2026-11-15",
+      "featured": true,
+      "readTime": "9 min read",
+      "heroColor": "navy-light",
+      "heroText": "Entity Choice"
+    },
+    {
       "id": "vat-registration-freelancers-south-africa",
       "slug": "vat-registration-freelancers-south-africa",
       "title": "VAT and the Freelancer: When You Must Register \u2014 and When You Shouldn't",
