@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "equipment-wear-and-tear-deductions",
+      "slug": "equipment-wear-and-tear-deductions",
+      "title": "Buying Equipment Before Year-End: Wear-and-Tear Allowances Under Section 11(e)",
+      "description": "Three months before the tax year closes is when equipment decisions have tax consequences attached. How the s11(e) allowance works, the R7,000 immediate write-off, the write-off periods that matter to freelancers, and when the February purchase actually makes sense.",
+      "category": "Deductions",
+      "categoryColor": "green",
+      "author": "Allan Lombard",
+      "date": "2026-11-25",
+      "featured": true,
+      "readTime": "8 min read",
+      "heroColor": "navy-light",
+      "heroText": "Equipment & Assets"
+    },
+    {
       "id": "sole-proprietor-vs-company-south-africa",
       "slug": "sole-proprietor-vs-company-south-africa",
       "title": "Sole Proprietor or Company? How Freelancers Should Think About Incorporating",
